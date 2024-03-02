@@ -1,0 +1,98 @@
+---
+title: ClientEvents
+description: ClientEvents
+---
+[vespera](../README) / [Exports](../modules) / ClientEvents
+
+# Interface: ClientEvents
+
+Interface representing the events that a Client can emit.
+
+## Table of contents
+
+### Properties
+
+- [button](ClientEvents#button)
+- [command](ClientEvents#command)
+- [commandRegistered](ClientEvents#commandregistered)
+- [commandUnregistered](ClientEvents#commandunregistered)
+- [error](ClientEvents#error)
+- [interaction](ClientEvents#interaction)
+- [request](ClientEvents#request)
+
+## Properties
+
+### button
+
+• **button**: `Callback`\<[[`ButtonContext`](../classes/ButtonContext)\<`unknown`\>]\>
+
+Emitted when a button interaction is received.
+
+
+
+
+___
+
+### command
+
+• **command**: `Callback`\<[[`CommandContext`](../classes/CommandContext)\<`unknown`\>]\>
+
+Emitted when a command interaction is received.
+
+
+
+
+___
+
+### commandRegistered
+
+• **commandRegistered**: `Callback`\<[`RESTPostAPIChatInputApplicationCommandsJSONBody`]\>
+
+Emitted after a command has been successfully registered.
+
+
+
+
+___
+
+### commandUnregistered
+
+• **commandUnregistered**: `Callback`\<[`string`]\>
+
+Emitted after a command has been successfully unregistered.
+
+
+
+
+___
+
+### error
+
+• **error**: `Callback`\<[[`VesperaError`](../classes/VesperaError)]\>
+
+Emitted when an error occurs in the client.
+
+
+
+
+___
+
+### interaction
+
+• **interaction**: `Callback`\<[[`BaseContext`](../classes/BaseContext)\<`APIBaseInteraction`\<`InteractionType`, `unknown`\>, `unknown`\>]\>
+
+Emitted when an interaction is received.
+
+
+
+
+___
+
+### request
+
+• **request**: `Callback`\<[[`Request`]( https://developer.mozilla.org/docs/Web/API/Request )]\>
+
+Emitted when the client makes a request.
+
+
+

@@ -1,0 +1,88 @@
+---
+title: ChannelManager
+description: ChannelManager
+---
+[vespera](../README) / [Exports](../modules) / ChannelManager
+
+# Class: ChannelManager
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`ChannelManager`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](ChannelManager#constructor)
+
+### Properties
+
+- [client](ChannelManager#client)
+
+### Methods
+
+- [fetch](ChannelManager#fetch)
+
+## Constructors
+
+### constructor
+
+• **new ChannelManager**(`client`): [`ChannelManager`](ChannelManager)
+
+Constructor for creating a new instance of the class.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `client` | [`Client`](Client) | the client object |
+
+#### Returns
+
+[`ChannelManager`](ChannelManager)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+
+
+
+## Properties
+
+### client
+
+• **client**: [`Client`](Client)
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+
+
+
+## Methods
+
+### fetch
+
+▸ **fetch**(`id`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+Fetches data using the provided ID.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | The ID used to fetch data. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+The data fetched using the ID.
+
+
+

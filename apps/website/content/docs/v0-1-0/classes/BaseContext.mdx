@@ -1,0 +1,600 @@
+---
+title: BaseContext
+description: BaseContext
+---
+[vespera](../README) / [Exports](../modules) / BaseContext
+
+# Class: BaseContext\<T, S\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `APIBaseInteraction`\<`InteractionType`, `unknown`\> |
+| `S` | extends `unknown` |
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`BaseContext`**
+
+  ↳↳ [`CommandContext`](CommandContext)
+
+  ↳↳ [`ButtonContext`](ButtonContext)
+
+## Table of contents
+
+### Constructors
+
+- [constructor](BaseContext#constructor)
+
+### Properties
+
+- [appPermissions](BaseContext#apppermissions)
+- [applicationId](BaseContext#applicationid)
+- [channel](BaseContext#channel)
+- [channelId](BaseContext#channelid)
+- [client](BaseContext#client)
+- [entitlement](BaseContext#entitlement)
+- [guildId](BaseContext#guildid)
+- [guildLocale](BaseContext#guildlocale)
+- [id](BaseContext#id)
+- [locale](BaseContext#locale)
+- [memberPermissions](BaseContext#memberpermissions)
+- [raw](BaseContext#raw)
+- [state](BaseContext#state)
+- [token](BaseContext#token)
+- [type](BaseContext#type)
+- [version](BaseContext#version)
+
+### Methods
+
+- [createdAt](BaseContext#createdat)
+- [createdTimestamp](BaseContext#createdtimestamp)
+- [decorate](BaseContext#decorate)
+- [inDM](BaseContext#indm)
+- [inGuild](BaseContext#inguild)
+- [isAnySelectMenu](BaseContext#isanyselectmenu)
+- [isAutocomplete](BaseContext#isautocomplete)
+- [isButton](BaseContext#isbutton)
+- [isChannelSelectMenu](BaseContext#ischannelselectmenu)
+- [isChatInputCommand](BaseContext#ischatinputcommand)
+- [isCommand](BaseContext#iscommand)
+- [isContextMenuCommand](BaseContext#iscontextmenucommand)
+- [isMentionableSelectMenu](BaseContext#ismentionableselectmenu)
+- [isMessageComponent](BaseContext#ismessagecomponent)
+- [isMessageContextMenuCommand](BaseContext#ismessagecontextmenucommand)
+- [isModalSubmit](BaseContext#ismodalsubmit)
+- [isRepliable](BaseContext#isrepliable)
+- [isRoleSelectMenu](BaseContext#isroleselectmenu)
+- [isSelectMenu](BaseContext#isselectmenu)
+- [isStringSelectMenu](BaseContext#isstringselectmenu)
+- [isUserContextMenuCommand](BaseContext#isusercontextmenucommand)
+- [isUserSelectMenu](BaseContext#isuserselectmenu)
+
+## Constructors
+
+### constructor
+
+• **new BaseContext**\<`T`, `S`\>(`client`, `data`): [`BaseContext`](BaseContext)\<`T`, `S`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `APIBaseInteraction`\<`InteractionType`, `unknown`\> |
+| `S` | extends `unknown` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `client` | [`Client`](Client) |
+| `data` | `T` |
+
+#### Returns
+
+[`BaseContext`](BaseContext)\<`T`, `S`\>
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+
+
+
+## Properties
+
+### appPermissions
+
+• **appPermissions**: `undefined` \| `string`
+
+
+
+
+___
+
+### applicationId
+
+• **applicationId**: `T`[``"application_id"``]
+
+
+
+
+___
+
+### channel
+
+• **channel**: `undefined` \| [`Channel`](Channel)
+
+
+
+
+___
+
+### channelId
+
+• **channelId**: `undefined` \| `string`
+
+
+
+
+___
+
+### client
+
+• **client**: [`Client`](Client)
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+
+
+
+___
+
+### entitlement
+
+• **entitlement**: `T`[``"entitlements"``]
+
+
+
+
+___
+
+### guildId
+
+• **guildId**: `T`[``"guild_id"``]
+
+
+
+
+___
+
+### guildLocale
+
+• **guildLocale**: `T`[``"guild_locale"``]
+
+
+
+
+___
+
+### id
+
+• **id**: `T`[``"id"``]
+
+
+
+
+___
+
+### locale
+
+• **locale**: `T`[``"locale"``]
+
+
+
+
+___
+
+### memberPermissions
+
+• **memberPermissions**: `undefined` \| `string`
+
+
+
+
+___
+
+### raw
+
+• **raw**: `T`
+
+
+
+
+___
+
+### state
+
+• **state**: `S`
+
+
+
+
+___
+
+### token
+
+• **token**: `T`[``"token"``]
+
+
+
+
+___
+
+### type
+
+• **type**: `T`[``"type"``]
+
+
+
+
+___
+
+### version
+
+• **version**: `T`[``"version"``]
+
+
+
+
+## Methods
+
+### createdAt
+
+▸ **createdAt**(): [`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+Returns the creation date of the interaction.
+
+#### Returns
+
+[`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+the creation date
+
+
+
+
+___
+
+### createdTimestamp
+
+▸ **createdTimestamp**(): `number`
+
+Get the timestamp when this interaction was created.
+
+#### Returns
+
+`number`
+
+the timestamp of the interaction
+
+
+
+
+___
+
+### decorate
+
+▸ **decorate**(`key`, `data`): [`BaseContext`](BaseContext)\<`T`, `S`\>
+
+A method to decorate the state object with a new key and data.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | the key to decorate the state object with |
+| `data` | `unknown` | the data to associate with the key in the state object |
+
+#### Returns
+
+[`BaseContext`](BaseContext)\<`T`, `S`\>
+
+the current instance of the class for method chaining
+
+
+
+
+___
+
+### inDM
+
+▸ **inDM**(): `boolean`
+
+Indicates whether this interaction is received from a DM.
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### inGuild
+
+▸ **inGuild**(): `boolean`
+
+Indicates whether this interaction is received from a guild.
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isAnySelectMenu
+
+▸ **isAnySelectMenu**(): `boolean`
+
+Indicates whether this interaction is a select menu of any known type.
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isAutocomplete
+
+▸ **isAutocomplete**(): `boolean`
+
+Indicates whether this interaction is an AutocompleteInteraction
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isButton
+
+▸ **isButton**(): `boolean`
+
+Indicates whether this interaction is a ButtonInteraction.
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isChannelSelectMenu
+
+▸ **isChannelSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a ChannelSelectMenuInteraction
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isChatInputCommand
+
+▸ **isChatInputCommand**(): `boolean`
+
+Indicates whether this interaction is a ChatInputCommandInteraction.
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isCommand
+
+▸ **isCommand**(): `boolean`
+
+Indicates whether this interaction is a CommandInteraction
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isContextMenuCommand
+
+▸ **isContextMenuCommand**(): `boolean`
+
+Indicates whether this interaction is a ContextMenuCommandInteraction
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isMentionableSelectMenu
+
+▸ **isMentionableSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a MentionableSelectMenuInteraction
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isMessageComponent
+
+▸ **isMessageComponent**(): `boolean`
+
+Indicates whether this interaction is a MessageComponentInteraction
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isMessageContextMenuCommand
+
+▸ **isMessageContextMenuCommand**(): `boolean`
+
+Indicates whether this interaction is a MessageContextMenuCommandInteraction
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isModalSubmit
+
+▸ **isModalSubmit**(): `boolean`
+
+Indicates whether this interaction is a ModalSubmitInteraction
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isRepliable
+
+▸ **isRepliable**(): `boolean`
+
+Indicates whether this interaction can be replied to.
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isRoleSelectMenu
+
+▸ **isRoleSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a RoleSelectMenuInteraction
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isSelectMenu
+
+▸ **isSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a StringSelectMenuInteraction.
+
+#### Returns
+
+`boolean`
+
+**`Deprecated`**
+
+Use BaseInteraction#isStringSelectMenu instead.
+
+
+
+
+___
+
+### isStringSelectMenu
+
+▸ **isStringSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a StringSelectMenuInteraction.
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isUserContextMenuCommand
+
+▸ **isUserContextMenuCommand**(): `boolean`
+
+Indicates whether this interaction is a UserContextMenuCommandInteraction
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isUserSelectMenu
+
+▸ **isUserSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a UserSelectMenuInteraction
+
+#### Returns
+
+`boolean`
+
+
+

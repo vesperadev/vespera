@@ -1,0 +1,742 @@
+---
+title: ButtonContext
+description: ButtonContext
+---
+[vespera](../README) / [Exports](../modules) / ButtonContext
+
+# Class: ButtonContext\<S\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+## Hierarchy
+
+- [`BaseContext`](BaseContext)\<`APIMessageComponentButtonInteraction`, `S`\>
+
+  ↳ **`ButtonContext`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](ButtonContext#constructor)
+
+### Properties
+
+- [appPermissions](ButtonContext#apppermissions)
+- [applicationId](ButtonContext#applicationid)
+- [channel](ButtonContext#channel)
+- [channelId](ButtonContext#channelid)
+- [client](ButtonContext#client)
+- [entitlement](ButtonContext#entitlement)
+- [guildId](ButtonContext#guildid)
+- [guildLocale](ButtonContext#guildlocale)
+- [id](ButtonContext#id)
+- [locale](ButtonContext#locale)
+- [memberPermissions](ButtonContext#memberpermissions)
+- [raw](ButtonContext#raw)
+- [state](ButtonContext#state)
+- [token](ButtonContext#token)
+- [type](ButtonContext#type)
+- [version](ButtonContext#version)
+
+### Methods
+
+- [createdAt](ButtonContext#createdat)
+- [createdTimestamp](ButtonContext#createdtimestamp)
+- [decorate](ButtonContext#decorate)
+- [inDM](ButtonContext#indm)
+- [inGuild](ButtonContext#inguild)
+- [isAnySelectMenu](ButtonContext#isanyselectmenu)
+- [isAutocomplete](ButtonContext#isautocomplete)
+- [isButton](ButtonContext#isbutton)
+- [isChannelSelectMenu](ButtonContext#ischannelselectmenu)
+- [isChatInputCommand](ButtonContext#ischatinputcommand)
+- [isCommand](ButtonContext#iscommand)
+- [isContextMenuCommand](ButtonContext#iscontextmenucommand)
+- [isMentionableSelectMenu](ButtonContext#ismentionableselectmenu)
+- [isMessageComponent](ButtonContext#ismessagecomponent)
+- [isMessageContextMenuCommand](ButtonContext#ismessagecontextmenucommand)
+- [isModalSubmit](ButtonContext#ismodalsubmit)
+- [isRepliable](ButtonContext#isrepliable)
+- [isRoleSelectMenu](ButtonContext#isroleselectmenu)
+- [isSelectMenu](ButtonContext#isselectmenu)
+- [isStringSelectMenu](ButtonContext#isstringselectmenu)
+- [isUserContextMenuCommand](ButtonContext#isusercontextmenucommand)
+- [isUserSelectMenu](ButtonContext#isuserselectmenu)
+
+## Constructors
+
+### constructor
+
+• **new ButtonContext**\<`S`\>(`client`, `data`): [`ButtonContext`](ButtonContext)\<`S`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `client` | [`Client`](Client) |
+| `data` | `APIMessageComponentButtonInteraction` |
+
+#### Returns
+
+[`ButtonContext`](ButtonContext)\<`S`\>
+
+#### Overrides
+
+[BaseContext](BaseContext).[constructor](BaseContext#constructor)
+
+
+
+
+## Properties
+
+### appPermissions
+
+• **appPermissions**: `undefined` \| `string`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[appPermissions](BaseContext#apppermissions)
+
+
+
+
+___
+
+### applicationId
+
+• **applicationId**: `string`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[applicationId](BaseContext#applicationid)
+
+
+
+
+___
+
+### channel
+
+• **channel**: `undefined` \| [`Channel`](Channel)
+
+#### Inherited from
+
+[BaseContext](BaseContext).[channel](BaseContext#channel)
+
+
+
+
+___
+
+### channelId
+
+• **channelId**: `undefined` \| `string`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[channelId](BaseContext#channelid)
+
+
+
+
+___
+
+### client
+
+• **client**: [`Client`](Client)
+
+#### Inherited from
+
+[BaseContext](BaseContext).[client](BaseContext#client)
+
+
+
+
+___
+
+### entitlement
+
+• **entitlement**: `APIEntitlement`[]
+
+#### Inherited from
+
+[BaseContext](BaseContext).[entitlement](BaseContext#entitlement)
+
+
+
+
+___
+
+### guildId
+
+• **guildId**: `undefined` \| `string`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[guildId](BaseContext#guildid)
+
+
+
+
+___
+
+### guildLocale
+
+• **guildLocale**: `undefined` \| ``"id"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"hr"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"th"`` \| ``"tr"`` \| ``"uk"`` \| ``"vi"``
+
+#### Inherited from
+
+[BaseContext](BaseContext).[guildLocale](BaseContext#guildlocale)
+
+
+
+
+___
+
+### id
+
+• **id**: `string`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[id](BaseContext#id)
+
+
+
+
+___
+
+### locale
+
+• **locale**: ``"id"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"hr"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"th"`` \| ``"tr"`` \| ``"uk"`` \| ``"vi"``
+
+#### Inherited from
+
+[BaseContext](BaseContext).[locale](BaseContext#locale)
+
+
+
+
+___
+
+### memberPermissions
+
+• **memberPermissions**: `undefined` \| `string`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[memberPermissions](BaseContext#memberpermissions)
+
+
+
+
+___
+
+### raw
+
+• **raw**: `APIMessageComponentButtonInteraction`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[raw](BaseContext#raw)
+
+
+
+
+___
+
+### state
+
+• **state**: `S`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[state](BaseContext#state)
+
+
+
+
+___
+
+### token
+
+• **token**: `string`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[token](BaseContext#token)
+
+
+
+
+___
+
+### type
+
+• **type**: `MessageComponent`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[type](BaseContext#type)
+
+
+
+
+___
+
+### version
+
+• **version**: ``1``
+
+#### Inherited from
+
+[BaseContext](BaseContext).[version](BaseContext#version)
+
+
+
+
+## Methods
+
+### createdAt
+
+▸ **createdAt**(): [`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+Returns the creation date of the interaction.
+
+#### Returns
+
+[`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+the creation date
+
+#### Inherited from
+
+[BaseContext](BaseContext).[createdAt](BaseContext#createdat)
+
+
+
+
+___
+
+### createdTimestamp
+
+▸ **createdTimestamp**(): `number`
+
+Get the timestamp when this interaction was created.
+
+#### Returns
+
+`number`
+
+the timestamp of the interaction
+
+#### Inherited from
+
+[BaseContext](BaseContext).[createdTimestamp](BaseContext#createdtimestamp)
+
+
+
+
+___
+
+### decorate
+
+▸ **decorate**(`key`, `data`): [`ButtonContext`](ButtonContext)\<`S`\>
+
+A method to decorate the state object with a new key and data.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `key` | `string` | the key to decorate the state object with |
+| `data` | `unknown` | the data to associate with the key in the state object |
+
+#### Returns
+
+[`ButtonContext`](ButtonContext)\<`S`\>
+
+the current instance of the class for method chaining
+
+#### Inherited from
+
+[BaseContext](BaseContext).[decorate](BaseContext#decorate)
+
+
+
+
+___
+
+### inDM
+
+▸ **inDM**(): `boolean`
+
+Indicates whether this interaction is received from a DM.
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[inDM](BaseContext#indm)
+
+
+
+
+___
+
+### inGuild
+
+▸ **inGuild**(): `boolean`
+
+Indicates whether this interaction is received from a guild.
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[inGuild](BaseContext#inguild)
+
+
+
+
+___
+
+### isAnySelectMenu
+
+▸ **isAnySelectMenu**(): `boolean`
+
+Indicates whether this interaction is a select menu of any known type.
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isAnySelectMenu](BaseContext#isanyselectmenu)
+
+
+
+
+___
+
+### isAutocomplete
+
+▸ **isAutocomplete**(): `boolean`
+
+Indicates whether this interaction is an AutocompleteInteraction
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isAutocomplete](BaseContext#isautocomplete)
+
+
+
+
+___
+
+### isButton
+
+▸ **isButton**(): `boolean`
+
+Indicates whether this interaction is a ButtonInteraction.
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isButton](BaseContext#isbutton)
+
+
+
+
+___
+
+### isChannelSelectMenu
+
+▸ **isChannelSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a ChannelSelectMenuInteraction
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isChannelSelectMenu](BaseContext#ischannelselectmenu)
+
+
+
+
+___
+
+### isChatInputCommand
+
+▸ **isChatInputCommand**(): `boolean`
+
+Indicates whether this interaction is a ChatInputCommandInteraction.
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isChatInputCommand](BaseContext#ischatinputcommand)
+
+
+
+
+___
+
+### isCommand
+
+▸ **isCommand**(): `boolean`
+
+Indicates whether this interaction is a CommandInteraction
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isCommand](BaseContext#iscommand)
+
+
+
+
+___
+
+### isContextMenuCommand
+
+▸ **isContextMenuCommand**(): `boolean`
+
+Indicates whether this interaction is a ContextMenuCommandInteraction
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isContextMenuCommand](BaseContext#iscontextmenucommand)
+
+
+
+
+___
+
+### isMentionableSelectMenu
+
+▸ **isMentionableSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a MentionableSelectMenuInteraction
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isMentionableSelectMenu](BaseContext#ismentionableselectmenu)
+
+
+
+
+___
+
+### isMessageComponent
+
+▸ **isMessageComponent**(): `boolean`
+
+Indicates whether this interaction is a MessageComponentInteraction
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isMessageComponent](BaseContext#ismessagecomponent)
+
+
+
+
+___
+
+### isMessageContextMenuCommand
+
+▸ **isMessageContextMenuCommand**(): `boolean`
+
+Indicates whether this interaction is a MessageContextMenuCommandInteraction
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isMessageContextMenuCommand](BaseContext#ismessagecontextmenucommand)
+
+
+
+
+___
+
+### isModalSubmit
+
+▸ **isModalSubmit**(): `boolean`
+
+Indicates whether this interaction is a ModalSubmitInteraction
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isModalSubmit](BaseContext#ismodalsubmit)
+
+
+
+
+___
+
+### isRepliable
+
+▸ **isRepliable**(): `boolean`
+
+Indicates whether this interaction can be replied to.
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isRepliable](BaseContext#isrepliable)
+
+
+
+
+___
+
+### isRoleSelectMenu
+
+▸ **isRoleSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a RoleSelectMenuInteraction
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isRoleSelectMenu](BaseContext#isroleselectmenu)
+
+
+
+
+___
+
+### isSelectMenu
+
+▸ **isSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a StringSelectMenuInteraction.
+
+#### Returns
+
+`boolean`
+
+**`Deprecated`**
+
+Use BaseInteraction#isStringSelectMenu instead.
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isSelectMenu](BaseContext#isselectmenu)
+
+
+
+
+___
+
+### isStringSelectMenu
+
+▸ **isStringSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a StringSelectMenuInteraction.
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isStringSelectMenu](BaseContext#isstringselectmenu)
+
+
+
+
+___
+
+### isUserContextMenuCommand
+
+▸ **isUserContextMenuCommand**(): `boolean`
+
+Indicates whether this interaction is a UserContextMenuCommandInteraction
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isUserContextMenuCommand](BaseContext#isusercontextmenucommand)
+
+
+
+
+___
+
+### isUserSelectMenu
+
+▸ **isUserSelectMenu**(): `boolean`
+
+Indicates whether this interaction is a UserSelectMenuInteraction
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+[BaseContext](BaseContext).[isUserSelectMenu](BaseContext#isuserselectmenu)
+
+
+

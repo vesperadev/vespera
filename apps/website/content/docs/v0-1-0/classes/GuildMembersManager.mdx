@@ -1,0 +1,109 @@
+---
+title: GuildMembersManager
+description: GuildMembersManager
+---
+[vespera](../README) / [Exports](../modules) / GuildMembersManager
+
+# Class: GuildMembersManager
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`GuildMembersManager`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](GuildMembersManager#constructor)
+
+### Properties
+
+- [client](GuildMembersManager#client)
+- [guild](GuildMembersManager#guild)
+
+### Methods
+
+- [fetch](GuildMembersManager#fetch)
+- [fetchMe](GuildMembersManager#fetchme)
+
+## Constructors
+
+### constructor
+
+• **new GuildMembersManager**(`client`, `guild`): [`GuildMembersManager`](GuildMembersManager)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `client` | [`Client`](Client) |
+| `guild` | [`Guild`](Guild) |
+
+#### Returns
+
+[`GuildMembersManager`](GuildMembersManager)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+
+
+
+## Properties
+
+### client
+
+• **client**: [`Client`](Client)
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+
+
+
+___
+
+### guild
+
+• **guild**: [`Guild`](Guild)
+
+
+
+
+## Methods
+
+### fetch
+
+▸ **fetch**(`id`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuildMember`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuildMember`\>
+
+
+
+
+___
+
+### fetchMe
+
+▸ **fetchMe**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuildMember`\>
+
+Fetches the client user as a GuildMember of the guild.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuildMember`\>
+
+
+

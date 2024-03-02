@@ -1,0 +1,694 @@
+---
+title: Channel
+description: Channel
+---
+[vespera](../README) / [Exports](../modules) / Channel
+
+# Class: Channel
+
+Represents any channel on Discord.
+
+**`Abstract`**
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`Channel`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](Channel#constructor)
+
+### Properties
+
+- [bitrate](Channel#bitrate)
+- [client](Channel#client)
+- [flags](Channel#flags)
+- [guildId](Channel#guildid)
+- [id](Channel#id)
+- [lastMessageId](Channel#lastmessageid)
+- [messages](Channel#messages)
+- [nsfw](Channel#nsfw)
+- [parentId](Channel#parentid)
+- [rateLimitPerUser](Channel#ratelimitperuser)
+- [raw](Channel#raw)
+- [rtcRegion](Channel#rtcregion)
+- [topic](Channel#topic)
+- [type](Channel#type)
+- [userLimit](Channel#userlimit)
+- [videoQualityMode](Channel#videoqualitymode)
+
+### Accessors
+
+- [createdAt](Channel#createdat)
+- [createdTimestamp](Channel#createdtimestamp)
+- [url](Channel#url)
+
+### Methods
+
+- [bulkDeleteMessages](Channel#bulkdeletemessages)
+- [createInvite](Channel#createinvite)
+- [crosspostMessage](Channel#crosspostmessage)
+- [delete](Channel#delete)
+- [edit](Channel#edit)
+- [editMessage](Channel#editmessage)
+- [fetch](Channel#fetch)
+- [fetchMessage](Channel#fetchmessage)
+- [fetchMessages](Channel#fetchmessages)
+- [getInvites](Channel#getinvites)
+- [isDMBased](Channel#isdmbased)
+- [isTextBased](Channel#istextbased)
+- [isThread](Channel#isthread)
+- [isThreadOnly](Channel#isthreadonly)
+- [isVoiceBased](Channel#isvoicebased)
+- [pinMessage](Channel#pinmessage)
+- [send](Channel#send)
+- [toString](Channel#tostring)
+- [unpinMessage](Channel#unpinmessage)
+
+## Constructors
+
+### constructor
+
+• **new Channel**(`client`, `data`): [`Channel`](Channel)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `client` | [`Client`](Client) |
+| `data` | `APIChannel` |
+
+#### Returns
+
+[`Channel`](Channel)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+
+
+
+## Properties
+
+### bitrate
+
+• **bitrate**: `undefined` \| `number`
+
+The bitrate of this voice-based channel
+
+
+
+
+___
+
+### client
+
+• **client**: [`Client`](Client)
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+
+
+
+___
+
+### flags
+
+• **flags**: `undefined` \| `ChannelFlags`
+
+The flags that are applied to the channel.
+
+
+
+
+___
+
+### guildId
+
+• **guildId**: `undefined` \| `string`
+
+The id of the guild the channel is in.
+
+
+
+
+___
+
+### id
+
+• **id**: `string`
+
+The channel's id
+
+
+
+
+___
+
+### lastMessageId
+
+• **lastMessageId**: `undefined` \| `string`
+
+The id of the last message sent in this channel
+
+
+
+
+___
+
+### messages
+
+• **messages**: `undefined` \| [`MessageManager`](MessageManager)
+
+The message manager class for this channel
+
+
+
+
+___
+
+### nsfw
+
+• **nsfw**: `undefined` \| `boolean`
+
+Whether the channel is NSFW
+
+
+
+
+___
+
+### parentId
+
+• **parentId**: `undefined` \| `string`
+
+The id of the parent category for a channel, or `null` if it doesn't have one
+
+
+
+
+___
+
+### rateLimitPerUser
+
+• **rateLimitPerUser**: `undefined` \| `number`
+
+The amount of seconds a user has to wait before sending another message
+
+
+
+
+___
+
+### raw
+
+• **raw**: `APIChannel`
+
+The raw data of the channel
+
+
+
+
+___
+
+### rtcRegion
+
+• **rtcRegion**: `undefined` \| `string`
+
+The RTC region for this voice-based channel. This region is automatically selected if `null`.
+
+
+
+
+___
+
+### topic
+
+• **topic**: `undefined` \| `string`
+
+The topic of this text-based channel
+
+
+
+
+___
+
+### type
+
+• **type**: `ChannelType`
+
+The type of the channel
+
+
+
+
+___
+
+### userLimit
+
+• **userLimit**: `undefined` \| `number`
+
+The maximum amount of users allowed in this channel.
+
+
+
+
+___
+
+### videoQualityMode
+
+• **videoQualityMode**: `undefined` \| `VideoQualityMode`
+
+The camera video quality mode of the channel
+
+
+
+
+## Accessors
+
+### createdAt
+
+• `get` **createdAt**(): [`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+The time the channel was created at
+
+#### Returns
+
+[`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+
+
+
+___
+
+### createdTimestamp
+
+• `get` **createdTimestamp**(): `number`
+
+The timestamp the channel was created at
+
+#### Returns
+
+`number`
+
+
+
+
+___
+
+### url
+
+• `get` **url**(): \`https://discord.com/channels/$\{string}/$\{string}\`
+
+The URL to the channel
+
+#### Returns
+
+\`https://discord.com/channels/$\{string}/$\{string}\`
+
+
+
+
+## Methods
+
+### bulkDeleteMessages
+
+▸ **bulkDeleteMessages**(`messages`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Bulk deletes messages
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `messages` | `string`[] | The data used to bulk delete messages |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Promise that resolves when the messages are deleted
+
+
+
+
+___
+
+### createInvite
+
+▸ **createInvite**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIInvite`\>
+
+Creates an invite using the given data and returns the created invite.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `RESTPostAPIChannelInviteJSONBody` | The data used to create the invite. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIInvite`\>
+
+The created invite.
+
+
+
+
+___
+
+### crosspostMessage
+
+▸ **crosspostMessage**(`messageId`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+Crossposts a message.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `messageId` | `string` | The ID of the message to crosspost. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+A promise that resolves to the crossposted message.
+
+
+
+
+___
+
+### delete
+
+▸ **delete**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+Deletes this channel.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+**`Example`**
+
+```ts
+// Delete the channel
+channel.delete()
+  .then(console.log)
+  .catch(console.error);
+```
+
+
+
+
+___
+
+### edit
+
+▸ **edit**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIChannel`\>
+
+Edits the channel
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `RESTPatchAPIChannelJSONBody` | The data used to edit the channel |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIChannel`\>
+
+Promise that resolves to the edited channel
+
+
+
+
+___
+
+### editMessage
+
+▸ **editMessage**(`messageId`, `data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+Edits a message.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `messageId` | `string` | The ID of the message to be edited. |
+| `data` | `RESTPatchAPIChannelMessageJSONBody` & \{ `files?`: `RawFile`[]  } | The data to be updated in the message. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+- A promise that resolves to the edited message.
+
+
+
+
+___
+
+### fetch
+
+▸ **fetch**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+Fetches this channel.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+
+
+
+___
+
+### fetchMessage
+
+▸ **fetchMessage**(`messageId`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+Fetches a specific message by its ID.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `messageId` | `string` | The ID of the message to fetch. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+A Promise that resolves to the fetched message.
+
+
+
+
+___
+
+### fetchMessages
+
+▸ **fetchMessages**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`[]\>
+
+Fetches messages using the provided data.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `RESTGetAPIChannelMessagesQuery` | The data used to fetch messages. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`[]\>
+
+A promise that resolves to an array of API messages.
+
+
+
+
+___
+
+### getInvites
+
+▸ **getInvites**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIInvite`[]\>
+
+Retrieves the invites.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIInvite`[]\>
+
+The list of invites.
+
+
+
+
+___
+
+### isDMBased
+
+▸ **isDMBased**(): `boolean`
+
+Indicates whether this channel is DM-based (either a DMChannel or a PartialGroupDMChannel).
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isTextBased
+
+▸ **isTextBased**(): `boolean`
+
+Indicates whether this channel is TextBasedChannels text-based.
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isThread
+
+▸ **isThread**(): `boolean`
+
+Indicates whether this channel is a ThreadChannel.
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isThreadOnly
+
+▸ **isThreadOnly**(): `boolean`
+
+Indicates whether this channel is ThreadOnlyChannel thread-only.
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### isVoiceBased
+
+▸ **isVoiceBased**(): `boolean`
+
+Indicates whether this channel is BaseGuildVoiceChannel voice-based.
+
+#### Returns
+
+`boolean`
+
+
+
+
+___
+
+### pinMessage
+
+▸ **pinMessage**(`messageId`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Pin a message
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `messageId` | `string` | The data used to pin a message |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Promise that resolves when the message is pinned
+
+
+
+
+___
+
+### send
+
+▸ **send**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+Sends a message with the given data.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `RESTPostAPIChannelMessageJSONBody` & \{ `files?`: `RawFile`[]  } | The data for the message. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+A promise that resolves to the created message.
+
+
+
+
+___
+
+### toString
+
+▸ **toString**(): \`\<#$\{string}\>\`
+
+When concatenated with a string, this automatically returns the channel's mention instead of the Channel object.
+
+#### Returns
+
+\`\<#$\{string}\>\`
+
+
+
+
+___
+
+### unpinMessage
+
+▸ **unpinMessage**(`messageId`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Unpin a message
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `messageId` | `string` | The data used to unpin a message |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Promise that resolves when the message is unpinned
+
+
+

@@ -1,0 +1,158 @@
+---
+title: ClientUser
+description: ClientUser
+---
+[vespera](../README) / [Exports](../modules) / ClientUser
+
+# Class: ClientUser
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`ClientUser`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](ClientUser#constructor)
+
+### Properties
+
+- [client](ClientUser#client)
+- [id](ClientUser#id)
+
+### Methods
+
+- [edit](ClientUser#edit)
+- [setAvatar](ClientUser#setavatar)
+- [setUsername](ClientUser#setusername)
+
+## Constructors
+
+### constructor
+
+• **new ClientUser**(`client`): [`ClientUser`](ClientUser)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `client` | [`Client`](Client) |
+
+#### Returns
+
+[`ClientUser`](ClientUser)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+
+
+
+## Properties
+
+### client
+
+• **client**: [`Client`](Client)
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+
+
+
+___
+
+### id
+
+• **id**: `string`
+
+
+
+
+## Methods
+
+### edit
+
+▸ **edit**(`options`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+Edits the logged in client.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options` | `RESTPatchAPICurrentUserJSONBody` & \{ `avatar?`: `string`  } | The options to provide |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+
+
+
+___
+
+### setAvatar
+
+▸ **setAvatar**(`avatar`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+Sets the avatar of the logged in client.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `avatar` | `string` | The new avatar |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+**`Example`**
+
+```ts
+// Set avatar
+client.user.setAvatar('./avatar.png')
+  .then(user => console.log(`New avatar set!`))
+  .catch(console.error);
+```
+
+
+
+
+___
+
+### setUsername
+
+▸ **setUsername**(`username`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+Sets the username of the logged in client.
+Changing usernames in Discord is heavily rate limited, with only 2 requests
+every hour. Use this sparingly!
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `username` | `string` | The new username |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+**`Example`**
+
+```ts
+// Set username
+client.user.setUsername('discordjs')
+  .then(user => console.log(`My new username is ${user.username}`))
+  .catch(console.error);
+```
+
+
+

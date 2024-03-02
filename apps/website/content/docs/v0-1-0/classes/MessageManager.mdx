@@ -1,0 +1,101 @@
+---
+title: MessageManager
+description: MessageManager
+---
+[vespera](../README) / [Exports](../modules) / MessageManager
+
+# Class: MessageManager
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`MessageManager`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](MessageManager#constructor)
+
+### Properties
+
+- [channel](MessageManager#channel)
+- [client](MessageManager#client)
+
+### Methods
+
+- [fetch](MessageManager#fetch)
+
+## Constructors
+
+### constructor
+
+• **new MessageManager**(`client`, `channel`): [`MessageManager`](MessageManager)
+
+Constructor for creating a new instance of the class.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `client` | [`Client`](Client) | the client object |
+| `channel` | [`Channel`](Channel) | the channel object |
+
+#### Returns
+
+[`MessageManager`](MessageManager)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+
+
+
+## Properties
+
+### channel
+
+• `Readonly` **channel**: [`Channel`](Channel)
+
+The channel
+
+
+
+
+___
+
+### client
+
+• **client**: [`Client`](Client)
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+
+
+
+## Methods
+
+### fetch
+
+▸ **fetch**(`id`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Message`](Message)\>
+
+Fetches data using the provided ID.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | The ID used to fetch data. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Message`](Message)\>
+
+The data fetched using the ID.
+
+
+

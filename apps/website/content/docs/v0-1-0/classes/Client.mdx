@@ -1,0 +1,767 @@
+---
+title: Client
+description: Client
+---
+[vespera](../README) / [Exports](../modules) / Client
+
+# Class: Client
+
+## Hierarchy
+
+- `TypedEventEmitter`\<[`ClientEvents`](../interfaces/ClientEvents), `this`\>
+
+  ↳ **`Client`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](Client#constructor)
+
+### Properties
+
+- [api](Client#api)
+- [channels](Client#channels)
+- [commands](Client#commands)
+- [guilds](Client#guilds)
+- [options](Client#options)
+- [rest](Client#rest)
+- [user](Client#user)
+
+### Methods
+
+- [addListener](Client#addlistener)
+- [emit](Client#emit)
+- [eventNames](Client#eventnames)
+- [getMaxListeners](Client#getmaxlisteners)
+- [handleApplicationCommandInteraction](Client#handleapplicationcommandinteraction)
+- [handleInteraction](Client#handleinteraction)
+- [handlePingInteraction](Client#handlepinginteraction)
+- [handleRequest](Client#handlerequest)
+- [listenerCount](Client#listenercount)
+- [listeners](Client#listeners)
+- [off](Client#off)
+- [on](Client#on)
+- [once](Client#once)
+- [prependListener](Client#prependlistener)
+- [prependOnceListener](Client#prependoncelistener)
+- [rawListeners](Client#rawlisteners)
+- [registerCommand](Client#registercommand)
+- [registerCommands](Client#registercommands)
+- [removeAllListeners](Client#removealllisteners)
+- [removeListener](Client#removelistener)
+- [setMaxListeners](Client#setmaxlisteners)
+- [sweepCommands](Client#sweepcommands)
+- [unRegisterCommand](Client#unregistercommand)
+- [unRegisterCommands](Client#unregistercommands)
+
+## Constructors
+
+### constructor
+
+• **new Client**(`options`): [`Client`](Client)
+
+Constructor for initializing the client with the given options.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options` | [`ClientOptions`](../interfaces/ClientOptions) | The options for configuring the client. |
+
+#### Returns
+
+[`Client`](Client)
+
+**`Example`**
+
+```ts title="example.ts"
+const client = new Client({
+  token: 'token',
+  application: {
+    id: 'id',
+    publicKey: 'key'
+  }
+  rest: {
+    version: '10'
+  }
+  state: {
+    set: (key, value, ttl) => {},
+    get: (key) => {}
+  }
+})
+```
+
+#### Overrides
+
+(EventEmitter as new () &#x3D;\&gt; TypedEmitter\&lt;ClientEvents\&gt;).constructor
+
+
+
+
+## Properties
+
+### api
+
+• **api**: `API`
+
+
+
+
+___
+
+### channels
+
+• **channels**: [`ChannelManager`](ChannelManager)
+
+
+
+
+___
+
+### commands
+
+• **commands**: `Collection`\<`string`, `SlashCommandBuilder`\<[`CommandContext`](CommandContext)\<`unknown`\>\>\>
+
+
+
+
+___
+
+### guilds
+
+• **guilds**: [`GuildManager`](GuildManager)
+
+
+
+
+___
+
+### options
+
+• **options**: [`ClientOptions`](../interfaces/ClientOptions)
+
+
+
+
+___
+
+### rest
+
+• **rest**: `REST`
+
+
+
+
+___
+
+### user
+
+• **user**: [`ClientUser`](ClientUser)
+
+
+
+
+## Methods
+
+### addListener
+
+▸ **addListener**\<`E`\>(`event`, `listener`): `this`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `E` |
+| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).addListener
+
+
+
+
+___
+
+### emit
+
+▸ **emit**\<`E`\>(`event`, `...args`): `boolean`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `E` |
+| `...args` | [`Parameters`]( https://www.typescriptlang.org/docs/handbook/utility-types.html#parameterstype )\<[`ClientEvents`](../interfaces/ClientEvents)[`E`]\> |
+
+#### Returns
+
+`boolean`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).emit
+
+
+
+
+___
+
+### eventNames
+
+▸ **eventNames**(): (`string` \| `symbol`)[]
+
+#### Returns
+
+(`string` \| `symbol`)[]
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).eventNames
+
+
+
+
+___
+
+### getMaxListeners
+
+▸ **getMaxListeners**(): `number`
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).getMaxListeners
+
+
+
+
+___
+
+### handleApplicationCommandInteraction
+
+▸ **handleApplicationCommandInteraction**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<\{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
+
+Handle application command interaction.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `APIApplicationCommandInteraction` | the application command interaction data |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<\{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
+
+an object with the type of InteractionResponseType
+
+
+
+
+___
+
+### handleInteraction
+
+▸ **handleInteraction**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`undefined` \| \{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
+
+Handle an interaction.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `APIBaseInteraction`\<`InteractionType`, `unknown`\> | the input data for the interaction |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`undefined` \| \{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
+
+a promise that resolves when the function has completed handling the interaction
+
+
+
+
+___
+
+### handlePingInteraction
+
+▸ **handlePingInteraction**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<\{ `type`: `InteractionResponseType` = InteractionResponseType.Pong }\>
+
+Handle a ping interaction.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `APIPingInteraction` | the data for the ping interaction |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<\{ `type`: `InteractionResponseType` = InteractionResponseType.Pong }\>
+
+an object with the type InteractionResponseType.Pong
+
+
+
+
+___
+
+### handleRequest
+
+▸ **handleRequest**(`request`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`undefined` \| \{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
+
+Handle the incoming request and validate the signature.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `request` | [`Request`]( https://developer.mozilla.org/docs/Web/API/Request ) | the request object |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`undefined` \| \{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
+
+a promise that resolves when the request is handled
+
+
+
+
+___
+
+### listenerCount
+
+▸ **listenerCount**\<`E`\>(`event`): `number`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `E` |
+
+#### Returns
+
+`number`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).listenerCount
+
+
+
+
+___
+
+### listeners
+
+▸ **listeners**\<`E`\>(`event`): [`ClientEvents`](../interfaces/ClientEvents)[`E`][]
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `E` |
+
+#### Returns
+
+[`ClientEvents`](../interfaces/ClientEvents)[`E`][]
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).listeners
+
+
+
+
+___
+
+### off
+
+▸ **off**\<`E`\>(`event`, `listener`): `this`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `E` |
+| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).off
+
+
+
+
+___
+
+### on
+
+▸ **on**\<`E`\>(`event`, `listener`): `this`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `E` |
+| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).on
+
+
+
+
+___
+
+### once
+
+▸ **once**\<`E`\>(`event`, `listener`): `this`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `E` |
+| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).once
+
+
+
+
+___
+
+### prependListener
+
+▸ **prependListener**\<`E`\>(`event`, `listener`): `this`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `E` |
+| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).prependListener
+
+
+
+
+___
+
+### prependOnceListener
+
+▸ **prependOnceListener**\<`E`\>(`event`, `listener`): `this`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `E` |
+| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).prependOnceListener
+
+
+
+
+___
+
+### rawListeners
+
+▸ **rawListeners**\<`E`\>(`event`): [`ClientEvents`](../interfaces/ClientEvents)[`E`][]
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `E` |
+
+#### Returns
+
+[`ClientEvents`](../interfaces/ClientEvents)[`E`][]
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).rawListeners
+
+
+
+
+___
+
+### registerCommand
+
+▸ **registerCommand**(`command`): `void`
+
+Register a command.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `command` | `SlashCommandBuilder`\<[`CommandContext`](CommandContext)\<`unknown`\>\> | the command to register |
+
+#### Returns
+
+`void`
+
+
+
+
+___
+
+### registerCommands
+
+▸ **registerCommands**(`commands`): `void`
+
+Register commands.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `commands` | `SlashCommandBuilder`\<[`CommandContext`](CommandContext)\<`unknown`\>\>[] | array of commands |
+
+#### Returns
+
+`void`
+
+
+
+
+___
+
+### removeAllListeners
+
+▸ **removeAllListeners**\<`E`\>(`event?`): `this`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event?` | `E` |
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).removeAllListeners
+
+
+
+
+___
+
+### removeListener
+
+▸ **removeListener**\<`E`\>(`event`, `listener`): `this`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `event` | `E` |
+| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).removeListener
+
+
+
+
+___
+
+### setMaxListeners
+
+▸ **setMaxListeners**(`maxListeners`): `this`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `maxListeners` | `number` |
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).setMaxListeners
+
+
+
+
+___
+
+### sweepCommands
+
+▸ **sweepCommands**(): `void`
+
+sweepCommands - A description of the entire function.
+
+#### Returns
+
+`void`
+
+
+
+
+___
+
+### unRegisterCommand
+
+▸ **unRegisterCommand**(`command`): `void`
+
+unregisters a command.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `command` | `SlashCommandBuilder`\<[`CommandContext`](CommandContext)\<`unknown`\>\> | the command to unregister |
+
+#### Returns
+
+`void`
+
+
+
+
+___
+
+### unRegisterCommands
+
+▸ **unRegisterCommands**(`commands`): `void`
+
+Unregisters the given commands from the list of registered commands.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `commands` | `SlashCommandBuilder`\<[`CommandContext`](CommandContext)\<`unknown`\>\>[] | The array of commands to unregister. |
+
+#### Returns
+
+`void`
+
+
+

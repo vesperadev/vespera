@@ -1,0 +1,62 @@
+{
+  "name": "vespera",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "license": "Apache-2.0",
+  "author": "Oreki",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./builders": {
+      "require": "./dist/builders/index.js",
+      "import": "./dist/builders/index.mjs",
+      "types": "./dist/builders/index.d.ts"
+    },
+    "./util": {
+      "require": "./dist/util/index.js",
+      "import": "./dist/util/index.mjs",
+      "types": "./dist/util/index.d.ts"
+    },
+    "./core": {
+      "require": "./dist/core/index.js",
+      "import": "./dist/core/index.mjs",
+      "types": "./dist/core/index.d.ts"
+    },
+    "./rest": {
+      "require": "./dist/rest/index.js",
+      "import": "./dist/rest/index.mjs",
+      "types": "./dist/rest/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "vespera": "./node_modules/@vespera/cli/bin/cli.mjs"
+  },
+  "scripts": {
+    "build": "tsup ./src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^1.7.0",
+    "@discordjs/collection": "^2.0.0",
+    "@discordjs/core": "^1.1.1",
+    "@discordjs/formatters": "^0.3.3",
+    "@discordjs/rest": "^2.2.0",
+    "@discordjs/util": "^1.0.2",
+    "discord-interactions": "^3.4.0",
+    "ts-mixer": "^6.0.4"
+  },
+  "devDependencies": {
+    "discord-api-types": "^0.37.71",
+    "esbuild": "^0.20.1",
+    "tsup": "^8.0.2",
+    "typed-emitter": "^2.1.0",
+    "typescript": "^5.3.3"
+  }
+}

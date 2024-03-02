@@ -1,0 +1,271 @@
+---
+title: modules
+description: modules
+---
+[vespera](README) / Exports
+
+# vespera
+
+## Table of contents
+
+### Classes
+
+- [ApplicationCommandOptions](classes/ApplicationCommandOptions)
+- [Base](classes/Base)
+- [BaseContext](classes/BaseContext)
+- [ButtonContext](classes/ButtonContext)
+- [Channel](classes/Channel)
+- [ChannelManager](classes/ChannelManager)
+- [Client](classes/Client)
+- [ClientUser](classes/ClientUser)
+- [CommandContext](classes/CommandContext)
+- [Guild](classes/Guild)
+- [GuildManager](classes/GuildManager)
+- [GuildMembersManager](classes/GuildMembersManager)
+- [Message](classes/Message)
+- [MessageManager](classes/MessageManager)
+- [Role](classes/Role)
+- [User](classes/User)
+- [VesperaError](classes/VesperaError)
+
+### Interfaces
+
+- [ClientEvents](interfaces/ClientEvents)
+- [ClientOptions](interfaces/ClientOptions)
+
+### Type Aliases
+
+- [Button](modules#button)
+- [Command](modules#command)
+- [SubCommand](modules#subcommand)
+- [SubCommandGroup](modules#subcommandgroup)
+- [TextChannel](modules#textchannel)
+
+### Variables
+
+- [TextChannelTypes](modules#textchanneltypes)
+
+### Functions
+
+- [createButton](modules#createbutton)
+- [createCommand](modules#createcommand)
+- [createSubCommand](modules#createsubcommand)
+- [createSubCommandGroup](modules#createsubcommandgroup)
+
+## Type Aliases
+
+### Button
+
+Ƭ **Button**\<`S`\>: `Callback`\<[`ButtonBuilder`\<[`ButtonContext`](classes/ButtonContext)\<`S`\>\>]\>
+
+Type alias for a Button callback.
+
+**`Param`**
+
+The builder for creating a button.
+
+#### Type parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `S` | extends `unknown` = `unknown` | The state type that extends `unknown` by default. |
+
+
+
+
+___
+
+### Command
+
+Ƭ **Command**\<`S`\>: `Callback`\<[`SlashCommandBuilder`\<[`CommandContext`](classes/CommandContext)\<`S`\>\>]\>
+
+Type alias for a Command callback.
+
+**`Param`**
+
+The builder for creating a slash command.
+
+#### Type parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `S` | extends `unknown` = `unknown` | The state type that extends `unknown` by default. |
+
+
+
+
+___
+
+### SubCommand
+
+Ƭ **SubCommand**\<`S`\>: `Callback`\<[`SlashCommandSubcommandBuilder`\<[`CommandContext`](classes/CommandContext)\<`S`\>\>]\>
+
+Type alias for a SubCommand callback.
+
+**`Param`**
+
+The builder for creating a subcommand.
+
+#### Type parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `S` | extends `unknown` = `unknown` | The state type that extends `unknown` by default. |
+
+
+
+
+___
+
+### SubCommandGroup
+
+Ƭ **SubCommandGroup**\<`S`\>: `Callback`\<[`SlashCommandSubcommandGroupBuilder`\<[`CommandContext`](classes/CommandContext)\<`S`\>\>]\>
+
+Type alias for a SubCommandGroup callback.
+
+**`Param`**
+
+The builder for creating a subcommand group.
+
+#### Type parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `S` | extends `unknown` = `unknown` | The state type that extends `unknown` by default. |
+
+
+
+
+___
+
+### TextChannel
+
+Ƭ **TextChannel**: typeof [`TextChannelTypes`](modules#textchanneltypes)[`number`]
+
+
+
+
+## Variables
+
+### TextChannelTypes
+
+• `Const` **TextChannelTypes**: readonly [`AnnouncementThread`, `GuildText`, `DM`, `GroupDM`, `GuildForum`, `GuildAnnouncement`, `PrivateThread`, `PublicThread`]
+
+
+
+
+## Functions
+
+### createButton
+
+▸ **createButton**\<`S`\>(`button`): `ButtonBuilder`\<[`ButtonContext`](classes/ButtonContext)\<`S`\>\>
+
+Creates a button with the given callback function.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` = `unknown` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `button` | [`Button`](modules#button)\<`S`\> |
+
+#### Returns
+
+`ButtonBuilder`\<[`ButtonContext`](classes/ButtonContext)\<`S`\>\>
+
+The result of calling the callback function with a new ButtonBuilder.
+
+
+
+
+___
+
+### createCommand
+
+▸ **createCommand**\<`S`\>(`command`): `SlashCommandBuilder`\<[`CommandContext`](classes/CommandContext)\<`S`\>\>
+
+Creates a command with the given callback function.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` = `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `command` | [`Command`](modules#command)\<`S`\> | The callback function for creating the command. |
+
+#### Returns
+
+`SlashCommandBuilder`\<[`CommandContext`](classes/CommandContext)\<`S`\>\>
+
+The result of calling the callback function with a new SlashCommandBuilder.
+
+
+
+
+___
+
+### createSubCommand
+
+▸ **createSubCommand**\<`S`\>(`subCommand`): `SlashCommandSubcommandBuilder`\<[`CommandContext`](classes/CommandContext)\<`S`\>\>
+
+Creates a subcommand with the given callback function.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` = `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `subCommand` | [`SubCommand`](modules#subcommand)\<`S`\> | The callback function for creating the subcommand. |
+
+#### Returns
+
+`SlashCommandSubcommandBuilder`\<[`CommandContext`](classes/CommandContext)\<`S`\>\>
+
+The result of calling the callback function with a new SlashCommandSubcommandBuilder.
+
+
+
+
+___
+
+### createSubCommandGroup
+
+▸ **createSubCommandGroup**\<`S`\>(`subCommandGroup`): `SlashCommandSubcommandGroupBuilder`\<[`CommandContext`](classes/CommandContext)\<`S`\>\>
+
+Creates a subcommand group with the given callback function.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` = `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `subCommandGroup` | [`SubCommandGroup`](modules#subcommandgroup)\<`S`\> | The callback function for creating the subcommand group. |
+
+#### Returns
+
+`SlashCommandSubcommandGroupBuilder`\<[`CommandContext`](classes/CommandContext)\<`S`\>\>
+
+The result of calling the callback function with a new SlashCommandSubcommandGroupBuilder.
+
+
+

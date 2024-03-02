@@ -1,0 +1,299 @@
+---
+title: ApplicationCommandOptions
+description: ApplicationCommandOptions
+---
+[vespera](../README) / [Exports](../modules) / ApplicationCommandOptions
+
+# Class: ApplicationCommandOptions
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`ApplicationCommandOptions`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](ApplicationCommandOptions#constructor)
+
+### Properties
+
+- [client](ApplicationCommandOptions#client)
+- [data](ApplicationCommandOptions#data)
+- [resolved](ApplicationCommandOptions#resolved)
+
+### Methods
+
+- [getBooleanOption](ApplicationCommandOptions#getbooleanoption)
+- [getChannelOption](ApplicationCommandOptions#getchanneloption)
+- [getNumberOption](ApplicationCommandOptions#getnumberoption)
+- [getRoleOption](ApplicationCommandOptions#getroleoption)
+- [getStringOption](ApplicationCommandOptions#getstringoption)
+- [resolveAttachmentOption](ApplicationCommandOptions#resolveattachmentoption)
+- [resolveChannelOption](ApplicationCommandOptions#resolvechanneloption)
+- [resolveOption](ApplicationCommandOptions#resolveoption)
+- [resolveRoleOption](ApplicationCommandOptions#resolveroleoption)
+
+## Constructors
+
+### constructor
+
+• **new ApplicationCommandOptions**(`client`, `data`, `resolved`): [`ApplicationCommandOptions`](ApplicationCommandOptions)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `client` | [`Client`](Client) |
+| `data` | `APIApplicationCommandInteractionDataOption`[] |
+| `resolved` | `undefined` \| `APIInteractionDataResolved` |
+
+#### Returns
+
+[`ApplicationCommandOptions`](ApplicationCommandOptions)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+
+
+
+## Properties
+
+### client
+
+• **client**: [`Client`](Client)
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+
+
+
+___
+
+### data
+
+• **data**: (`undefined` \| `APIApplicationCommandInteractionDataChannelOption` \| `APIApplicationCommandInteractionDataRoleOption` \| `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `name`: `string` ; `type`: `Channel` ; `value`: [`Channel`](Channel)  } \| \{ `name`: `string` ; `type`: `Role` ; `value`: [`Role`](Role)  } \| \{ `name`: `string` ; `type`: `Attachment` ; `value`: `Attachment`  } \| \{ `name`: `string` ; `type`: `Boolean` ; `value`: `boolean`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `String` ; `value`: `string`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Integer` ; `value`: `number`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Number` ; `value`: `number`  })[]
+
+
+
+
+___
+
+### resolved
+
+• **resolved**: `undefined` \| `APIInteractionDataResolved`
+
+
+
+
+## Methods
+
+### getBooleanOption
+
+▸ **getBooleanOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? `boolean` : `undefined` \| `boolean`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `R` | extends `boolean` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+| `required` | `R` |
+
+#### Returns
+
+`R` extends ``true`` ? `boolean` : `undefined` \| `boolean`
+
+
+
+
+___
+
+### getChannelOption
+
+▸ **getChannelOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? [`Channel`](Channel) : `undefined` \| [`Channel`](Channel)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `R` | extends `boolean` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+| `required` | `R` |
+
+#### Returns
+
+`R` extends ``true`` ? [`Channel`](Channel) : `undefined` \| [`Channel`](Channel)
+
+
+
+
+___
+
+### getNumberOption
+
+▸ **getNumberOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? `number` : `undefined` \| `number`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `R` | extends `boolean` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+| `required` | `R` |
+
+#### Returns
+
+`R` extends ``true`` ? `number` : `undefined` \| `number`
+
+
+
+
+___
+
+### getRoleOption
+
+▸ **getRoleOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? [`Role`](Role) : `undefined` \| [`Role`](Role)
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `R` | extends `boolean` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+| `required` | `R` |
+
+#### Returns
+
+`R` extends ``true`` ? [`Role`](Role) : `undefined` \| [`Role`](Role)
+
+
+
+
+___
+
+### getStringOption
+
+▸ **getStringOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? `string` : `undefined` \| `string`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `R` | extends `boolean` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+| `required` | `R` |
+
+#### Returns
+
+`R` extends ``true`` ? `string` : `undefined` \| `string`
+
+
+
+
+___
+
+### resolveAttachmentOption
+
+▸ **resolveAttachmentOption**(`option`): `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `name`: `string` ; `type`: `Attachment` ; `value`: `Attachment`  }
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `option` | `APIApplicationCommandInteractionDataAttachmentOption` |
+
+#### Returns
+
+`APIApplicationCommandInteractionDataAttachmentOption` \| \{ `name`: `string` ; `type`: `Attachment` ; `value`: `Attachment`  }
+
+
+
+
+___
+
+### resolveChannelOption
+
+▸ **resolveChannelOption**(`option`): `APIApplicationCommandInteractionDataChannelOption` \| \{ `name`: `string` ; `type`: `Channel` ; `value`: [`Channel`](Channel)  }
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `option` | `APIApplicationCommandInteractionDataChannelOption` |
+
+#### Returns
+
+`APIApplicationCommandInteractionDataChannelOption` \| \{ `name`: `string` ; `type`: `Channel` ; `value`: [`Channel`](Channel)  }
+
+
+
+
+___
+
+### resolveOption
+
+▸ **resolveOption**(`option`): `undefined` \| `APIApplicationCommandInteractionDataChannelOption` \| `APIApplicationCommandInteractionDataRoleOption` \| `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `name`: `string` ; `type`: `Channel` ; `value`: [`Channel`](Channel)  } \| \{ `name`: `string` ; `type`: `Role` ; `value`: [`Role`](Role)  } \| \{ `name`: `string` ; `type`: `Attachment` ; `value`: `Attachment`  } \| \{ `name`: `string` ; `type`: `Boolean` ; `value`: `boolean`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `String` ; `value`: `string`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Integer` ; `value`: `number`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Number` ; `value`: `number`  }
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `option` | `APIApplicationCommandInteractionDataOption` |
+
+#### Returns
+
+`undefined` \| `APIApplicationCommandInteractionDataChannelOption` \| `APIApplicationCommandInteractionDataRoleOption` \| `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `name`: `string` ; `type`: `Channel` ; `value`: [`Channel`](Channel)  } \| \{ `name`: `string` ; `type`: `Role` ; `value`: [`Role`](Role)  } \| \{ `name`: `string` ; `type`: `Attachment` ; `value`: `Attachment`  } \| \{ `name`: `string` ; `type`: `Boolean` ; `value`: `boolean`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `String` ; `value`: `string`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Integer` ; `value`: `number`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Number` ; `value`: `number`  }
+
+
+
+
+___
+
+### resolveRoleOption
+
+▸ **resolveRoleOption**(`option`): `APIApplicationCommandInteractionDataRoleOption` \| \{ `name`: `string` ; `type`: `Role` ; `value`: [`Role`](Role)  }
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `option` | `APIApplicationCommandInteractionDataRoleOption` |
+
+#### Returns
+
+`APIApplicationCommandInteractionDataRoleOption` \| \{ `name`: `string` ; `type`: `Role` ; `value`: [`Role`](Role)  }
+
+
+
