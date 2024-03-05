@@ -1,4 +1,4 @@
-import type { APIMessage, Snowflake } from '../../core';
+import type { Snowflake } from '../../core';
 import { Base } from '../Base';
 import type { Channel } from '../Channel';
 import type { Client } from '../Client';

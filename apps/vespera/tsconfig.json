@@ -9,6 +9,7 @@
     "skipLibCheck": true,
     "jsx": "preserve",
     "moduleResolution": "NodeNext",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "types": []
   }
 }

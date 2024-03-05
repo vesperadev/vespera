@@ -1,0 +1,268 @@
+---
+title: Webhook
+description: Webhook
+---
+[vespera](../README) / [Exports](../modules) / Webhook
+
+# Class: Webhook
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`Webhook`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](Webhook#constructor)
+
+### Properties
+
+- [avatar](Webhook#avatar)
+- [client](Webhook#client)
+- [creator](Webhook#creator)
+- [id](Webhook#id)
+- [raw](Webhook#raw)
+- [token](Webhook#token)
+- [type](Webhook#type)
+
+### Methods
+
+- [avatarURL](Webhook#avatarurl)
+- [createClient](Webhook#createclient)
+- [createdAt](Webhook#createdat)
+- [createdTimestamp](Webhook#createdtimestamp)
+- [isApplicationCreated](Webhook#isapplicationcreated)
+- [isChannelFollower](Webhook#ischannelfollower)
+- [isIncoming](Webhook#isincoming)
+- [isUserCreated](Webhook#isusercreated)
+
+## Constructors
+
+### constructor
+
+• **new Webhook**(`client`, `data`): [`Webhook`](Webhook)
+
+Initializes a new instance of the class.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `client` | [`Client`](Client) | The client instance. |
+| `data` | `APIWebhook` | The webhook data. |
+
+#### Returns
+
+[`Webhook`](Webhook)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+#### Defined in
+
+
+## Properties
+
+### avatar
+
+• `Optional` **avatar**: `string`
+
+#### Defined in
+
+
+___
+
+### client
+
+• **client**: [`Client`](Client)
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+#### Defined in
+
+[apps/vespera/src/structure/Base.ts:4](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Base.ts#L4)
+
+___
+
+### creator
+
+• `Optional` **creator**: [`User`](User)
+
+#### Defined in
+
+
+___
+
+### id
+
+• **id**: `string`
+
+#### Defined in
+
+
+___
+
+### raw
+
+• `Readonly` **raw**: `APIWebhook`
+
+#### Defined in
+
+
+___
+
+### token
+
+• `Optional` **token**: `string`
+
+#### Defined in
+
+
+___
+
+### type
+
+• **type**: `WebhookType`
+
+#### Defined in
+
+
+## Methods
+
+### avatarURL
+
+▸ **avatarURL**(`options?`): `undefined` \| `string`
+
+Returns the URL of the avatar image for this user.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `ImageURLOptions` | Optional parameters for the image URL. |
+
+#### Returns
+
+`undefined` \| `string`
+
+The URL of the avatar image, or undefined if there is no avatar.
+
+#### Defined in
+
+
+___
+
+### createClient
+
+▸ **createClient**(): ``false`` \| [`WebhookClient`](WebhookClient)\<\{ `id`: `string` ; `token`: `string`  }\>
+
+Creates a client if the call is incoming and returns a new WebhookClient instance.
+
+#### Returns
+
+``false`` \| [`WebhookClient`](WebhookClient)\<\{ `id`: `string` ; `token`: `string`  }\>
+
+A new WebhookClient instance.
+
+#### Defined in
+
+
+___
+
+### createdAt
+
+▸ **createdAt**(): [`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+Returns the creation date of the object.
+
+#### Returns
+
+[`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+The creation date of the object.
+
+#### Defined in
+
+
+___
+
+### createdTimestamp
+
+▸ **createdTimestamp**(): `number`
+
+Returns the created timestamp as a Date object.
+
+#### Returns
+
+`number`
+
+The created timestamp.
+
+#### Defined in
+
+
+___
+
+### isApplicationCreated
+
+▸ **isApplicationCreated**(): `boolean`
+
+Whether this webhook is created by an application.
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+
+___
+
+### isChannelFollower
+
+▸ **isChannelFollower**(): `boolean`
+
+Whether or not this webhook is a channel follower webhook.
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+
+___
+
+### isIncoming
+
+▸ **isIncoming**(): `boolean`
+
+Whether or not this webhook is an incoming webhook.
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+
+___
+
+### isUserCreated
+
+▸ **isUserCreated**(): `boolean`
+
+Whether this webhook is created by a user.
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+

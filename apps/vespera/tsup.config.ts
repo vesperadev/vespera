@@ -9,4 +9,5 @@ export default defineConfig({
   treeshake: true,
   minify: true,
   target: 'es2022',
+  external: ['esbuild'],
 });

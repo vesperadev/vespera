@@ -14,7 +14,7 @@ description: ButtonContext
 
 ## Hierarchy
 
-- [`BaseContext`](BaseContext)\<`APIMessageComponentButtonInteraction`, `S`\>
+- [`ComponentContext`](ComponentContext)\<`S`\>
 
   ↳ **`ButtonContext`**
 
@@ -31,6 +31,7 @@ description: ButtonContext
 - [channel](ButtonContext#channel)
 - [channelId](ButtonContext#channelid)
 - [client](ButtonContext#client)
+- [deferred](ButtonContext#deferred)
 - [entitlement](ButtonContext#entitlement)
 - [guildId](ButtonContext#guildid)
 - [guildLocale](ButtonContext#guildlocale)
@@ -38,6 +39,7 @@ description: ButtonContext
 - [locale](ButtonContext#locale)
 - [memberPermissions](ButtonContext#memberpermissions)
 - [raw](ButtonContext#raw)
+- [replied](ButtonContext#replied)
 - [state](ButtonContext#state)
 - [token](ButtonContext#token)
 - [type](ButtonContext#type)
@@ -48,6 +50,11 @@ description: ButtonContext
 - [createdAt](ButtonContext#createdat)
 - [createdTimestamp](ButtonContext#createdtimestamp)
 - [decorate](ButtonContext#decorate)
+- [defer](ButtonContext#defer)
+- [deleteReply](ButtonContext#deletereply)
+- [editReply](ButtonContext#editreply)
+- [fetchReply](ButtonContext#fetchreply)
+- [followUp](ButtonContext#followup)
 - [inDM](ButtonContext#indm)
 - [inGuild](ButtonContext#inguild)
 - [isAnySelectMenu](ButtonContext#isanyselectmenu)
@@ -67,12 +74,17 @@ description: ButtonContext
 - [isStringSelectMenu](ButtonContext#isstringselectmenu)
 - [isUserContextMenuCommand](ButtonContext#isusercontextmenucommand)
 - [isUserSelectMenu](ButtonContext#isuserselectmenu)
+- [reply](ButtonContext#reply)
+- [replyModal](ButtonContext#replymodal)
 
 ## Constructors
 
 ### constructor
 
 • **new ButtonContext**\<`S`\>(`client`, `data`): [`ButtonContext`](ButtonContext)\<`S`\>
+
+The `constructor(client: Client, data: APIMessageComponentButtonInteraction)` is a constructor method of the
+`ButtonContext` class. It is used to create instances of the `ButtonContext` class with specific parameters.
 
 #### Type parameters
 
@@ -91,12 +103,17 @@ description: ButtonContext
 
 [`ButtonContext`](ButtonContext)\<`S`\>
 
+**`Name`**
+
+ButtonContext
+
 #### Overrides
 
-[BaseContext](BaseContext).[constructor](BaseContext#constructor)
+[ComponentContext](ComponentContext).[constructor](ComponentContext#constructor)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/ButtonContext.ts:18](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/ButtonContext.ts#L18)
 
 ## Properties
 
@@ -104,12 +121,28 @@ description: ButtonContext
 
 • **appPermissions**: `undefined` \| `string`
 
+app permissions of the user who triggered the interaction
+will only be present if the interaction was triggered in a guild
+
+**`Name`**
+
+appPermissions
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[appPermissions](BaseContext#apppermissions)
+[ComponentContext](ComponentContext).[appPermissions](ComponentContext#apppermissions)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:116](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L116)
 
 ___
 
@@ -117,12 +150,25 @@ ___
 
 • **applicationId**: `string`
 
+**`Name`**
+
+applicationId
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[applicationId](BaseContext#applicationid)
+[ComponentContext](ComponentContext).[applicationId](ComponentContext#applicationid)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:53](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L53)
 
 ___
 
@@ -130,12 +176,25 @@ ___
 
 • **channel**: `undefined` \| [`Channel`](Channel)
 
+**`Name`**
+
+channel
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[channel](BaseContext#channel)
+[ComponentContext](ComponentContext).[channel](ComponentContext#channel)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:73](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L73)
 
 ___
 
@@ -143,12 +202,25 @@ ___
 
 • **channelId**: `undefined` \| `string`
 
+**`Name`**
+
+channelId
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[channelId](BaseContext#channelid)
+[ComponentContext](ComponentContext).[channelId](ComponentContext#channelid)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:63](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L63)
 
 ___
 
@@ -158,10 +230,25 @@ ___
 
 #### Inherited from
 
-[BaseContext](BaseContext).[client](BaseContext#client)
+[ComponentContext](ComponentContext).[client](ComponentContext#client)
 
+#### Defined in
 
+[apps/vespera/src/structure/Base.ts:4](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Base.ts#L4)
 
+___
+
+### deferred
+
+• **deferred**: `boolean` = `false`
+
+#### Inherited from
+
+[ComponentContext](ComponentContext).[deferred](ComponentContext#deferred)
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:157](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L157)
 
 ___
 
@@ -169,12 +256,25 @@ ___
 
 • **entitlement**: `APIEntitlement`[]
 
+**`Name`**
+
+entitlement
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[entitlement](BaseContext#entitlement)
+[ComponentContext](ComponentContext).[entitlement](ComponentContext#entitlement)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:151](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L151)
 
 ___
 
@@ -182,12 +282,25 @@ ___
 
 • **guildId**: `undefined` \| `string`
 
+**`Name`**
+
+guildId
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[guildId](BaseContext#guildid)
+[ComponentContext](ComponentContext).[guildId](ComponentContext#guildid)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:83](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L83)
 
 ___
 
@@ -195,12 +308,25 @@ ___
 
 • **guildLocale**: `undefined` \| ``"id"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"hr"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"th"`` \| ``"tr"`` \| ``"uk"`` \| ``"vi"``
 
+**`Name`**
+
+guildLocale
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[guildLocale](BaseContext#guildlocale)
+[ComponentContext](ComponentContext).[guildLocale](ComponentContext#guildlocale)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:93](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L93)
 
 ___
 
@@ -208,12 +334,25 @@ ___
 
 • **id**: `string`
 
+**`Name`**
+
+id
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[id](BaseContext#id)
+[ComponentContext](ComponentContext).[id](ComponentContext#id)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:43](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L43)
 
 ___
 
@@ -221,12 +360,27 @@ ___
 
 • **locale**: ``"id"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"hr"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"th"`` \| ``"tr"`` \| ``"uk"`` \| ``"vi"``
 
+locale of the user who triggered the interaction
+
+**`Name`**
+
+locale
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[locale](BaseContext#locale)
+[ComponentContext](ComponentContext).[locale](ComponentContext#locale)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:141](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L141)
 
 ___
 
@@ -234,25 +388,56 @@ ___
 
 • **memberPermissions**: `undefined` \| `string`
 
+member permissions of the user who triggered the interaction
+will only be present if the interaction was triggered in a guild
+
+**`Name`**
+
+memberPermissions
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[memberPermissions](BaseContext#memberpermissions)
+[ComponentContext](ComponentContext).[memberPermissions](ComponentContext#memberpermissions)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:129](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L129)
 
 ___
 
 ### raw
 
-• **raw**: `APIMessageComponentButtonInteraction`
+• **raw**: `APIMessageComponentInteraction`
 
 #### Inherited from
 
-[BaseContext](BaseContext).[raw](BaseContext#raw)
+[ComponentContext](ComponentContext).[raw](ComponentContext#raw)
 
+#### Defined in
 
+[apps/vespera/src/structure/Context/Base.ts:153](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L153)
 
+___
+
+### replied
+
+• **replied**: `boolean` = `false`
+
+#### Inherited from
+
+[ComponentContext](ComponentContext).[replied](ComponentContext#replied)
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:158](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L158)
 
 ___
 
@@ -262,10 +447,11 @@ ___
 
 #### Inherited from
 
-[BaseContext](BaseContext).[state](BaseContext#state)
+[ComponentContext](ComponentContext).[state](ComponentContext#state)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:155](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L155)
 
 ___
 
@@ -273,12 +459,25 @@ ___
 
 • **token**: `string`
 
+**`Name`**
+
+token
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[token](BaseContext#token)
+[ComponentContext](ComponentContext).[token](ComponentContext#token)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:33](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L33)
 
 ___
 
@@ -286,12 +485,25 @@ ___
 
 • **type**: `MessageComponent`
 
+**`Name`**
+
+type
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[type](BaseContext#type)
+[ComponentContext](ComponentContext).[type](ComponentContext#type)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:23](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L23)
 
 ___
 
@@ -299,12 +511,25 @@ ___
 
 • **version**: ``1``
 
+**`Name`**
+
+version
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
 #### Inherited from
 
-[BaseContext](BaseContext).[version](BaseContext#version)
+[ComponentContext](ComponentContext).[version](ComponentContext#version)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:103](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L103)
 
 ## Methods
 
@@ -322,10 +547,11 @@ the creation date
 
 #### Inherited from
 
-[BaseContext](BaseContext).[createdAt](BaseContext#createdat)
+[ComponentContext](ComponentContext).[createdAt](ComponentContext#createdat)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:214](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L214)
 
 ___
 
@@ -343,10 +569,11 @@ the timestamp of the interaction
 
 #### Inherited from
 
-[BaseContext](BaseContext).[createdTimestamp](BaseContext#createdtimestamp)
+[ComponentContext](ComponentContext).[createdTimestamp](ComponentContext#createdtimestamp)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:200](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L200)
 
 ___
 
@@ -371,9 +598,151 @@ the current instance of the class for method chaining
 
 #### Inherited from
 
-[BaseContext](BaseContext).[decorate](BaseContext#decorate)
+[ComponentContext](ComponentContext).[decorate](ComponentContext#decorate)
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:187](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L187)
+
+___
+
+### defer
+
+▸ **defer**(`ephemeral?`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Defers reply the interaction recieved
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `ephemeral` | `boolean` | `false` | Whether or not the reply should be ephemeral |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+A promise that resolves when the deferral is complete.
+
+#### Inherited from
+
+[ComponentContext](ComponentContext).[defer](ComponentContext#defer)
+
+#### Defined in
 
 
+___
+
+### deleteReply
+
+▸ **deleteReply**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Deletes a reply.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+A promise that resolves when the reply is deleted.
+
+#### Inherited from
+
+[ComponentContext](ComponentContext).[deleteReply](ComponentContext#deletereply)
+
+#### Defined in
+
+
+___
+
+### editReply
+
+▸ **editReply**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+Edits a reply.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `Object` | The data for editing the reply. |
+| `data.allowedMentions` | `undefined` \| \{ `parse`: `undefined` \| `AllowedMentionsTypes`[] ; `repliedUser`: `undefined` \| `boolean` ; `roles`: `undefined` \| `string`[] ; `users`: `undefined` \| `string`[]  } | - |
+| `data.attachments` | `undefined` \| \{ `description`: `undefined` \| `string` ; `filename`: `undefined` \| `string` ; `id`: `string` \| `number`  }[] | - |
+| `data.components` | `undefined` \| \{ `components`: (\{ `customId`: `string` ; `disabled`: `undefined` \| `boolean` ; `emoji`: `undefined` \| \{ `animated`: `undefined` \| `boolean` ; `id`: `undefined` \| `string` ; `name`: `undefined` \| `string`  } ; `label`: `undefined` \| `string` ; `style`: `Primary` \| `Secondary` \| `Success` \| `Danger` ; `type`: `Button`  } \| \{ `disabled`: `undefined` \| `boolean` ; `emoji`: `undefined` \| \{ `animated`: `undefined` \| `boolean` ; `id`: `undefined` \| `string` ; `name`: `undefined` \| `string`  } ; `label`: `undefined` \| `string` ; `style`: `Link` ; `type`: `Button` ; `url`: `string`  } \| \{ `customId`: `string` ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `options`: \{ `default`: `undefined` \| `boolean` ; `description`: `undefined` \| `string` ; `emoji`: `undefined` \| \{ `animated`: ... ; `id`: ... ; `name`: ...  } ; `label`: `string` ; `value`: `string`  }[] ; `placeholder`: `undefined` \| `string` ; `type`: `StringSelect`  } \| \{ `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: `User`  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `UserSelect`  } \| \{ `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: `Role`  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `RoleSelect`  } \| \{ `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: ... \| ...  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `MentionableSelect`  } \| \{ `channelTypes`: `undefined` \| `ChannelType`[] ; `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: `Channel`  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `ChannelSelect`  })[] ; `type`: `ActionRow`  }[] | - |
+| `data.content` | `undefined` \| `string` | - |
+| `data.embeds` | `undefined` \| \{ `author`: `undefined` \| \{ `iconUrl`: `undefined` \| `string` ; `name`: `string` ; `proxyIconUrl`: `undefined` \| `string` ; `url`: `undefined` \| `string`  } ; `color`: `undefined` \| `number` ; `description`: `undefined` \| `string` ; `fields`: `undefined` \| \{ `inline`: `undefined` \| `boolean` ; `name`: `string` ; `value`: `string`  }[] ; `footer`: `undefined` \| \{ `iconUrl`: `undefined` \| `string` ; `proxyIconUrl`: `undefined` \| `string` ; `text`: `string`  } ; `image`: `undefined` \| \{ `height`: `undefined` \| `number` ; `proxyUrl`: `undefined` \| `string` ; `url`: `string` ; `width`: `undefined` \| `number`  } ; `provider`: `undefined` \| \{ `name`: `undefined` \| `string` ; `url`: `undefined` \| `string`  } ; `thumbnail`: `undefined` \| \{ `height`: `undefined` \| `number` ; `proxyUrl`: `undefined` \| `string` ; `url`: `string` ; `width`: `undefined` \| `number`  } ; `timestamp`: `undefined` \| `string` ; `title`: `undefined` \| `string` ; `type`: `undefined` \| `EmbedType` ; `url`: `undefined` \| `string` ; `video`: `undefined` \| \{ `height`: `undefined` \| `number` ; `proxyUrl`: `undefined` \| `string` ; `url`: `undefined` \| `string` ; `width`: `undefined` \| `number`  }  }[] | - |
+| `data.files` | `undefined` \| \{ `contentType`: `undefined` \| `string` ; `data`: `string` \| `number` \| `boolean` \| \{ `[iterator]`: () => `IterableIterator`\<`number`\> ; `[toStringTag]`: ``"Uint8Array"`` ; `at`: (`index`: `number`) => `undefined` \| `number` ; `buffer`: \{ `[toStringTag]`: `string` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`ArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer )  } \| \{ `[species]`: \{ readonly byteLength: number; slice: (begin: number, end?: number \| undefined) =\> SharedArrayBuffer; readonly [species]: ...; readonly [toStringTag]: "SharedArrayBuffer"; } ; `[toStringTag]`: ``"SharedArrayBuffer"`` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`SharedArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer )  } ; `byteLength`: `number` ; `byteOffset`: `number` ; `bytesPerElement`: `number` ; `compare`: (`target`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `targetStart?`: `number`, `targetEnd?`: `number`, `sourceStart?`: `number`, `sourceEnd?`: `number`) => ``-1`` \| ``0`` \| ``1`` ; `copy`: (`target`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `targetStart?`: `number`, `sourceStart?`: `number`, `sourceEnd?`: `number`) => `number` ; `copyWithin`: (`target`: `number`, `start`: `number`, `end?`: `number`) => `this` ; `entries`: () => `IterableIterator`\<[`number`, `number`]\> ; `equals`: (`otherBuffer`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean` ; `every`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `fill`: (`value`: `string` \| `number` \| [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `offset?`: `number`, `end?`: `number`, `encoding?`: `BufferEncoding`) => `this` ; `filter`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `any`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `find`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `undefined` \| `number` ; `findIndex`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `number` ; `forEach`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `void`, `thisArg?`: `any`) => `void` ; `includes`: (`value`: `string` \| `number` \| `Buffer`, `byteOffset?`: `number`, `encoding?`: `BufferEncoding`) => `boolean` ; `indexOf`: (`value`: `string` \| `number` \| [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `byteOffset?`: `number`, `encoding?`: `BufferEncoding`) => `number` ; `join`: (`separator?`: `string`) => `string` ; `keys`: () => `IterableIterator`\<`number`\> ; `lastIndexOf`: (`value`: `string` \| `number` \| [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `byteOffset?`: `number`, `encoding?`: `BufferEncoding`) => `number` ; `length`: `number` ; `map`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `readBigInt64BE`: (`offset?`: `number`) => `bigint` ; `readBigInt64LE`: (`offset?`: `number`) => `bigint` ; `readBigUInt64BE`: (`offset?`: `number`) => `bigint` ; `readBigUInt64LE`: (`offset?`: `number`) => `bigint` ; `readBigUint64BE`: (`offset?`: `number`) => `bigint` ; `readBigUint64LE`: (`offset?`: `number`) => `bigint` ; `readDoubleBE`: (`offset?`: `number`) => `number` ; `readDoubleLE`: (`offset?`: `number`) => `number` ; `readFloatBE`: (`offset?`: `number`) => `number` ; `readFloatLE`: (`offset?`: `number`) => `number` ; `readInt16BE`: (`offset?`: `number`) => `number` ; `readInt16LE`: (`offset?`: `number`) => `number` ; `readInt32BE`: (`offset?`: `number`) => `number` ; `readInt32LE`: (`offset?`: `number`) => `number` ; `readInt8`: (`offset?`: `number`) => `number` ; `readIntBE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readIntLE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUInt16BE`: (`offset?`: `number`) => `number` ; `readUInt16LE`: (`offset?`: `number`) => `number` ; `readUInt32BE`: (`offset?`: `number`) => `number` ; `readUInt32LE`: (`offset?`: `number`) => `number` ; `readUInt8`: (`offset?`: `number`) => `number` ; `readUIntBE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUIntLE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUint16BE`: (`offset?`: `number`) => `number` ; `readUint16LE`: (`offset?`: `number`) => `number` ; `readUint32BE`: (`offset?`: `number`) => `number` ; `readUint32LE`: (`offset?`: `number`) => `number` ; `readUint8`: (`offset?`: `number`) => `number` ; `readUintBE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUintLE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `reduce`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reduceRight`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reverse`: () => `this` ; `set`: (`array`: `ArrayLike`\<`number`\>, `offset?`: `number`) => `void` ; `slice`: (`start?`: `number`, `end?`: `number`) => `Buffer` ; `some`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `sort`: (`compareFn?`: (`a`: `number`, `b`: `number`) => `number`) => `this` ; `subarray`: (`start?`: `number`, `end?`: `number`) => `Buffer` ; `swap16`: () => `Buffer` ; `swap32`: () => `Buffer` ; `swap64`: () => `Buffer` ; `toJSON`: () => {} ; `toLocaleString`: () => `string` ; `toString`: (`encoding?`: `BufferEncoding`, `start?`: `number`, `end?`: `number`) => `string` ; `valueOf`: () => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `values`: () => `IterableIterator`\<`number`\> ; `write`: (`string`: `string`, `encoding?`: `BufferEncoding`) => `number`(`string`: `string`, `offset`: `number`, `encoding?`: `BufferEncoding`) => `number`(`string`: `string`, `offset`: `number`, `length`: `number`, `encoding?`: `BufferEncoding`) => `number` ; `writeBigInt64BE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigInt64LE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUInt64BE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUInt64LE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUint64BE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUint64LE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeDoubleBE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeDoubleLE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeFloatBE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeFloatLE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt16BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt16LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt32BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt32LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt8`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeIntBE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeIntLE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUInt16BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt16LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt32BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt32LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt8`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUIntBE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUIntLE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUint16BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint16LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint32BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint32LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint8`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUintBE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUintLE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number`  } \| \{ `[iterator]`: () => `IterableIterator`\<`number`\> ; `[toStringTag]`: ``"Uint8Array"`` ; `at`: (`index`: `number`) => `undefined` \| `number` ; `buffer`: \{ `[toStringTag]`: `string` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`ArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer )  } \| \{ `[species]`: \{ readonly byteLength: number; slice: (begin: number, end?: number \| undefined) =\> SharedArrayBuffer; readonly [species]: ...; readonly [toStringTag]: "SharedArrayBuffer"; } ; `[toStringTag]`: ``"SharedArrayBuffer"`` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`SharedArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer )  } ; `byteLength`: `number` ; `byteOffset`: `number` ; `bytesPerElement`: `number` ; `copyWithin`: (`target`: `number`, `start`: `number`, `end?`: `number`) => `this` ; `entries`: () => `IterableIterator`\<[`number`, `number`]\> ; `every`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `fill`: (`value`: `number`, `start?`: `number`, `end?`: `number`) => `this` ; `filter`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `any`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `find`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `undefined` \| `number` ; `findIndex`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `number` ; `forEach`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `void`, `thisArg?`: `any`) => `void` ; `includes`: (`searchElement`: `number`, `fromIndex?`: `number`) => `boolean` ; `indexOf`: (`searchElement`: `number`, `fromIndex?`: `number`) => `number` ; `join`: (`separator?`: `string`) => `string` ; `keys`: () => `IterableIterator`\<`number`\> ; `lastIndexOf`: (`searchElement`: `number`, `fromIndex?`: `number`) => `number` ; `length`: `number` ; `map`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `reduce`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reduceRight`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reverse`: () => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `set`: (`array`: `ArrayLike`\<`number`\>, `offset?`: `number`) => `void` ; `slice`: (`start?`: `number`, `end?`: `number`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `some`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `sort`: (`compareFn?`: (`a`: `number`, `b`: `number`) => `number`) => `this` ; `subarray`: (`begin?`: `number`, `end?`: `number`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `toLocaleString`: () => `string` ; `toString`: () => `string` ; `valueOf`: () => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `values`: () => `IterableIterator`\<`number`\>  } ; `key`: `undefined` \| `string` ; `name`: `string`  }[] | - |
+| `data.flags` | `undefined` \| `MessageFlags` | - |
+| `data.threadName` | `undefined` \| `string` | - |
+| `data.tts` | `undefined` \| `boolean` | - |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+A promise that resolves when the reply is edited.
+
+#### Inherited from
+
+[ComponentContext](ComponentContext).[editReply](ComponentContext#editreply)
+
+#### Defined in
+
+
+___
+
+### fetchReply
+
+▸ **fetchReply**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+Fetches the reply asynchronously.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+A promise that resolves when the original reply is fetched.
+
+#### Inherited from
+
+[ComponentContext](ComponentContext).[fetchReply](ComponentContext#fetchreply)
+
+#### Defined in
+
+
+___
+
+### followUp
+
+▸ **followUp**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+Calls the followUp method of the API class with the provided data.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `Object` | The data to be passed to the followUp method. |
+| `data.allowedMentions` | `undefined` \| \{ `parse`: `undefined` \| `AllowedMentionsTypes`[] ; `repliedUser`: `undefined` \| `boolean` ; `roles`: `undefined` \| `string`[] ; `users`: `undefined` \| `string`[]  } | - |
+| `data.attachments` | `undefined` \| \{ `description`: `undefined` \| `string` ; `filename`: `undefined` \| `string` ; `id`: `string` \| `number`  }[] | - |
+| `data.components` | `undefined` \| \{ `components`: (\{ `customId`: `string` ; `disabled`: `undefined` \| `boolean` ; `emoji`: `undefined` \| \{ `animated`: `undefined` \| `boolean` ; `id`: `undefined` \| `string` ; `name`: `undefined` \| `string`  } ; `label`: `undefined` \| `string` ; `style`: `Primary` \| `Secondary` \| `Success` \| `Danger` ; `type`: `Button`  } \| \{ `disabled`: `undefined` \| `boolean` ; `emoji`: `undefined` \| \{ `animated`: `undefined` \| `boolean` ; `id`: `undefined` \| `string` ; `name`: `undefined` \| `string`  } ; `label`: `undefined` \| `string` ; `style`: `Link` ; `type`: `Button` ; `url`: `string`  } \| \{ `customId`: `string` ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `options`: \{ `default`: `undefined` \| `boolean` ; `description`: `undefined` \| `string` ; `emoji`: `undefined` \| \{ `animated`: ... ; `id`: ... ; `name`: ...  } ; `label`: `string` ; `value`: `string`  }[] ; `placeholder`: `undefined` \| `string` ; `type`: `StringSelect`  } \| \{ `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: `User`  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `UserSelect`  } \| \{ `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: `Role`  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `RoleSelect`  } \| \{ `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: ... \| ...  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `MentionableSelect`  } \| \{ `channelTypes`: `undefined` \| `ChannelType`[] ; `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: `Channel`  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `ChannelSelect`  })[] ; `type`: `ActionRow`  }[] | - |
+| `data.content` | `undefined` \| `string` | - |
+| `data.embeds` | `undefined` \| \{ `author`: `undefined` \| \{ `iconUrl`: `undefined` \| `string` ; `name`: `string` ; `proxyIconUrl`: `undefined` \| `string` ; `url`: `undefined` \| `string`  } ; `color`: `undefined` \| `number` ; `description`: `undefined` \| `string` ; `fields`: `undefined` \| \{ `inline`: `undefined` \| `boolean` ; `name`: `string` ; `value`: `string`  }[] ; `footer`: `undefined` \| \{ `iconUrl`: `undefined` \| `string` ; `proxyIconUrl`: `undefined` \| `string` ; `text`: `string`  } ; `image`: `undefined` \| \{ `height`: `undefined` \| `number` ; `proxyUrl`: `undefined` \| `string` ; `url`: `string` ; `width`: `undefined` \| `number`  } ; `provider`: `undefined` \| \{ `name`: `undefined` \| `string` ; `url`: `undefined` \| `string`  } ; `thumbnail`: `undefined` \| \{ `height`: `undefined` \| `number` ; `proxyUrl`: `undefined` \| `string` ; `url`: `string` ; `width`: `undefined` \| `number`  } ; `timestamp`: `undefined` \| `string` ; `title`: `undefined` \| `string` ; `type`: `undefined` \| `EmbedType` ; `url`: `undefined` \| `string` ; `video`: `undefined` \| \{ `height`: `undefined` \| `number` ; `proxyUrl`: `undefined` \| `string` ; `url`: `undefined` \| `string` ; `width`: `undefined` \| `number`  }  }[] | - |
+| `data.files` | `undefined` \| \{ `contentType`: `undefined` \| `string` ; `data`: `string` \| `number` \| `boolean` \| \{ `[iterator]`: () => `IterableIterator`\<`number`\> ; `[toStringTag]`: ``"Uint8Array"`` ; `at`: (`index`: `number`) => `undefined` \| `number` ; `buffer`: \{ `[toStringTag]`: `string` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`ArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer )  } \| \{ `[species]`: \{ readonly byteLength: number; slice: (begin: number, end?: number \| undefined) =\> SharedArrayBuffer; readonly [species]: ...; readonly [toStringTag]: "SharedArrayBuffer"; } ; `[toStringTag]`: ``"SharedArrayBuffer"`` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`SharedArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer )  } ; `byteLength`: `number` ; `byteOffset`: `number` ; `bytesPerElement`: `number` ; `compare`: (`target`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `targetStart?`: `number`, `targetEnd?`: `number`, `sourceStart?`: `number`, `sourceEnd?`: `number`) => ``-1`` \| ``0`` \| ``1`` ; `copy`: (`target`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `targetStart?`: `number`, `sourceStart?`: `number`, `sourceEnd?`: `number`) => `number` ; `copyWithin`: (`target`: `number`, `start`: `number`, `end?`: `number`) => `this` ; `entries`: () => `IterableIterator`\<[`number`, `number`]\> ; `equals`: (`otherBuffer`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean` ; `every`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `fill`: (`value`: `string` \| `number` \| [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `offset?`: `number`, `end?`: `number`, `encoding?`: `BufferEncoding`) => `this` ; `filter`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `any`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `find`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `undefined` \| `number` ; `findIndex`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `number` ; `forEach`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `void`, `thisArg?`: `any`) => `void` ; `includes`: (`value`: `string` \| `number` \| `Buffer`, `byteOffset?`: `number`, `encoding?`: `BufferEncoding`) => `boolean` ; `indexOf`: (`value`: `string` \| `number` \| [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `byteOffset?`: `number`, `encoding?`: `BufferEncoding`) => `number` ; `join`: (`separator?`: `string`) => `string` ; `keys`: () => `IterableIterator`\<`number`\> ; `lastIndexOf`: (`value`: `string` \| `number` \| [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `byteOffset?`: `number`, `encoding?`: `BufferEncoding`) => `number` ; `length`: `number` ; `map`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `readBigInt64BE`: (`offset?`: `number`) => `bigint` ; `readBigInt64LE`: (`offset?`: `number`) => `bigint` ; `readBigUInt64BE`: (`offset?`: `number`) => `bigint` ; `readBigUInt64LE`: (`offset?`: `number`) => `bigint` ; `readBigUint64BE`: (`offset?`: `number`) => `bigint` ; `readBigUint64LE`: (`offset?`: `number`) => `bigint` ; `readDoubleBE`: (`offset?`: `number`) => `number` ; `readDoubleLE`: (`offset?`: `number`) => `number` ; `readFloatBE`: (`offset?`: `number`) => `number` ; `readFloatLE`: (`offset?`: `number`) => `number` ; `readInt16BE`: (`offset?`: `number`) => `number` ; `readInt16LE`: (`offset?`: `number`) => `number` ; `readInt32BE`: (`offset?`: `number`) => `number` ; `readInt32LE`: (`offset?`: `number`) => `number` ; `readInt8`: (`offset?`: `number`) => `number` ; `readIntBE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readIntLE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUInt16BE`: (`offset?`: `number`) => `number` ; `readUInt16LE`: (`offset?`: `number`) => `number` ; `readUInt32BE`: (`offset?`: `number`) => `number` ; `readUInt32LE`: (`offset?`: `number`) => `number` ; `readUInt8`: (`offset?`: `number`) => `number` ; `readUIntBE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUIntLE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUint16BE`: (`offset?`: `number`) => `number` ; `readUint16LE`: (`offset?`: `number`) => `number` ; `readUint32BE`: (`offset?`: `number`) => `number` ; `readUint32LE`: (`offset?`: `number`) => `number` ; `readUint8`: (`offset?`: `number`) => `number` ; `readUintBE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUintLE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `reduce`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reduceRight`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reverse`: () => `this` ; `set`: (`array`: `ArrayLike`\<`number`\>, `offset?`: `number`) => `void` ; `slice`: (`start?`: `number`, `end?`: `number`) => `Buffer` ; `some`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `sort`: (`compareFn?`: (`a`: `number`, `b`: `number`) => `number`) => `this` ; `subarray`: (`start?`: `number`, `end?`: `number`) => `Buffer` ; `swap16`: () => `Buffer` ; `swap32`: () => `Buffer` ; `swap64`: () => `Buffer` ; `toJSON`: () => {} ; `toLocaleString`: () => `string` ; `toString`: (`encoding?`: `BufferEncoding`, `start?`: `number`, `end?`: `number`) => `string` ; `valueOf`: () => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `values`: () => `IterableIterator`\<`number`\> ; `write`: (`string`: `string`, `encoding?`: `BufferEncoding`) => `number`(`string`: `string`, `offset`: `number`, `encoding?`: `BufferEncoding`) => `number`(`string`: `string`, `offset`: `number`, `length`: `number`, `encoding?`: `BufferEncoding`) => `number` ; `writeBigInt64BE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigInt64LE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUInt64BE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUInt64LE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUint64BE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUint64LE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeDoubleBE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeDoubleLE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeFloatBE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeFloatLE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt16BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt16LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt32BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt32LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt8`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeIntBE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeIntLE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUInt16BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt16LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt32BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt32LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt8`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUIntBE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUIntLE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUint16BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint16LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint32BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint32LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint8`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUintBE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUintLE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number`  } \| \{ `[iterator]`: () => `IterableIterator`\<`number`\> ; `[toStringTag]`: ``"Uint8Array"`` ; `at`: (`index`: `number`) => `undefined` \| `number` ; `buffer`: \{ `[toStringTag]`: `string` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`ArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer )  } \| \{ `[species]`: \{ readonly byteLength: number; slice: (begin: number, end?: number \| undefined) =\> SharedArrayBuffer; readonly [species]: ...; readonly [toStringTag]: "SharedArrayBuffer"; } ; `[toStringTag]`: ``"SharedArrayBuffer"`` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`SharedArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer )  } ; `byteLength`: `number` ; `byteOffset`: `number` ; `bytesPerElement`: `number` ; `copyWithin`: (`target`: `number`, `start`: `number`, `end?`: `number`) => `this` ; `entries`: () => `IterableIterator`\<[`number`, `number`]\> ; `every`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `fill`: (`value`: `number`, `start?`: `number`, `end?`: `number`) => `this` ; `filter`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `any`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `find`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `undefined` \| `number` ; `findIndex`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `number` ; `forEach`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `void`, `thisArg?`: `any`) => `void` ; `includes`: (`searchElement`: `number`, `fromIndex?`: `number`) => `boolean` ; `indexOf`: (`searchElement`: `number`, `fromIndex?`: `number`) => `number` ; `join`: (`separator?`: `string`) => `string` ; `keys`: () => `IterableIterator`\<`number`\> ; `lastIndexOf`: (`searchElement`: `number`, `fromIndex?`: `number`) => `number` ; `length`: `number` ; `map`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `reduce`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reduceRight`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reverse`: () => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `set`: (`array`: `ArrayLike`\<`number`\>, `offset?`: `number`) => `void` ; `slice`: (`start?`: `number`, `end?`: `number`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `some`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `sort`: (`compareFn?`: (`a`: `number`, `b`: `number`) => `number`) => `this` ; `subarray`: (`begin?`: `number`, `end?`: `number`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `toLocaleString`: () => `string` ; `toString`: () => `string` ; `valueOf`: () => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `values`: () => `IterableIterator`\<`number`\>  } ; `key`: `undefined` \| `string` ; `name`: `string`  }[] | - |
+| `data.flags` | `undefined` \| `MessageFlags` | - |
+| `data.threadName` | `undefined` \| `string` | - |
+| `data.tts` | `undefined` \| `boolean` | - |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+A promise that resolves to an APIMessage object.
+
+#### Inherited from
+
+[ComponentContext](ComponentContext).[followUp](ComponentContext#followup)
+
+#### Defined in
 
 
 ___
@@ -390,10 +759,11 @@ Indicates whether this interaction is received from a DM.
 
 #### Inherited from
 
-[BaseContext](BaseContext).[inDM](BaseContext#indm)
+[ComponentContext](ComponentContext).[inDM](ComponentContext#indm)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:230](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L230)
 
 ___
 
@@ -409,10 +779,11 @@ Indicates whether this interaction is received from a guild.
 
 #### Inherited from
 
-[BaseContext](BaseContext).[inGuild](BaseContext#inguild)
+[ComponentContext](ComponentContext).[inGuild](ComponentContext#inguild)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:222](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L222)
 
 ___
 
@@ -428,10 +799,11 @@ Indicates whether this interaction is a select menu of any known type.
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isAnySelectMenu](BaseContext#isanyselectmenu)
+[ComponentContext](ComponentContext).[isAnySelectMenu](ComponentContext#isanyselectmenu)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:338](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L338)
 
 ___
 
@@ -447,10 +819,11 @@ Indicates whether this interaction is an AutocompleteInteraction
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isAutocomplete](BaseContext#isautocomplete)
+[ComponentContext](ComponentContext).[isAutocomplete](ComponentContext#isautocomplete)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:238](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L238)
 
 ___
 
@@ -466,10 +839,11 @@ Indicates whether this interaction is a ButtonInteraction.
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isButton](BaseContext#isbutton)
+[ComponentContext](ComponentContext).[isButton](ComponentContext#isbutton)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:318](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L318)
 
 ___
 
@@ -485,10 +859,11 @@ Indicates whether this interaction is a ChannelSelectMenuInteraction
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isChannelSelectMenu](BaseContext#ischannelselectmenu)
+[ComponentContext](ComponentContext).[isChannelSelectMenu](ComponentContext#ischannelselectmenu)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:388](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L388)
 
 ___
 
@@ -504,10 +879,11 @@ Indicates whether this interaction is a ChatInputCommandInteraction.
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isChatInputCommand](BaseContext#ischatinputcommand)
+[ComponentContext](ComponentContext).[isChatInputCommand](ComponentContext#ischatinputcommand)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:256](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L256)
 
 ___
 
@@ -515,18 +891,23 @@ ___
 
 ▸ **isCommand**(): `boolean`
 
-Indicates whether this interaction is a CommandInteraction
+The function `isCommand()` checks if the type of interaction is an Application Command in
+TypeScript.
 
 #### Returns
 
 `boolean`
 
+The `isCommand()` function is returning a boolean value based on whether the `type`
+property of the object is equal to `InteractionType.ApplicationCommand`.
+
 #### Inherited from
 
-[BaseContext](BaseContext).[isCommand](BaseContext#iscommand)
+[ComponentContext](ComponentContext).[isCommand](ComponentContext#iscommand)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:248](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L248)
 
 ___
 
@@ -542,10 +923,11 @@ Indicates whether this interaction is a ContextMenuCommandInteraction
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isContextMenuCommand](BaseContext#iscontextmenucommand)
+[ComponentContext](ComponentContext).[isContextMenuCommand](ComponentContext#iscontextmenucommand)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:267](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L267)
 
 ___
 
@@ -561,10 +943,11 @@ Indicates whether this interaction is a MentionableSelectMenuInteraction
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isMentionableSelectMenu](BaseContext#ismentionableselectmenu)
+[ComponentContext](ComponentContext).[isMentionableSelectMenu](ComponentContext#ismentionableselectmenu)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:399](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L399)
 
 ___
 
@@ -580,10 +963,11 @@ Indicates whether this interaction is a MessageComponentInteraction
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isMessageComponent](BaseContext#ismessagecomponent)
+[ComponentContext](ComponentContext).[isMessageComponent](ComponentContext#ismessagecomponent)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:280](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L280)
 
 ___
 
@@ -599,10 +983,11 @@ Indicates whether this interaction is a MessageContextMenuCommandInteraction
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isMessageContextMenuCommand](BaseContext#ismessagecontextmenucommand)
+[ComponentContext](ComponentContext).[isMessageContextMenuCommand](ComponentContext#ismessagecontextmenucommand)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:307](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L307)
 
 ___
 
@@ -618,10 +1003,11 @@ Indicates whether this interaction is a ModalSubmitInteraction
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isModalSubmit](BaseContext#ismodalsubmit)
+[ComponentContext](ComponentContext).[isModalSubmit](ComponentContext#ismodalsubmit)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:288](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L288)
 
 ___
 
@@ -637,10 +1023,11 @@ Indicates whether this interaction can be replied to.
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isRepliable](BaseContext#isrepliable)
+[ComponentContext](ComponentContext).[isRepliable](ComponentContext#isrepliable)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:410](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L410)
 
 ___
 
@@ -656,10 +1043,11 @@ Indicates whether this interaction is a RoleSelectMenuInteraction
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isRoleSelectMenu](BaseContext#isroleselectmenu)
+[ComponentContext](ComponentContext).[isRoleSelectMenu](ComponentContext#isroleselectmenu)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:377](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L377)
 
 ___
 
@@ -679,10 +1067,11 @@ Use BaseInteraction#isStringSelectMenu instead.
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isSelectMenu](BaseContext#isselectmenu)
+[ComponentContext](ComponentContext).[isSelectMenu](ComponentContext#isselectmenu)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:330](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L330)
 
 ___
 
@@ -698,10 +1087,11 @@ Indicates whether this interaction is a StringSelectMenuInteraction.
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isStringSelectMenu](BaseContext#isstringselectmenu)
+[ComponentContext](ComponentContext).[isStringSelectMenu](ComponentContext#isstringselectmenu)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:355](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L355)
 
 ___
 
@@ -717,10 +1107,11 @@ Indicates whether this interaction is a UserContextMenuCommandInteraction
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isUserContextMenuCommand](BaseContext#isusercontextmenucommand)
+[ComponentContext](ComponentContext).[isUserContextMenuCommand](ComponentContext#isusercontextmenucommand)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:296](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L296)
 
 ___
 
@@ -736,7 +1127,74 @@ Indicates whether this interaction is a UserSelectMenuInteraction
 
 #### Inherited from
 
-[BaseContext](BaseContext).[isUserSelectMenu](BaseContext#isuserselectmenu)
+[ComponentContext](ComponentContext).[isUserSelectMenu](ComponentContext#isuserselectmenu)
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:366](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L366)
+
+___
+
+### reply
+
+▸ **reply**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Replies to an interaction.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `Object` | The data for creating the reply. |
+| `data.allowedMentions` | `undefined` \| \{ `parse`: `undefined` \| `AllowedMentionsTypes`[] ; `repliedUser`: `undefined` \| `boolean` ; `roles`: `undefined` \| `string`[] ; `users`: `undefined` \| `string`[]  } | - |
+| `data.attachments` | `undefined` \| \{ `description`: `undefined` \| `string` ; `filename`: `undefined` \| `string` ; `id`: `string` \| `number`  }[] | - |
+| `data.components` | `undefined` \| \{ `components`: (\{ `customId`: `string` ; `disabled`: `undefined` \| `boolean` ; `emoji`: `undefined` \| \{ `animated`: `undefined` \| `boolean` ; `id`: `undefined` \| `string` ; `name`: `undefined` \| `string`  } ; `label`: `undefined` \| `string` ; `style`: `Primary` \| `Secondary` \| `Success` \| `Danger` ; `type`: `Button`  } \| \{ `disabled`: `undefined` \| `boolean` ; `emoji`: `undefined` \| \{ `animated`: `undefined` \| `boolean` ; `id`: `undefined` \| `string` ; `name`: `undefined` \| `string`  } ; `label`: `undefined` \| `string` ; `style`: `Link` ; `type`: `Button` ; `url`: `string`  } \| \{ `customId`: `string` ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `options`: \{ `default`: `undefined` \| `boolean` ; `description`: `undefined` \| `string` ; `emoji`: `undefined` \| \{ `animated`: ... ; `id`: ... ; `name`: ...  } ; `label`: `string` ; `value`: `string`  }[] ; `placeholder`: `undefined` \| `string` ; `type`: `StringSelect`  } \| \{ `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: `User`  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `UserSelect`  } \| \{ `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: `Role`  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `RoleSelect`  } \| \{ `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: ... \| ...  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `MentionableSelect`  } \| \{ `channelTypes`: `undefined` \| `ChannelType`[] ; `customId`: `string` ; `defaultValues`: `undefined` \| \{ `id`: `string` ; `type`: `Channel`  }[] ; `disabled`: `undefined` \| `boolean` ; `maxValues`: `undefined` \| `number` ; `minValues`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `type`: `ChannelSelect`  })[] ; `type`: `ActionRow`  }[] | - |
+| `data.content` | `undefined` \| `string` | - |
+| `data.embeds` | `undefined` \| \{ `author`: `undefined` \| \{ `iconUrl`: `undefined` \| `string` ; `name`: `string` ; `proxyIconUrl`: `undefined` \| `string` ; `url`: `undefined` \| `string`  } ; `color`: `undefined` \| `number` ; `description`: `undefined` \| `string` ; `fields`: `undefined` \| \{ `inline`: `undefined` \| `boolean` ; `name`: `string` ; `value`: `string`  }[] ; `footer`: `undefined` \| \{ `iconUrl`: `undefined` \| `string` ; `proxyIconUrl`: `undefined` \| `string` ; `text`: `string`  } ; `image`: `undefined` \| \{ `height`: `undefined` \| `number` ; `proxyUrl`: `undefined` \| `string` ; `url`: `string` ; `width`: `undefined` \| `number`  } ; `provider`: `undefined` \| \{ `name`: `undefined` \| `string` ; `url`: `undefined` \| `string`  } ; `thumbnail`: `undefined` \| \{ `height`: `undefined` \| `number` ; `proxyUrl`: `undefined` \| `string` ; `url`: `string` ; `width`: `undefined` \| `number`  } ; `timestamp`: `undefined` \| `string` ; `title`: `undefined` \| `string` ; `type`: `undefined` \| `EmbedType` ; `url`: `undefined` \| `string` ; `video`: `undefined` \| \{ `height`: `undefined` \| `number` ; `proxyUrl`: `undefined` \| `string` ; `url`: `undefined` \| `string` ; `width`: `undefined` \| `number`  }  }[] | - |
+| `data.files` | `undefined` \| \{ `contentType`: `undefined` \| `string` ; `data`: `string` \| `number` \| `boolean` \| \{ `[iterator]`: () => `IterableIterator`\<`number`\> ; `[toStringTag]`: ``"Uint8Array"`` ; `at`: (`index`: `number`) => `undefined` \| `number` ; `buffer`: \{ `[toStringTag]`: `string` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`ArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer )  } \| \{ `[species]`: \{ readonly byteLength: number; slice: (begin: number, end?: number \| undefined) =\> SharedArrayBuffer; readonly [species]: ...; readonly [toStringTag]: "SharedArrayBuffer"; } ; `[toStringTag]`: ``"SharedArrayBuffer"`` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`SharedArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer )  } ; `byteLength`: `number` ; `byteOffset`: `number` ; `bytesPerElement`: `number` ; `compare`: (`target`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `targetStart?`: `number`, `targetEnd?`: `number`, `sourceStart?`: `number`, `sourceEnd?`: `number`) => ``-1`` \| ``0`` \| ``1`` ; `copy`: (`target`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `targetStart?`: `number`, `sourceStart?`: `number`, `sourceEnd?`: `number`) => `number` ; `copyWithin`: (`target`: `number`, `start`: `number`, `end?`: `number`) => `this` ; `entries`: () => `IterableIterator`\<[`number`, `number`]\> ; `equals`: (`otherBuffer`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean` ; `every`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `fill`: (`value`: `string` \| `number` \| [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `offset?`: `number`, `end?`: `number`, `encoding?`: `BufferEncoding`) => `this` ; `filter`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `any`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `find`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `undefined` \| `number` ; `findIndex`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `number` ; `forEach`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `void`, `thisArg?`: `any`) => `void` ; `includes`: (`value`: `string` \| `number` \| `Buffer`, `byteOffset?`: `number`, `encoding?`: `BufferEncoding`) => `boolean` ; `indexOf`: (`value`: `string` \| `number` \| [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `byteOffset?`: `number`, `encoding?`: `BufferEncoding`) => `number` ; `join`: (`separator?`: `string`) => `string` ; `keys`: () => `IterableIterator`\<`number`\> ; `lastIndexOf`: (`value`: `string` \| `number` \| [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ), `byteOffset?`: `number`, `encoding?`: `BufferEncoding`) => `number` ; `length`: `number` ; `map`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `readBigInt64BE`: (`offset?`: `number`) => `bigint` ; `readBigInt64LE`: (`offset?`: `number`) => `bigint` ; `readBigUInt64BE`: (`offset?`: `number`) => `bigint` ; `readBigUInt64LE`: (`offset?`: `number`) => `bigint` ; `readBigUint64BE`: (`offset?`: `number`) => `bigint` ; `readBigUint64LE`: (`offset?`: `number`) => `bigint` ; `readDoubleBE`: (`offset?`: `number`) => `number` ; `readDoubleLE`: (`offset?`: `number`) => `number` ; `readFloatBE`: (`offset?`: `number`) => `number` ; `readFloatLE`: (`offset?`: `number`) => `number` ; `readInt16BE`: (`offset?`: `number`) => `number` ; `readInt16LE`: (`offset?`: `number`) => `number` ; `readInt32BE`: (`offset?`: `number`) => `number` ; `readInt32LE`: (`offset?`: `number`) => `number` ; `readInt8`: (`offset?`: `number`) => `number` ; `readIntBE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readIntLE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUInt16BE`: (`offset?`: `number`) => `number` ; `readUInt16LE`: (`offset?`: `number`) => `number` ; `readUInt32BE`: (`offset?`: `number`) => `number` ; `readUInt32LE`: (`offset?`: `number`) => `number` ; `readUInt8`: (`offset?`: `number`) => `number` ; `readUIntBE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUIntLE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUint16BE`: (`offset?`: `number`) => `number` ; `readUint16LE`: (`offset?`: `number`) => `number` ; `readUint32BE`: (`offset?`: `number`) => `number` ; `readUint32LE`: (`offset?`: `number`) => `number` ; `readUint8`: (`offset?`: `number`) => `number` ; `readUintBE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `readUintLE`: (`offset`: `number`, `byteLength`: `number`) => `number` ; `reduce`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reduceRight`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reverse`: () => `this` ; `set`: (`array`: `ArrayLike`\<`number`\>, `offset?`: `number`) => `void` ; `slice`: (`start?`: `number`, `end?`: `number`) => `Buffer` ; `some`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `sort`: (`compareFn?`: (`a`: `number`, `b`: `number`) => `number`) => `this` ; `subarray`: (`start?`: `number`, `end?`: `number`) => `Buffer` ; `swap16`: () => `Buffer` ; `swap32`: () => `Buffer` ; `swap64`: () => `Buffer` ; `toJSON`: () => {} ; `toLocaleString`: () => `string` ; `toString`: (`encoding?`: `BufferEncoding`, `start?`: `number`, `end?`: `number`) => `string` ; `valueOf`: () => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `values`: () => `IterableIterator`\<`number`\> ; `write`: (`string`: `string`, `encoding?`: `BufferEncoding`) => `number`(`string`: `string`, `offset`: `number`, `encoding?`: `BufferEncoding`) => `number`(`string`: `string`, `offset`: `number`, `length`: `number`, `encoding?`: `BufferEncoding`) => `number` ; `writeBigInt64BE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigInt64LE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUInt64BE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUInt64LE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUint64BE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeBigUint64LE`: (`value`: `bigint`, `offset?`: `number`) => `number` ; `writeDoubleBE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeDoubleLE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeFloatBE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeFloatLE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt16BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt16LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt32BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt32LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeInt8`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeIntBE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeIntLE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUInt16BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt16LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt32BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt32LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUInt8`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUIntBE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUIntLE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUint16BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint16LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint32BE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint32LE`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUint8`: (`value`: `number`, `offset?`: `number`) => `number` ; `writeUintBE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number` ; `writeUintLE`: (`value`: `number`, `offset`: `number`, `byteLength`: `number`) => `number`  } \| \{ `[iterator]`: () => `IterableIterator`\<`number`\> ; `[toStringTag]`: ``"Uint8Array"`` ; `at`: (`index`: `number`) => `undefined` \| `number` ; `buffer`: \{ `[toStringTag]`: `string` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`ArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer )  } \| \{ `[species]`: \{ readonly byteLength: number; slice: (begin: number, end?: number \| undefined) =\> SharedArrayBuffer; readonly [species]: ...; readonly [toStringTag]: "SharedArrayBuffer"; } ; `[toStringTag]`: ``"SharedArrayBuffer"`` ; `byteLength`: `number` ; `slice`: (`begin`: `number`, `end?`: `number`) => [`SharedArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer )  } ; `byteLength`: `number` ; `byteOffset`: `number` ; `bytesPerElement`: `number` ; `copyWithin`: (`target`: `number`, `start`: `number`, `end?`: `number`) => `this` ; `entries`: () => `IterableIterator`\<[`number`, `number`]\> ; `every`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `fill`: (`value`: `number`, `start?`: `number`, `end?`: `number`) => `this` ; `filter`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `any`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `find`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `undefined` \| `number` ; `findIndex`: (`predicate`: (`value`: `number`, `index`: `number`, `obj`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `boolean`, `thisArg?`: `any`) => `number` ; `forEach`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `void`, `thisArg?`: `any`) => `void` ; `includes`: (`searchElement`: `number`, `fromIndex?`: `number`) => `boolean` ; `indexOf`: (`searchElement`: `number`, `fromIndex?`: `number`) => `number` ; `join`: (`separator?`: `string`) => `string` ; `keys`: () => `IterableIterator`\<`number`\> ; `lastIndexOf`: (`searchElement`: `number`, `fromIndex?`: `number`) => `number` ; `length`: `number` ; `map`: (`callbackfn`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `thisArg?`: `any`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `reduce`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reduceRight`: (`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`) => `number`(`callbackfn`: (`previousValue`: `number`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `number`, `initialValue`: `number`) => `number`\<U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: `number`, `currentIndex`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `U`, `initialValue`: `U`) => `U` ; `reverse`: () => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `set`: (`array`: `ArrayLike`\<`number`\>, `offset?`: `number`) => `void` ; `slice`: (`start?`: `number`, `end?`: `number`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `some`: (`predicate`: (`value`: `number`, `index`: `number`, `array`: [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array )) => `unknown`, `thisArg?`: `any`) => `boolean` ; `sort`: (`compareFn?`: (`a`: `number`, `b`: `number`) => `number`) => `this` ; `subarray`: (`begin?`: `number`, `end?`: `number`) => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `toLocaleString`: () => `string` ; `toString`: () => `string` ; `valueOf`: () => [`Uint8Array`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array ) ; `values`: () => `IterableIterator`\<`number`\>  } ; `key`: `undefined` \| `string` ; `name`: `string`  }[] | - |
+| `data.flags` | `undefined` \| `MessageFlags` | - |
+| `data.threadName` | `undefined` \| `string` | - |
+| `data.tts` | `undefined` \| `boolean` | - |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+A promise that resolves when the reply is sent.
+
+#### Inherited from
+
+[ComponentContext](ComponentContext).[reply](ComponentContext#reply)
+
+#### Defined in
 
 
+___
+
+### replyModal
+
+▸ **replyModal**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Reply to a modal.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `Object` | The data for creating the modal. |
+| `data.components` | \{ `components`: \{ `customId`: `string` ; `label`: `string` ; `maxLength`: `undefined` \| `number` ; `minLength`: `undefined` \| `number` ; `placeholder`: `undefined` \| `string` ; `required`: `undefined` \| `boolean` ; `style`: `TextInputStyle` ; `type`: `TextInput` ; `value`: `undefined` \| `string`  }[] ; `type`: `ActionRow`  }[] | - |
+| `data.customId` | `string` | - |
+| `data.title` | `string` | - |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+A promise that resolves when the modal is created.
+
+#### Inherited from
+
+[ComponentContext](ComponentContext).[replyModal](ComponentContext#replymodal)
+
+#### Defined in
 

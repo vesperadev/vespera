@@ -1,8 +1,10 @@
-import { create } from '@/components/ui/icon';
+import { Section } from '@radix-ui/themes';
 import { DocsLayout } from 'fumadocs-ui/layout';
 import { LayoutTemplate } from 'lucide-react';
+
+import { create } from '@/components/ui/icon';
+
 import { docs } from '../lib/source';
-import { Section } from '@radix-ui/themes';
 
 export default function Home() {
   return (

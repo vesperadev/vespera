@@ -10,24 +10,152 @@ import { Channel } from '../Channel';
 import type { Client } from '../Client';
 import { VesperaError } from '../Error';
 
+/* This TypeScript class `BaseContext` extends `Base` and has generic types `T` and `S`. */
 export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>, S extends unknown> extends Base {
+  /**
+   * @property
+   * @name type
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["type"]}
+   */
   public type: T['type'];
+
+  /**
+   * @property
+   * @name token
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["token"]}
+   */
   public token: T['token'];
+
+  /**
+   * @property
+   * @name id
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["id"]}
+   */
   public id: T['id'];
+
+  /**
+   * @property
+   * @name applicationId
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["application_id"]}
+   */
   public applicationId: T['application_id'];
+
+  /**
+   * @property
+   * @name channelId
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["channel_id"]}
+   */
   public channelId: string | undefined;
+
+  /**
+   * @property
+   * @name channel
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {Channel}
+   */
   public channel: Channel | undefined;
+
+  /**
+   * @property
+   * @name guildId
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["guild_id"]}
+   */
   public guildId: T['guild_id'];
+
+  /**
+   * @property
+   * @name guildLocale
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["guild_locale"]}
+   */
   public guildLocale: T['guild_locale'];
+
+  /**
+   * @property
+   * @name version
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["version"]}
+   */
   public version: T['version'];
+
+  /**
+   * app permissions of the user who triggered the interaction
+   * will only be present if the interaction was triggered in a guild
+   *
+   * @property
+   * @name appPermissions
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["app_permissions"]}
+   */
   public appPermissions: string | undefined;
+
+  /**
+   * member permissions of the user who triggered the interaction
+   * will only be present if the interaction was triggered in a guild
+   *
+   * @property
+   * @name memberPermissions
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["member"]["permissions"]}
+   */
   public memberPermissions: string | undefined;
+
+  /**
+   * locale of the user who triggered the interaction
+   *
+   * @property
+   * @name locale
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["locale"]}
+   */
   public locale: T['locale'];
+
+  /**
+   * @property
+   * @name entitlement
+   * @kind property
+   * @memberof BaseContext
+   * @public
+   * @type {T["entitlements"]}
+   */
   public entitlement: T['entitlements'];
 
   public raw: T;
 
-  public state: S;
+  public state: S = {} as S;
+
+  public deferred = false;
+  public replied = false;
 
   constructor(client: Client, data: T) {
     super(client);
@@ -47,7 +175,6 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
     this.entitlement = data.entitlements;
 
     this.raw = data;
-    this.state = {} as S;
   }
 
   /**
@@ -113,8 +240,10 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
   }
 
   /**
-   * Indicates whether this interaction is a {@link CommandInteraction}
-   * @returns {boolean}
+   * The function `isCommand()` checks if the type of interaction is an Application Command in
+   * TypeScript.
+   * @returns The `isCommand()` function is returning a boolean value based on whether the `type`
+   * property of the object is equal to `InteractionType.ApplicationCommand`.
    */
   isCommand() {
     return this.type === InteractionType.ApplicationCommand;

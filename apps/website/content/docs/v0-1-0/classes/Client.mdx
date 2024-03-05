@@ -24,33 +24,17 @@ description: Client
 - [channels](Client#channels)
 - [commands](Client#commands)
 - [guilds](Client#guilds)
+- [handler](Client#handler)
 - [options](Client#options)
 - [rest](Client#rest)
 - [user](Client#user)
 
 ### Methods
 
-- [addListener](Client#addlistener)
-- [emit](Client#emit)
-- [eventNames](Client#eventnames)
-- [getMaxListeners](Client#getmaxlisteners)
-- [handleApplicationCommandInteraction](Client#handleapplicationcommandinteraction)
-- [handleInteraction](Client#handleinteraction)
-- [handlePingInteraction](Client#handlepinginteraction)
+- [deployCommands](Client#deploycommands)
 - [handleRequest](Client#handlerequest)
-- [listenerCount](Client#listenercount)
-- [listeners](Client#listeners)
-- [off](Client#off)
-- [on](Client#on)
-- [once](Client#once)
-- [prependListener](Client#prependlistener)
-- [prependOnceListener](Client#prependoncelistener)
-- [rawListeners](Client#rawlisteners)
 - [registerCommand](Client#registercommand)
 - [registerCommands](Client#registercommands)
-- [removeAllListeners](Client#removealllisteners)
-- [removeListener](Client#removelistener)
-- [setMaxListeners](Client#setmaxlisteners)
 - [sweepCommands](Client#sweepcommands)
 - [unRegisterCommand](Client#unregistercommand)
 - [unRegisterCommands](Client#unregistercommands)
@@ -80,15 +64,15 @@ const client = new Client({
   token: 'token',
   application: {
     id: 'id',
-    publicKey: 'key'
-  }
+    publicKey: 'key',
+  },
   rest: {
-    version: '10'
-  }
+    version: '10',
+  },
   state: {
     set: (key, value, ttl) => {},
-    get: (key) => {}
-  }
+    get: (key) => {},
+  },
 })
 ```
 
@@ -96,8 +80,9 @@ const client = new Client({
 
 (EventEmitter as new () &#x3D;\&gt; TypedEmitter\&lt;ClientEvents\&gt;).constructor
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:132](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L132)
 
 ## Properties
 
@@ -105,8 +90,9 @@ const client = new Client({
 
 • **api**: `API`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:101](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L101)
 
 ___
 
@@ -114,17 +100,19 @@ ___
 
 • **channels**: [`ChannelManager`](ChannelManager)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:107](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L107)
 
 ___
 
 ### commands
 
-• **commands**: `Collection`\<`string`, `SlashCommandBuilder`\<[`CommandContext`](CommandContext)\<`unknown`\>\>\>
+• **commands**: `Collection`\<`string`, [`SlashCommandBuilder`](SlashCommandBuilder)\<`unknown`\>\>
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:102](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L102)
 
 ___
 
@@ -132,17 +120,29 @@ ___
 
 • **guilds**: [`GuildManager`](GuildManager)
 
+#### Defined in
 
+[apps/vespera/src/structure/Client.ts:108](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L108)
 
+___
+
+### handler
+
+• `Private` **handler**: [`ClientHandler`](ClientHandler)
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:105](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L105)
 
 ___
 
 ### options
 
-• **options**: [`ClientOptions`](../interfaces/ClientOptions)
+• `Readonly` **options**: [`ClientOptions`](../interfaces/ClientOptions)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:98](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L98)
 
 ___
 
@@ -150,8 +150,9 @@ ___
 
 • **rest**: `REST`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:100](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L100)
 
 ___
 
@@ -159,171 +160,25 @@ ___
 
 • **user**: [`ClientUser`](ClientUser)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:104](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L104)
 
 ## Methods
 
-### addListener
+### deployCommands
 
-▸ **addListener**\<`E`\>(`event`, `listener`): `this`
+▸ **deployCommands**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`RESTPutAPIApplicationCommandsResult`\>
 
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
+deployCommands - deploy the registered commands to the Discord API
 
 #### Returns
 
-`this`
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`RESTPutAPIApplicationCommandsResult`\>
 
-#### Inherited from
+#### Defined in
 
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).addListener
-
-
-
-
-___
-
-### emit
-
-▸ **emit**\<`E`\>(`event`, `...args`): `boolean`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-| `...args` | [`Parameters`]( https://www.typescriptlang.org/docs/handbook/utility-types.html#parameterstype )\<[`ClientEvents`](../interfaces/ClientEvents)[`E`]\> |
-
-#### Returns
-
-`boolean`
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).emit
-
-
-
-
-___
-
-### eventNames
-
-▸ **eventNames**(): (`string` \| `symbol`)[]
-
-#### Returns
-
-(`string` \| `symbol`)[]
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).eventNames
-
-
-
-
-___
-
-### getMaxListeners
-
-▸ **getMaxListeners**(): `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).getMaxListeners
-
-
-
-
-___
-
-### handleApplicationCommandInteraction
-
-▸ **handleApplicationCommandInteraction**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<\{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
-
-Handle application command interaction.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `APIApplicationCommandInteraction` | the application command interaction data |
-
-#### Returns
-
-[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<\{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
-
-an object with the type of InteractionResponseType
-
-
-
-
-___
-
-### handleInteraction
-
-▸ **handleInteraction**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`undefined` \| \{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
-
-Handle an interaction.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `APIBaseInteraction`\<`InteractionType`, `unknown`\> | the input data for the interaction |
-
-#### Returns
-
-[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`undefined` \| \{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
-
-a promise that resolves when the function has completed handling the interaction
-
-
-
-
-___
-
-### handlePingInteraction
-
-▸ **handlePingInteraction**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<\{ `type`: `InteractionResponseType` = InteractionResponseType.Pong }\>
-
-Handle a ping interaction.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `APIPingInteraction` | the data for the ping interaction |
-
-#### Returns
-
-[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<\{ `type`: `InteractionResponseType` = InteractionResponseType.Pong }\>
-
-an object with the type InteractionResponseType.Pong
-
-
-
+[apps/vespera/src/structure/Client.ts:211](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L211)
 
 ___
 
@@ -345,245 +200,9 @@ Handle the incoming request and validate the signature.
 
 a promise that resolves when the request is handled
 
+#### Defined in
 
-
-
-___
-
-### listenerCount
-
-▸ **listenerCount**\<`E`\>(`event`): `number`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).listenerCount
-
-
-
-
-___
-
-### listeners
-
-▸ **listeners**\<`E`\>(`event`): [`ClientEvents`](../interfaces/ClientEvents)[`E`][]
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-
-#### Returns
-
-[`ClientEvents`](../interfaces/ClientEvents)[`E`][]
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).listeners
-
-
-
-
-___
-
-### off
-
-▸ **off**\<`E`\>(`event`, `listener`): `this`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
-
-#### Returns
-
-`this`
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).off
-
-
-
-
-___
-
-### on
-
-▸ **on**\<`E`\>(`event`, `listener`): `this`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
-
-#### Returns
-
-`this`
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).on
-
-
-
-
-___
-
-### once
-
-▸ **once**\<`E`\>(`event`, `listener`): `this`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
-
-#### Returns
-
-`this`
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).once
-
-
-
-
-___
-
-### prependListener
-
-▸ **prependListener**\<`E`\>(`event`, `listener`): `this`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
-
-#### Returns
-
-`this`
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).prependListener
-
-
-
-
-___
-
-### prependOnceListener
-
-▸ **prependOnceListener**\<`E`\>(`event`, `listener`): `this`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
-
-#### Returns
-
-`this`
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).prependOnceListener
-
-
-
-
-___
-
-### rawListeners
-
-▸ **rawListeners**\<`E`\>(`event`): [`ClientEvents`](../interfaces/ClientEvents)[`E`][]
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-
-#### Returns
-
-[`ClientEvents`](../interfaces/ClientEvents)[`E`][]
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).rawListeners
-
-
-
+[apps/vespera/src/structure/Client.ts:222](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L222)
 
 ___
 
@@ -597,14 +216,15 @@ Register a command.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `command` | `SlashCommandBuilder`\<[`CommandContext`](CommandContext)\<`unknown`\>\> | the command to register |
+| `command` | [`SlashCommandBuilder`](SlashCommandBuilder)\<`unknown`\> | the command to register |
 
 #### Returns
 
 `void`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:170](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L170)
 
 ___
 
@@ -618,96 +238,15 @@ Register commands.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `commands` | `SlashCommandBuilder`\<[`CommandContext`](CommandContext)\<`unknown`\>\>[] | array of commands |
+| `commands` | [`SlashCommandBuilder`](SlashCommandBuilder)\<`unknown`\>[] | array of commands |
 
 #### Returns
 
 `void`
 
+#### Defined in
 
-
-
-___
-
-### removeAllListeners
-
-▸ **removeAllListeners**\<`E`\>(`event?`): `this`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event?` | `E` |
-
-#### Returns
-
-`this`
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).removeAllListeners
-
-
-
-
-___
-
-### removeListener
-
-▸ **removeListener**\<`E`\>(`event`, `listener`): `this`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `E` | extends keyof [`ClientEvents`](../interfaces/ClientEvents) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `event` | `E` |
-| `listener` | [`ClientEvents`](../interfaces/ClientEvents)[`E`] |
-
-#### Returns
-
-`this`
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).removeListener
-
-
-
-
-___
-
-### setMaxListeners
-
-▸ **setMaxListeners**(`maxListeners`): `this`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `maxListeners` | `number` |
-
-#### Returns
-
-`this`
-
-#### Inherited from
-
-(EventEmitter as new () =\> TypedEmitter\<ClientEvents\>).setMaxListeners
-
-
-
+[apps/vespera/src/structure/Client.ts:156](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L156)
 
 ___
 
@@ -721,8 +260,9 @@ sweepCommands - A description of the entire function.
 
 `void`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:202](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L202)
 
 ___
 
@@ -736,14 +276,15 @@ unregisters a command.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `command` | `SlashCommandBuilder`\<[`CommandContext`](CommandContext)\<`unknown`\>\> | the command to unregister |
+| `command` | [`SlashCommandBuilder`](SlashCommandBuilder)\<`unknown`\> | the command to unregister |
 
 #### Returns
 
 `void`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:193](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L193)
 
 ___
 
@@ -757,11 +298,12 @@ Unregisters the given commands from the list of registered commands.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `commands` | `SlashCommandBuilder`\<[`CommandContext`](CommandContext)\<`unknown`\>\>[] | The array of commands to unregister. |
+| `commands` | [`SlashCommandBuilder`](SlashCommandBuilder)\<`unknown`\>[] | The array of commands to unregister. |
 
 #### Returns
 
 `void`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:181](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L181)

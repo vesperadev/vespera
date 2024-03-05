@@ -111,9 +111,10 @@ export class Attachment {
   }
 
   /**
-   * Whether or not this attachment has been marked as a spoiler
-   * @type {boolean}
-   * @readonly
+   * The function `isSpoiler` checks if the file name or URL starts with 'SPOILER_'.
+   * @returns {boolean} The code snippet is checking if the basename of the URL or name starts with 'SPOILER_'.
+   * If it does, the function returns true, indicating that the content may be a spoiler. If it doesn't
+   * start with 'SPOILER_', the function returns false.
    */
   public isSpoiler() {
     return path.basename(this.url ?? this.name).startsWith('SPOILER_');

@@ -1,5 +1,5 @@
-import { Client, User } from '..';
-import { Base, Channel } from '..';
+import type { Client } from '..';
+import { Base, Channel, User } from '..';
 import type {
   APIApplicationCommandInteractionDataAttachmentOption,
   APIApplicationCommandInteractionDataChannelOption,

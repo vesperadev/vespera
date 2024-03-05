@@ -20,9 +20,89 @@ description: Guild
 
 ### Properties
 
+- [afkChannelId](Guild#afkchannelid)
+- [afkTimeout](Guild#afktimeout)
+- [applicationId](Guild#applicationid)
 - [client](Guild#client)
+- [defaultMessageNotifications](Guild#defaultmessagenotifications)
+- [discoverySplash](Guild#discoverysplash)
+- [emojis](Guild#emojis)
+- [explicitContentFilter](Guild#explicitcontentfilter)
+- [features](Guild#features)
+- [icon](Guild#icon)
 - [id](Guild#id)
+- [joinedTimestamp](Guild#joinedtimestamp)
+- [maxMembers](Guild#maxmembers)
 - [members](Guild#members)
+- [mfaLevel](Guild#mfalevel)
+- [name](Guild#name)
+- [ownerId](Guild#ownerid)
+- [permissions](Guild#permissions)
+- [preferredLocale](Guild#preferredlocale)
+- [premiumTier](Guild#premiumtier)
+- [publicUpdatesChannelId](Guild#publicupdateschannelid)
+- [roles](Guild#roles)
+- [rulesChannelId](Guild#ruleschannelid)
+- [safetyAlertsChannelId](Guild#safetyalertschannelid)
+- [splash](Guild#splash)
+- [systemChannelFlags](Guild#systemchannelflags)
+- [systemChannelId](Guild#systemchannelid)
+- [verificationLevel](Guild#verificationlevel)
+- [widgetChannelId](Guild#widgetchannelid)
+- [widgetEnabled](Guild#widgetenabled)
+
+### Accessors
+
+- [maximumBitrate](Guild#maximumbitrate)
+- [publicUpdatesChannel](Guild#publicupdateschannel)
+- [rulesChannel](Guild#ruleschannel)
+- [safetyAlertsChannel](Guild#safetyalertschannel)
+
+### Methods
+
+- [afkChannel](Guild#afkchannel)
+- [createTemplate](Guild#createtemplate)
+- [delete](Guild#delete)
+- [disableInvites](Guild#disableinvites)
+- [discoverySplashURL](Guild#discoverysplashurl)
+- [edit](Guild#edit)
+- [editOnboarding](Guild#editonboarding)
+- [editWelcomeScreen](Guild#editwelcomescreen)
+- [fetchAuditLogs](Guild#fetchauditlogs)
+- [fetchIntegrations](Guild#fetchintegrations)
+- [fetchOnboarding](Guild#fetchonboarding)
+- [fetchOwner](Guild#fetchowner)
+- [fetchPreview](Guild#fetchpreview)
+- [fetchTemplates](Guild#fetchtemplates)
+- [fetchVanityData](Guild#fetchvanitydata)
+- [fetchWebhooks](Guild#fetchwebhooks)
+- [fetchWelcomeScreen](Guild#fetchwelcomescreen)
+- [fetchWidgetSettings](Guild#fetchwidgetsettings)
+- [joinedAt](Guild#joinedat)
+- [leave](Guild#leave)
+- [setAFKChannel](Guild#setafkchannel)
+- [setAFKTimeout](Guild#setafktimeout)
+- [setBanner](Guild#setbanner)
+- [setDefaultMessageNotifications](Guild#setdefaultmessagenotifications)
+- [setDiscoverySplash](Guild#setdiscoverysplash)
+- [setExplicitContentFilter](Guild#setexplicitcontentfilter)
+- [setIcon](Guild#seticon)
+- [setMFALevel](Guild#setmfalevel)
+- [setName](Guild#setname)
+- [setOwner](Guild#setowner)
+- [setPreferredLocale](Guild#setpreferredlocale)
+- [setPremiumProgressBarEnabled](Guild#setpremiumprogressbarenabled)
+- [setPublicUpdatesChannel](Guild#setpublicupdateschannel)
+- [setRulesChannel](Guild#setruleschannel)
+- [setSafetyAlertsChannel](Guild#setsafetyalertschannel)
+- [setSplash](Guild#setsplash)
+- [setSystemChannel](Guild#setsystemchannel)
+- [setSystemChannelFlags](Guild#setsystemchannelflags)
+- [setVerificationLevel](Guild#setverificationlevel)
+- [setWidgetSettings](Guild#setwidgetsettings)
+- [systemChannel](Guild#systemchannel)
+- [widgetChannel](Guild#widgetchannel)
+- [widgetImageURL](Guild#widgetimageurl)
 
 ## Constructors
 
@@ -45,10 +125,41 @@ description: Guild
 
 [Base](Base).[constructor](Base#constructor)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Guild.ts:102](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L102)
 
 ## Properties
+
+### afkChannelId
+
+• **afkChannelId**: `undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:51](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L51)
+
+___
+
+### afkTimeout
+
+• **afkTimeout**: `undefined` \| `number`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:52](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L52)
+
+___
+
+### applicationId
+
+• **applicationId**: `undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:62](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L62)
+
+___
 
 ### client
 
@@ -58,8 +169,69 @@ description: Guild
 
 [Base](Base).[client](Base#client)
 
+#### Defined in
 
+[apps/vespera/src/structure/Base.ts:4](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Base.ts#L4)
 
+___
+
+### defaultMessageNotifications
+
+• **defaultMessageNotifications**: `undefined` \| `number`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:56](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L56)
+
+___
+
+### discoverySplash
+
+• **discoverySplash**: `undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:43](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L43)
+
+___
+
+### emojis
+
+• **emojis**: [`Emoji`](Emoji)[]
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:59](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L59)
+
+___
+
+### explicitContentFilter
+
+• **explicitContentFilter**: `undefined` \| `number`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:57](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L57)
+
+___
+
+### features
+
+• **features**: `GuildFeature`[] = `[]`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:60](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L60)
+
+___
+
+### icon
+
+• **icon**: `undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:41](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L41)
 
 ___
 
@@ -67,8 +239,33 @@ ___
 
 • **id**: `string`
 
+#### Defined in
 
+[apps/vespera/src/structure/Guild.ts:37](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L37)
 
+___
+
+### joinedTimestamp
+
+• **joinedTimestamp**: `undefined` \| `number`
+
+The timestamp the client user joined the guild at
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:49](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L49)
+
+___
+
+### maxMembers
+
+• **maxMembers**: `undefined` \| `number`
+
+The maximum amount of members for the guild
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:88](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L88)
 
 ___
 
@@ -76,5 +273,1374 @@ ___
 
 • **members**: [`GuildMembersManager`](GuildMembersManager)
 
+#### Defined in
 
+[apps/vespera/src/structure/Guild.ts:38](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L38)
 
+___
+
+### mfaLevel
+
+• **mfaLevel**: `undefined` \| `number`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:61](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L61)
+
+___
+
+### name
+
+• **name**: `undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:40](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L40)
+
+___
+
+### ownerId
+
+• **ownerId**: `undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:44](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L44)
+
+___
+
+### permissions
+
+• **permissions**: `undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:50](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L50)
+
+___
+
+### preferredLocale
+
+• **preferredLocale**: `undefined` \| `Locale`
+
+The preferred locale of the guild, defaults to `en-US`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:94](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L94)
+
+___
+
+### premiumTier
+
+• **premiumTier**: `undefined` \| `GuildPremiumTier`
+
+The premium tier of this guild
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:70](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L70)
+
+___
+
+### publicUpdatesChannelId
+
+• **publicUpdatesChannelId**: `undefined` \| `string`
+
+The public updates channel's id for the guild
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:82](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L82)
+
+___
+
+### roles
+
+• **roles**: [`GuildRolesManager`](GuildRolesManager)
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:58](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L58)
+
+___
+
+### rulesChannelId
+
+• **rulesChannelId**: `undefined` \| `string`
+
+The rules channel's id for the guild
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:76](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L76)
+
+___
+
+### safetyAlertsChannelId
+
+• **safetyAlertsChannelId**: `undefined` \| `string`
+
+The guild's safety channel id
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:100](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L100)
+
+___
+
+### splash
+
+• **splash**: `undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:42](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L42)
+
+___
+
+### systemChannelFlags
+
+• **systemChannelFlags**: `undefined` \| `number`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:64](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L64)
+
+___
+
+### systemChannelId
+
+• **systemChannelId**: `undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:63](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L63)
+
+___
+
+### verificationLevel
+
+• **verificationLevel**: `undefined` \| `number`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:55](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L55)
+
+___
+
+### widgetChannelId
+
+• **widgetChannelId**: `undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:54](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L54)
+
+___
+
+### widgetEnabled
+
+• **widgetEnabled**: `undefined` \| `boolean`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:53](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L53)
+
+## Accessors
+
+### maximumBitrate
+
+• `get` **maximumBitrate**(): ``96000`` \| ``128000`` \| ``256000`` \| ``384000``
+
+The maximum bitrate available for this guild
+
+#### Returns
+
+``96000`` \| ``128000`` \| ``256000`` \| ``384000``
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:312](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L312)
+
+___
+
+### publicUpdatesChannel
+
+• `get` **publicUpdatesChannel**(): ``null`` \| [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+Public updates channel for this guild
+
+#### Returns
+
+``null`` \| [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:286](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L286)
+
+___
+
+### rulesChannel
+
+• `get` **rulesChannel**(): ``null`` \| [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+Rules channel for this guild
+
+#### Returns
+
+``null`` \| [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:273](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L273)
+
+___
+
+### safetyAlertsChannel
+
+• `get` **safetyAlertsChannel**(): ``null`` \| [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+Safety alerts channel for this guild
+
+#### Returns
+
+``null`` \| [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:299](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L299)
+
+## Methods
+
+### afkChannel
+
+▸ **afkChannel**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<``null`` \| [`Channel`](Channel)\>
+
+AFK voice channel for this guild
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<``null`` \| [`Channel`](Channel)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:236](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L236)
+
+___
+
+### createTemplate
+
+▸ **createTemplate**(`body`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildTemplate`](GuildTemplate)\>
+
+Creates a template for the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `body` | `Object` |
+| `body.description` | `undefined` \| ``null`` \| `string` |
+| `body.name` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildTemplate`](GuildTemplate)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:376](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L376)
+
+___
+
+### delete
+
+▸ **delete**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Guild`](Guild)\>
+
+Deletes the guild.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Guild`](Guild)\>
+
+**`Example`**
+
+```ts
+// Delete a guild
+guild.delete()
+  .then(guild => console.log(`Deleted the guild ${guild}`))
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:1001](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L1001)
+
+___
+
+### disableInvites
+
+▸ **disableInvites**(`disabled?`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Sets whether this guild's invites are disabled.
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `disabled?` | `boolean` | `true` | Whether the invites are disabled |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:1011](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L1011)
+
+___
+
+### discoverySplashURL
+
+▸ **discoverySplashURL**(`options?`): `undefined` \| `string`
+
+The URL to this guild's discovery splash image.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | Options for the image URL |
+| `options.extension` | `undefined` \| ``"webp"`` \| ``"png"`` \| ``"jpg"`` \| ``"jpeg"`` \| ``"gif"`` | - |
+| `options.forceStatic` | `undefined` \| `boolean` | - |
+| `options.size` | `undefined` \| ``16`` \| ``32`` \| ``64`` \| ``128`` \| ``256`` \| ``512`` \| ``1024`` \| ``2048`` \| ``4096`` | - |
+
+#### Returns
+
+`undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:214](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L214)
+
+___
+
+### edit
+
+▸ **edit**(`options`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Updates the guild with new information - e.g. a new name.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options` | \{ `afkChannelId`: `undefined` \| ``null`` \| `string` ; `afkTimeout`: `undefined` \| ``60`` \| ``300`` \| ``900`` \| ``1800`` \| ``3600`` ; `banner`: `undefined` \| ``null`` \| `string` ; `defaultMessageNotifications`: `undefined` \| ``null`` \| `GuildDefaultMessageNotifications` ; `description`: `undefined` \| ``null`` \| `string` ; `discoverySplash`: `undefined` \| ``null`` \| `string` ; `explicitContentFilter`: `undefined` \| ``null`` \| `GuildExplicitContentFilter` ; `features`: `undefined` \| `GuildFeature`[] ; `icon`: `undefined` \| ``null`` \| `string` ; `name`: `undefined` \| `string` ; `ownerId`: `undefined` \| `string` ; `preferredLocale`: `undefined` \| ``null`` \| `string` ; `premiumProgressBarEnabled`: `undefined` \| `boolean` ; `publicUpdatesChannelId`: `undefined` \| ``null`` \| `string` ; `region`: `undefined` \| ``null`` \| `string` ; `rulesChannelId`: `undefined` \| ``null`` \| `string` ; `safetyAlertsChannelId`: `undefined` \| ``null`` \| `string` ; `splash`: `undefined` \| ``null`` \| `string` ; `systemChannelFlags`: `undefined` \| `GuildSystemChannelFlags` ; `systemChannelId`: `undefined` \| ``null`` \| `string` ; `verificationLevel`: `undefined` \| ``null`` \| `GuildVerificationLevel`  } & \{ `reason?`: `string`  } | The options to provide |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Set the guild name
+guild.edit({
+  name: 'Discord Guild',
+})
+  .then(updated => console.log(`New guild name ${updated}`))
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:561](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L561)
+
+___
+
+### editOnboarding
+
+▸ **editOnboarding**(`options`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildOnboarding`](GuildOnboarding)\>
+
+Edits the guild onboarding data for this guild.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options` | \{ `defaultChannelIds`: `string`[] ; `enabled`: `boolean` ; `mode`: `GuildOnboardingMode` ; `prompts`: \{ `id`: `string` ; `inOnboarding`: `boolean` ; `options`: \{ `channelIds`: `string`[] ; `description`: ``null`` \| `string` ; `emoji`: \{ `animated`: `undefined` \| `boolean` ; `id`: ``null`` \| `string` ; `name`: ``null`` \| `string`  } ; `id`: `string` ; `roleIds`: `string`[] ; `title`: `string`  }[] ; `required`: `boolean` ; `singleSelect`: `boolean` ; `title`: `string` ; `type`: `GuildOnboardingPromptType`  }[]  } & \{ `reason?`: `string`  } | The options to provide |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildOnboarding`](GuildOnboarding)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:612](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L612)
+
+___
+
+### editWelcomeScreen
+
+▸ **editWelcomeScreen**(`options`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildWelcomeScreen`](GuildWelcomeScreen)\>
+
+Updates the guild's welcome screen
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options` | \{ `description`: `AddUndefinedToPossiblyUndefinedPropertiesOfInterface`\<`undefined` \| ``null`` \| `string`\> ; `enabled`: `undefined` \| ``null`` \| `boolean` ; `welcomeChannels`: `undefined` \| ``null`` \| \{ `channelId`: `string` ; `description`: `string` ; `emojiId`: `AddUndefinedToPossiblyUndefinedPropertiesOfInterface`\<``null`` \| `string`\> ; `emojiName`: `AddUndefinedToPossiblyUndefinedPropertiesOfInterface`\<``null`` \| `string`\>  }[]  } & \{ `reason?`: `string`  } | The options to provide |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildWelcomeScreen`](GuildWelcomeScreen)\>
+
+**`Example`**
+
+```ts
+guild.editWelcomeScreen({
+  description: 'Hello World',
+  enabled: true,
+  welcomeChannels: [
+    {
+      description: 'foobar',
+      channel: '222197033908436994',
+    }
+  ],
+})
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:674](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L674)
+
+___
+
+### fetchAuditLogs
+
+▸ **fetchAuditLogs**(`options?`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildAuditLogs`](GuildAuditLogs)\>
+
+Fetches audit logs for this guild.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | Options for fetching audit logs |
+| `options.actionType` | `undefined` \| `AuditLogEvent` | - |
+| `options.after` | `undefined` \| `string` | - |
+| `options.before` | `undefined` \| `string` | - |
+| `options.limit` | `undefined` \| `number` | - |
+| `options.userId` | `undefined` \| `string` | - |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildAuditLogs`](GuildAuditLogs)\>
+
+**`Example`**
+
+```ts
+// Output audit log entries
+guild.fetchAuditLogs()
+  .then(audit => console.log(audit.entries.first()))
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:494](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L494)
+
+___
+
+### fetchIntegrations
+
+▸ **fetchIntegrations**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`Collection`\<`unknown`, `unknown`\>\>
+
+Fetches a collection of integrations to this guild.
+Resolves with a collection mapping integrations by their ids.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`Collection`\<`unknown`, `unknown`\>\>
+
+**`Example`**
+
+```ts
+// Fetch integrations
+guild.fetchIntegrations()
+  .then(integrations => console.log(`Fetched ${integrations.size} integrations`))
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:339](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L339)
+
+___
+
+### fetchOnboarding
+
+▸ **fetchOnboarding**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildOnboarding`](GuildOnboarding)\>
+
+Fetches the guild onboarding data for this guild.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildOnboarding`](GuildOnboarding)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:503](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L503)
+
+___
+
+### fetchOwner
+
+▸ **fetchOwner**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuildMember`\>
+
+Fetches the owner of the guild.
+If the member object isn't needed, use [Guild#ownerId](Guild#ownerid) instead.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuildMember`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:223](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L223)
+
+___
+
+### fetchPreview
+
+▸ **fetchPreview**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildPreview`](GuildPreview)\>
+
+Obtains a guild preview for this guild from Discord.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildPreview`](GuildPreview)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:385](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L385)
+
+___
+
+### fetchTemplates
+
+▸ **fetchTemplates**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`Collection`\<`unknown`, `unknown`\>\>
+
+Fetches a collection of templates from this guild.
+Resolves with a collection mapping templates by their codes.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`Collection`\<`unknown`, `unknown`\>\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:353](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L353)
+
+___
+
+### fetchVanityData
+
+▸ **fetchVanityData**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`RESTGetAPIGuildVanityUrlResult`\>
+
+Fetches the vanity URL invite object to this guild.
+Resolves with an object containing the vanity URL invite code and the use count
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`RESTGetAPIGuildVanityUrlResult`\>
+
+**`Example`**
+
+```ts
+// Fetch invite data
+guild.fetchVanityData()
+  .then(res => {
+    console.log(`Vanity URL: https://discord.gg/${res.code} with ${res.uses} uses`);
+  })
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:409](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L409)
+
+___
+
+### fetchWebhooks
+
+▸ **fetchWebhooks**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`Collection`\<`unknown`, `unknown`\>\>
+
+Fetches all webhooks for the guild.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`Collection`\<`unknown`, `unknown`\>\>
+
+**`Example`**
+
+```ts
+// Fetch webhooks
+guild.fetchWebhooks()
+  .then(webhooks => console.log(`Fetched ${webhooks.size} webhooks`))
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:423](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L423)
+
+___
+
+### fetchWelcomeScreen
+
+▸ **fetchWelcomeScreen**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildWelcomeScreen`](GuildWelcomeScreen)\>
+
+Fetches the welcome screen for this guild.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`GuildWelcomeScreen`](GuildWelcomeScreen)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:365](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L365)
+
+___
+
+### fetchWidgetSettings
+
+▸ **fetchWidgetSettings**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<\{ `channel`: ``null`` \| [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\> ; `enabled`: `boolean` = data.enabled }\>
+
+Fetches the guild widget settings.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<\{ `channel`: ``null`` \| [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\> ; `enabled`: `boolean` = data.enabled }\>
+
+**`Example`**
+
+```ts
+// Fetches the guild widget settings
+guild.fetchWidgetSettings()
+  .then(widget => console.log(`The widget is ${widget.enabled ? 'enabled' : 'disabled'}`))
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:456](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L456)
+
+___
+
+### joinedAt
+
+▸ **joinedAt**(): [`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+The time the client user joined the guild
+
+#### Returns
+
+[`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:205](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L205)
+
+___
+
+### leave
+
+▸ **leave**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Guild`](Guild)\>
+
+Leaves the guild.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Guild`](Guild)\>
+
+**`Example`**
+
+```ts
+// Leave a guild
+guild.leave()
+  .then(guild => console.log(`Left the guild: ${guild.name}`))
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:986](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L986)
+
+___
+
+### setAFKChannel
+
+▸ **setAFKChannel**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the AFK channel of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `channel` | `string` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild AFK channel
+guild.setAFKChannel(channel)
+ .then(updated => console.log(`Updated guild AFK channel to ${guild.afkChannel.name}`))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:765](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L765)
+
+___
+
+### setAFKTimeout
+
+▸ **setAFKTimeout**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the AFK timeout of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `reason?` | `string` |
+| › `timeout` | `undefined` \| ``60`` \| ``300`` \| ``900`` \| ``1800`` \| ``3600`` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild AFK channel
+guild.setAFKTimeout(60)
+ .then(updated => console.log(`Updated guild AFK timeout to ${guild.afkTimeout}`))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:795](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L795)
+
+___
+
+### setBanner
+
+▸ **setBanner**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Sets a new guild banner.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `banner` | `string` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+guild.setBanner('./banner.png')
+ .then(updated => console.log('Updated the guild banner'))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:870](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L870)
+
+___
+
+### setDefaultMessageNotifications
+
+▸ **setDefaultMessageNotifications**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the setting of the default message notifications of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `notification` | `GuildDefaultMessageNotifications` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:704](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L704)
+
+___
+
+### setDiscoverySplash
+
+▸ **setDiscoverySplash**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Sets a new guild discovery splash image.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `reason?` | `string` |
+| › `splash` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild discovery splash
+guild.setDiscoverySplash('./discoverysplash.png')
+  .then(updated => console.log('Updated the guild discovery splash'))
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:856](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L856)
+
+___
+
+### setExplicitContentFilter
+
+▸ **setExplicitContentFilter**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the level of the explicit content filter.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `filter` | `GuildExplicitContentFilter` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:693](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L693)
+
+___
+
+### setIcon
+
+▸ **setIcon**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Sets a new guild icon.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `icon` | `string` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild icon
+guild.setIcon('./icon.png')
+ .then(updated => console.log('Updated the guild icon'))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:810](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L810)
+
+___
+
+### setMFALevel
+
+▸ **setMFALevel**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Guild`](Guild)\>
+
+Sets the guild's MFA level
+<info>An elevated MFA level requires guild moderators to have 2FA enabled.</info>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `level` | `GuildMFALevel` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Guild`](Guild)\>
+
+**`Example`**
+
+```ts
+// Set the MFA level of the guild to Elevated
+guild.setMFALevel(GuildMFALevel.Elevated)
+  .then(guild => console.log("Set guild's MFA level to Elevated"))
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:971](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L971)
+
+___
+
+### setName
+
+▸ **setName**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the name of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `name` | `string` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild name
+guild.setName('Discord Guild')
+ .then(updated => console.log(`Updated guild name to ${updated.name}`))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:735](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L735)
+
+___
+
+### setOwner
+
+▸ **setOwner**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Sets a new owner of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `owner` | `string` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild owner
+guild.setOwner(guild.members.cache.first())
+ .then(guild => guild.fetchOwner())
+ .then(owner => console.log(`Updated the guild owner to ${owner.displayName}`))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:826](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L826)
+
+___
+
+### setPreferredLocale
+
+▸ **setPreferredLocale**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the preferred locale of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `preferredLocale` | `Locale` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild preferred locale
+guild.setPreferredLocale('en-US')
+ .then(updated => console.log(`Updated guild preferred locale to ${guild.preferredLocale}`))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:915](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L915)
+
+___
+
+### setPremiumProgressBarEnabled
+
+▸ **setPremiumProgressBarEnabled**(`enabled?`, `reason?`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the enabled state of the guild's premium progress bar
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `enabled?` | `boolean` | `true` | The new enabled state of the guild's premium progress bar |
+| `reason?` | `string` | `undefined` | Reason for changing the state of the guild's premium progress bar |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:925](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L925)
+
+___
+
+### setPublicUpdatesChannel
+
+▸ **setPublicUpdatesChannel**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the community updates channel of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `channel` | `string` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild community updates channel
+guild.setPublicUpdatesChannel(channel)
+ .then(updated => console.log(`Updated guild community updates channel to ${guild.publicUpdatesChannel.name}`))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:900](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L900)
+
+___
+
+### setRulesChannel
+
+▸ **setRulesChannel**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the rules channel of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `channel` | `string` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild rules channel
+guild.setRulesChannel(channel)
+ .then(updated => console.log(`Updated guild rules channel to ${guild.rulesChannel.name}`))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:885](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L885)
+
+___
+
+### setSafetyAlertsChannel
+
+▸ **setSafetyAlertsChannel**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the safety alerts channel of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `channel` | `string` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild safety alerts channel
+guild.setSafetyAlertsChannel(channel)
+ .then(updated => console.log(`Updated guild safety alerts channel to ${updated.safetyAlertsChannel.name}`))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:940](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L940)
+
+___
+
+### setSplash
+
+▸ **setSplash**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Sets a new guild invite splash image.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `reason?` | `string` |
+| › `splash` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild splash
+guild.setSplash('./splash.png')
+ .then(updated => console.log('Updated the guild splash'))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:841](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L841)
+
+___
+
+### setSystemChannel
+
+▸ **setSystemChannel**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the system channel of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `channel` | `string` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild system channel
+guild.setSystemChannel(channel)
+ .then(updated => console.log(`Updated guild system channel to ${guild.systemChannel.name}`))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:780](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L780)
+
+___
+
+### setSystemChannelFlags
+
+▸ **setSystemChannelFlags**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the flags of the default message notifications of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `flags` | `GuildSystemChannelFlags` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:720](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L720)
+
+___
+
+### setVerificationLevel
+
+▸ **setVerificationLevel**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+Edits the verification level of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `level` | `GuildVerificationLevel` |
+| › `reason?` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuild`\>
+
+**`Example`**
+
+```ts
+// Edit the guild verification level
+guild.setVerificationLevel(1)
+ .then(updated => console.log(`Updated guild verification level to ${guild.verificationLevel}`))
+ .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:750](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L750)
+
+___
+
+### setWidgetSettings
+
+▸ **setWidgetSettings**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Guild`](Guild)\>
+
+Edits the guild's widget settings.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | \{ `channelId`: `undefined` \| ``null`` \| `string` ; `enabled`: `undefined` \| `boolean`  } & \{ `reason?`: `string`  } |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Guild`](Guild)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:950](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L950)
+
+___
+
+### systemChannel
+
+▸ **systemChannel**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<``null`` \| [`Channel`](Channel)\>
+
+System channel for this guild
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<``null`` \| [`Channel`](Channel)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:248](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L248)
+
+___
+
+### widgetChannel
+
+▸ **widgetChannel**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<``null`` \| [`Channel`](Channel)\>
+
+Widget channel for this guild
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<``null`` \| [`Channel`](Channel)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:260](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L260)
+
+___
+
+### widgetImageURL
+
+▸ **widgetImageURL**(`style?`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer )\>
+
+Returns a URL for the PNG widget of the guild.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `style?` | `GuildWidgetStyle` | The style for the widget image |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ArrayBuffer`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer )\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Guild.ts:470](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Guild.ts#L470)

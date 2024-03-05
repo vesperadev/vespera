@@ -1,17 +1,15 @@
-import { VesperaError } from '../structure/Error';
-
 import { ButtonBuilder } from './ButtonBuilder';
-import type { ButtonContext } from './Context/ButtonContext';
+import { VesperaError } from './Error';
 import { StringSelectMenuBuilder } from './StringSelectMenuBuilder';
 
 /**
- * Interface for ComponentBuilder that extends the functionalities of both VesperaMixins and DISCORDJSButtonBuilder.
+ * Interface for a component.
  *
  * @interface
  */
 export type Component = 'Button' | 'StringSelect';
 
-export class createComponentBuilder {
+export class createComponentBuilder<S extends unknown = unknown> {
   /**
    * @public @property {Component} type - The type of the component.
    */
@@ -23,23 +21,19 @@ export class createComponentBuilder {
    * A function to set the type of a component.
    *
    * @param {T} type - the type of the component
-   * @return {(ButtonBuilder<ButtonContext> | StringSelectMenuBuilder<unknown> | undefined)} an instance of ButtonBuilder or StringSelectMenuBuilder, or undefined
+   * @return {(ButtonBuilder<S> | StringSelectMenuBuilder<S>)} an instance of ButtonBuilder or StringSelectMenuBuilder, or undefined
    */
-  public setType<S extends unknown, T extends Component>(
-    type: T,
-  ): T extends 'Button' ? ButtonBuilder<ButtonContext<S>> : StringSelectMenuBuilder<unknown> {
+  public setType<T extends Component>(type: T): T extends 'Button' ? ButtonBuilder<S> : StringSelectMenuBuilder<S> {
     this.type = type;
 
     switch (type) {
       case 'Button':
-        return new ButtonBuilder<unknown>() as T extends 'Button'
-          ? ButtonBuilder<ButtonContext<S>>
-          : StringSelectMenuBuilder<unknown>;
+        return new ButtonBuilder<unknown>() as T extends 'Button' ? ButtonBuilder<S> : StringSelectMenuBuilder<S>;
 
       case 'StringSelect':
         return new StringSelectMenuBuilder<unknown>() as T extends 'Button'
-          ? ButtonBuilder<ButtonContext<S>>
-          : StringSelectMenuBuilder<unknown>;
+          ? ButtonBuilder<S>
+          : StringSelectMenuBuilder<S>;
 
       default:
         throw new VesperaError('Unknown component type');

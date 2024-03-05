@@ -1,0 +1,184 @@
+---
+title: SlashCommandSubcommandGroupBuilder
+description: SlashCommandSubcommandGroupBuilder
+---
+[vespera](../README) / [Exports](../modules) / SlashCommandSubcommandGroupBuilder
+
+# Class: SlashCommandSubcommandGroupBuilder\<S\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+## Hierarchy
+
+- `SlashCommandSubcommandGroupBuilder`
+
+  ↳ **`SlashCommandSubcommandGroupBuilder`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](SlashCommandSubcommandGroupBuilder#constructor)
+
+### Properties
+
+- [components](SlashCommandSubcommandGroupBuilder#components)
+- [middlewares](SlashCommandSubcommandGroupBuilder#middlewares)
+- [run](SlashCommandSubcommandGroupBuilder#run)
+
+### Methods
+
+- [addComponent](SlashCommandSubcommandGroupBuilder#addcomponent)
+- [addSubcommand](SlashCommandSubcommandGroupBuilder#addsubcommand)
+- [createMiddleware](SlashCommandSubcommandGroupBuilder#createmiddleware)
+- [execute](SlashCommandSubcommandGroupBuilder#execute)
+
+## Constructors
+
+### constructor
+
+• **new SlashCommandSubcommandGroupBuilder**\<`S`\>(): [`SlashCommandSubcommandGroupBuilder`](SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+#### Returns
+
+[`SlashCommandSubcommandGroupBuilder`](SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+#### Inherited from
+
+DISCORDJSSlashCommandSubcommandGroupBuilder.constructor
+
+## Properties
+
+### components
+
+• **components**: [`Record`]( https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type )\<[`Component`](../interfaces/Component), [`Record`]( https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type )\<`string`, [`Callback`](../modules#callback)\<[`unknown`]\>\>\>
+
+#### Defined in
+
+[apps/vespera/src/structure/SlashCommand.ts:201](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/SlashCommand.ts#L201)
+
+___
+
+### middlewares
+
+• **middlewares**: [`Callback`](../modules#callback)\<[[`CommandContext`](CommandContext)\<`S`\>]\>[]
+
+#### Defined in
+
+[apps/vespera/src/structure/SlashCommand.ts:196](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/SlashCommand.ts#L196)
+
+___
+
+### run
+
+• **run**: [`Callback`](../modules#callback)\<[[`CommandContext`](CommandContext)\<`S`\>]\>
+
+#### Defined in
+
+[apps/vespera/src/structure/SlashCommand.ts:191](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/SlashCommand.ts#L191)
+
+## Methods
+
+### addComponent
+
+▸ **addComponent**(`callback`): [`SlashCommandSubcommandGroupBuilder`](SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+Adds a component to the list of components.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callback` | [`Callback`](../modules#callback)\<[[`createComponentBuilder`](createComponentBuilder)\<`unknown`\>]\> |
+
+#### Returns
+
+[`SlashCommandSubcommandGroupBuilder`](SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+the current instance of the class
+
+#### Defined in
+
+[apps/vespera/src/structure/SlashCommand.ts:231](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/SlashCommand.ts#L231)
+
+___
+
+### addSubcommand
+
+▸ **addSubcommand**(`callback`): [`SlashCommandSubcommandGroupBuilder`](SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callback` | [`Callback`](../modules#callback)\<[[`SlashCommandSubcommandBuilder`](SlashCommandSubcommandBuilder)\<`S`\>]\> |
+
+#### Returns
+
+[`SlashCommandSubcommandGroupBuilder`](SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+#### Overrides
+
+DISCORDJSSlashCommandSubcommandGroupBuilder.addSubcommand
+
+#### Defined in
+
+[apps/vespera/src/structure/SlashCommand.ts:263](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/SlashCommand.ts#L263)
+
+___
+
+### createMiddleware
+
+▸ **createMiddleware**(`callback`): [`SlashCommandSubcommandGroupBuilder`](SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+createMiddleware - adds a callback to the list of middlewares.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | [`Callback`](../modules#callback)\<[[`CommandContext`](CommandContext)\<`S`\>]\> | the callback to be added to the middlewares list |
+
+#### Returns
+
+[`SlashCommandSubcommandGroupBuilder`](SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+the current instance of the class
+
+#### Defined in
+
+[apps/vespera/src/structure/SlashCommand.ts:220](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/SlashCommand.ts#L220)
+
+___
+
+### execute
+
+▸ **execute**(`callback`): [`SlashCommandSubcommandGroupBuilder`](SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+Execute the callback function and set it as the 'run' property, then return the current object.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | [`Callback`](../modules#callback)\<[[`CommandContext`](CommandContext)\<`S`\>]\> | The callback function to be executed and set as the 'run' property. |
+
+#### Returns
+
+[`SlashCommandSubcommandGroupBuilder`](SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+The current object.
+
+#### Defined in
+
+[apps/vespera/src/structure/SlashCommand.ts:209](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/SlashCommand.ts#L209)

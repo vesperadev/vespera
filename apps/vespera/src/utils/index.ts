@@ -1,3 +1,5 @@
+import type { SnakeCasedPropertiesDeep } from 'type-fest';
+
 export * from '@discordjs/util';
 export * from '@discordjs/formatters';
 export * from '@discordjs/collection';
@@ -19,4 +21,19 @@ export type Callback<T extends unknown[]> = (...callback: T) => Promise<T | unkn
 export function getTimestamp(snowflake: string) {
   const milliseconds = BigInt(parseInt(snowflake)) >> 22n;
   return new Date(Number(milliseconds) + 1420070400000).valueOf();
+}
+
+/**
+ * Converts the keys of an object to snake case recursively.
+ *
+ * @param {object} object - The input object to convert to snake case
+ * @return {object} The object with keys converted to snake case
+ */
+export function toSnakeCase<Input extends object>(object: Input): SnakeCasedPropertiesDeep<Input> {
+  return Object.fromEntries(
+    Object.entries(object).map(([key, value]) => [
+      key.replace(/([A-Z])/g, '_$1').toLowerCase(),
+      value instanceof Object ? toSnakeCase(value) : value,
+    ]),
+  ) as SnakeCasedPropertiesDeep<Input>;
 }

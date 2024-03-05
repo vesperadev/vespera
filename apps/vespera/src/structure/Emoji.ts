@@ -1,13 +1,13 @@
 /* eslint-disable no-bitwise */
 /* eslint-disable @typescript-eslint/non-nullable-type-assertion-style */
-import { APIEmoji } from '@discordjs/core';
-import { formatEmoji } from '@discordjs/formatters';
-import { BaseImageURLOptions } from '@discordjs/rest';
+import type { APIEmoji } from '../core';
+import type { BaseImageURLOptions } from '../rest';
+import { formatEmoji } from '../utils';
 
 import { Base } from './Base';
-import { User } from './User';
-import { Client } from './Client';
+import type { Client } from './Client';
 import { VesperaError } from './Error';
+import { User } from './User';
 
 export class Emoji extends Base {
   public raw: APIEmoji;

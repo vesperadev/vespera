@@ -1,5 +1,7 @@
+import type { CamelCasedPropertiesDeep } from 'type-fest';
+
 import type { Client } from '..';
-import { Base } from '..';
+import { Base, VesperaError } from '..';
 import type {
   APIChannel,
   APIInvite,
@@ -15,7 +17,7 @@ import type {
 } from '../core';
 import { ChannelType } from '../core';
 import type { RawFile } from '../rest';
-import { channelLink, channelMention, getTimestamp } from '../utils';
+import { channelLink, channelMention, getTimestamp, toSnakeCase } from '../utils';
 
 import { MessageManager } from './Manager/Message';
 
@@ -236,8 +238,17 @@ export class Channel extends Base {
    * @param {RESTPostAPIChannelMessageJSONBody & { files?: RawFile[] }} data - The data for the message.
    * @return {Promise<APIMessage>} A promise that resolves to the created message.
    */
-  public async send(data: RESTPostAPIChannelMessageJSONBody & { files?: RawFile[] }): Promise<APIMessage> {
-    return this.client.api.channels.createMessage(this.id, data);
+  public async send(
+    data: CamelCasedPropertiesDeep<RESTPostAPIChannelMessageJSONBody & { files?: RawFile[] }>,
+  ): Promise<APIMessage> {
+    try {
+      return this.client.api.channels.createMessage(
+        this.id,
+        toSnakeCase(data) as Parameters<typeof this.client.api.channels.createMessage>[1],
+      );
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**
@@ -249,9 +260,17 @@ export class Channel extends Base {
    */
   public async editMessage(
     messageId: string,
-    data: RESTPatchAPIChannelMessageJSONBody & { files?: RawFile[] },
+    data: CamelCasedPropertiesDeep<RESTPatchAPIChannelMessageJSONBody & { files?: RawFile[] }>,
   ): Promise<APIMessage> {
-    return this.client.api.channels.editMessage(this.id, messageId, data);
+    try {
+      return this.client.api.channels.editMessage(
+        this.id,
+        messageId,
+        toSnakeCase(data) as Parameters<typeof this.client.api.channels.editMessage>[2],
+      );
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**
@@ -261,7 +280,11 @@ export class Channel extends Base {
    * @return {Promise<APIMessage>} A Promise that resolves to the fetched message.
    */
   public async fetchMessage(messageId: string): Promise<APIMessage> {
-    return this.client.api.channels.getMessage(this.id, messageId);
+    try {
+      return this.client.api.channels.getMessage(this.id, messageId);
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**
@@ -270,8 +293,12 @@ export class Channel extends Base {
    * @param {RESTGetAPIChannelMessagesQuery } data - The data used to fetch messages.
    * @return {Promise<APIMessage[]>} A promise that resolves to an array of API messages.
    */
-  public async fetchMessages(data: RESTGetAPIChannelMessagesQuery): Promise<APIMessage[]> {
-    return this.client.api.channels.getMessages(this.id, data);
+  public async fetchMessages(data: CamelCasedPropertiesDeep<RESTGetAPIChannelMessagesQuery>): Promise<APIMessage[]> {
+    try {
+      return this.client.api.channels.getMessages(this.id, data);
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**
@@ -281,7 +308,11 @@ export class Channel extends Base {
    * @return {Promise<APIMessage>} A promise that resolves to the crossposted message.
    */
   public async crosspostMessage(messageId: string): Promise<APIMessage> {
-    return this.client.api.channels.crosspostMessage(this.id, messageId);
+    try {
+      return this.client.api.channels.crosspostMessage(this.id, messageId);
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**
@@ -290,8 +321,12 @@ export class Channel extends Base {
    * @param {RESTPostAPIChannelInviteJSONBody} data - The data used to create the invite.
    * @return {Promise<APIInvite>} The created invite.
    */
-  public async createInvite(data: RESTPostAPIChannelInviteJSONBody): Promise<APIInvite> {
-    return this.client.api.channels.createInvite(this.id, data);
+  public async createInvite(data: CamelCasedPropertiesDeep<RESTPostAPIChannelInviteJSONBody>): Promise<APIInvite> {
+    try {
+      return this.client.api.channels.createInvite(this.id, data);
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**
@@ -300,17 +335,26 @@ export class Channel extends Base {
    * @return {Promise<APIInvite[]>} The list of invites.
    */
   public async getInvites(): Promise<APIInvite[]> {
-    return this.client.api.channels.getInvites(this.id);
+    try {
+      return this.client.api.channels.getInvites(this.id);
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**
    * Edits the channel
    *
    * @param {RESTPatchAPIChannelJSONBody} data - The data used to edit the channel
-   * @return {Promise<APIChannel>} Promise that resolves to the edited channel
+   * @return {Promise<Channel>} Promise that resolves to the edited channel
    */
-  public async edit(data: RESTPatchAPIChannelJSONBody): Promise<APIChannel> {
-    return this.client.api.channels.edit(this.id, data);
+  public async edit(data: CamelCasedPropertiesDeep<RESTPatchAPIChannelJSONBody>): Promise<Channel> {
+    try {
+      const newChannel = await this.client.api.channels.edit(this.id, data);
+      return new Channel(this.client, newChannel);
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**
@@ -320,7 +364,11 @@ export class Channel extends Base {
    * @return {Promise<void>} Promise that resolves when the messages are deleted
    */
   public async bulkDeleteMessages(messages: string[]): Promise<void> {
-    return this.client.api.channels.bulkDeleteMessages(this.id, messages);
+    try {
+      return this.client.api.channels.bulkDeleteMessages(this.id, messages);
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**
@@ -330,7 +378,11 @@ export class Channel extends Base {
    * @return {Promise<void>} Promise that resolves when the message is pinned
    */
   public async pinMessage(messageId: string): Promise<void> {
-    return this.client.api.channels.pinMessage(this.id, messageId);
+    try {
+      return this.client.api.channels.pinMessage(this.id, messageId);
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**
@@ -340,15 +392,23 @@ export class Channel extends Base {
    * @return {Promise<void>} Promise that resolves when the message is unpinned
    */
   public async unpinMessage(messageId: string): Promise<void> {
-    return this.client.api.channels.unpinMessage(this.id, messageId);
+    try {
+      return this.client.api.channels.unpinMessage(this.id, messageId);
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**
    * Fetches this channel.
-   * @returns {Promise<BaseChannel>}
+   * @returns {Promise<Channel>}
    */
   fetch() {
-    return this.client.channels.fetch(this.id);
+    try {
+      return this.client.channels.fetch(this.id);
+    } catch (error) {
+      throw new VesperaError(error instanceof Error ? error.message : 'Unknown error');
+    }
   }
 
   /**

@@ -21,7 +21,7 @@ description: BaseContext
 
   ↳↳ [`CommandContext`](CommandContext)
 
-  ↳↳ [`ButtonContext`](ButtonContext)
+  ↳↳ [`ComponentContext`](ComponentContext)
 
 ## Table of contents
 
@@ -36,6 +36,7 @@ description: BaseContext
 - [channel](BaseContext#channel)
 - [channelId](BaseContext#channelid)
 - [client](BaseContext#client)
+- [deferred](BaseContext#deferred)
 - [entitlement](BaseContext#entitlement)
 - [guildId](BaseContext#guildid)
 - [guildLocale](BaseContext#guildlocale)
@@ -43,6 +44,7 @@ description: BaseContext
 - [locale](BaseContext#locale)
 - [memberPermissions](BaseContext#memberpermissions)
 - [raw](BaseContext#raw)
+- [replied](BaseContext#replied)
 - [state](BaseContext#state)
 - [token](BaseContext#token)
 - [type](BaseContext#type)
@@ -101,8 +103,9 @@ description: BaseContext
 
 [Base](Base).[constructor](Base#constructor)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:160](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L160)
 
 ## Properties
 
@@ -110,8 +113,24 @@ description: BaseContext
 
 • **appPermissions**: `undefined` \| `string`
 
+app permissions of the user who triggered the interaction
+will only be present if the interaction was triggered in a guild
 
+**`Name`**
 
+appPermissions
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:116](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L116)
 
 ___
 
@@ -119,8 +138,21 @@ ___
 
 • **applicationId**: `T`[``"application_id"``]
 
+**`Name`**
 
+applicationId
 
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:53](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L53)
 
 ___
 
@@ -128,8 +160,21 @@ ___
 
 • **channel**: `undefined` \| [`Channel`](Channel)
 
+**`Name`**
 
+channel
 
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:73](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L73)
 
 ___
 
@@ -137,8 +182,21 @@ ___
 
 • **channelId**: `undefined` \| `string`
 
+**`Name`**
 
+channelId
 
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:63](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L63)
 
 ___
 
@@ -150,8 +208,19 @@ ___
 
 [Base](Base).[client](Base#client)
 
+#### Defined in
 
+[apps/vespera/src/structure/Base.ts:4](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Base.ts#L4)
 
+___
+
+### deferred
+
+• **deferred**: `boolean` = `false`
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:157](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L157)
 
 ___
 
@@ -159,8 +228,21 @@ ___
 
 • **entitlement**: `T`[``"entitlements"``]
 
+**`Name`**
 
+entitlement
 
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:151](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L151)
 
 ___
 
@@ -168,8 +250,21 @@ ___
 
 • **guildId**: `T`[``"guild_id"``]
 
+**`Name`**
 
+guildId
 
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:83](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L83)
 
 ___
 
@@ -177,8 +272,21 @@ ___
 
 • **guildLocale**: `T`[``"guild_locale"``]
 
+**`Name`**
 
+guildLocale
 
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:93](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L93)
 
 ___
 
@@ -186,8 +294,21 @@ ___
 
 • **id**: `T`[``"id"``]
 
+**`Name`**
 
+id
 
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:43](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L43)
 
 ___
 
@@ -195,8 +316,23 @@ ___
 
 • **locale**: `T`[``"locale"``]
 
+locale of the user who triggered the interaction
 
+**`Name`**
 
+locale
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:141](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L141)
 
 ___
 
@@ -204,8 +340,24 @@ ___
 
 • **memberPermissions**: `undefined` \| `string`
 
+member permissions of the user who triggered the interaction
+will only be present if the interaction was triggered in a guild
 
+**`Name`**
 
+memberPermissions
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:129](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L129)
 
 ___
 
@@ -213,8 +365,19 @@ ___
 
 • **raw**: `T`
 
+#### Defined in
 
+[apps/vespera/src/structure/Context/Base.ts:153](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L153)
 
+___
+
+### replied
+
+• **replied**: `boolean` = `false`
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:158](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L158)
 
 ___
 
@@ -222,8 +385,9 @@ ___
 
 • **state**: `S`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:155](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L155)
 
 ___
 
@@ -231,8 +395,21 @@ ___
 
 • **token**: `T`[``"token"``]
 
+**`Name`**
 
+token
 
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:33](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L33)
 
 ___
 
@@ -240,8 +417,21 @@ ___
 
 • **type**: `T`[``"type"``]
 
+**`Name`**
 
+type
 
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:23](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L23)
 
 ___
 
@@ -249,8 +439,21 @@ ___
 
 • **version**: `T`[``"version"``]
 
+**`Name`**
 
+version
 
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+BaseContext
+
+#### Defined in
+
+[apps/vespera/src/structure/Context/Base.ts:103](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L103)
 
 ## Methods
 
@@ -266,8 +469,9 @@ Returns the creation date of the interaction.
 
 the creation date
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:214](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L214)
 
 ___
 
@@ -283,8 +487,9 @@ Get the timestamp when this interaction was created.
 
 the timestamp of the interaction
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:200](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L200)
 
 ___
 
@@ -307,8 +512,9 @@ A method to decorate the state object with a new key and data.
 
 the current instance of the class for method chaining
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:187](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L187)
 
 ___
 
@@ -322,8 +528,9 @@ Indicates whether this interaction is received from a DM.
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:230](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L230)
 
 ___
 
@@ -337,8 +544,9 @@ Indicates whether this interaction is received from a guild.
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:222](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L222)
 
 ___
 
@@ -352,8 +560,9 @@ Indicates whether this interaction is a select menu of any known type.
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:338](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L338)
 
 ___
 
@@ -367,8 +576,9 @@ Indicates whether this interaction is an AutocompleteInteraction
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:238](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L238)
 
 ___
 
@@ -382,8 +592,9 @@ Indicates whether this interaction is a ButtonInteraction.
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:318](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L318)
 
 ___
 
@@ -397,8 +608,9 @@ Indicates whether this interaction is a ChannelSelectMenuInteraction
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:388](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L388)
 
 ___
 
@@ -412,8 +624,9 @@ Indicates whether this interaction is a ChatInputCommandInteraction.
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:256](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L256)
 
 ___
 
@@ -421,14 +634,19 @@ ___
 
 ▸ **isCommand**(): `boolean`
 
-Indicates whether this interaction is a CommandInteraction
+The function `isCommand()` checks if the type of interaction is an Application Command in
+TypeScript.
 
 #### Returns
 
 `boolean`
 
+The `isCommand()` function is returning a boolean value based on whether the `type`
+property of the object is equal to `InteractionType.ApplicationCommand`.
 
+#### Defined in
 
+[apps/vespera/src/structure/Context/Base.ts:248](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L248)
 
 ___
 
@@ -442,8 +660,9 @@ Indicates whether this interaction is a ContextMenuCommandInteraction
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:267](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L267)
 
 ___
 
@@ -457,8 +676,9 @@ Indicates whether this interaction is a MentionableSelectMenuInteraction
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:399](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L399)
 
 ___
 
@@ -472,8 +692,9 @@ Indicates whether this interaction is a MessageComponentInteraction
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:280](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L280)
 
 ___
 
@@ -487,8 +708,9 @@ Indicates whether this interaction is a MessageContextMenuCommandInteraction
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:307](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L307)
 
 ___
 
@@ -502,8 +724,9 @@ Indicates whether this interaction is a ModalSubmitInteraction
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:288](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L288)
 
 ___
 
@@ -517,8 +740,9 @@ Indicates whether this interaction can be replied to.
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:410](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L410)
 
 ___
 
@@ -532,8 +756,9 @@ Indicates whether this interaction is a RoleSelectMenuInteraction
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:377](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L377)
 
 ___
 
@@ -551,8 +776,9 @@ Indicates whether this interaction is a StringSelectMenuInteraction.
 
 Use BaseInteraction#isStringSelectMenu instead.
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:330](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L330)
 
 ___
 
@@ -566,8 +792,9 @@ Indicates whether this interaction is a StringSelectMenuInteraction.
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:355](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L355)
 
 ___
 
@@ -581,8 +808,9 @@ Indicates whether this interaction is a UserContextMenuCommandInteraction
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:296](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L296)
 
 ___
 
@@ -596,5 +824,6 @@ Indicates whether this interaction is a UserSelectMenuInteraction
 
 `boolean`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Context/Base.ts:366](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Context/Base.ts#L366)

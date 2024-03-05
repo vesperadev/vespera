@@ -35,11 +35,14 @@ description: ClientUser
 
 • **new ClientUser**(`client`): [`ClientUser`](ClientUser)
 
+The constructor initializes the id property of the class instance with the application id from the
+client options.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `client` | [`Client`](Client) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `client` | [`Client`](Client) | The `client` parameter in the constructor is an instance of the `Client` class. It is being passed to the constructor to initialize the object. |
 
 #### Returns
 
@@ -49,8 +52,9 @@ description: ClientUser
 
 [Base](Base).[constructor](Base#constructor)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/ClientUser.ts:15](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ClientUser.ts#L15)
 
 ## Properties
 
@@ -62,8 +66,9 @@ description: ClientUser
 
 [Base](Base).[client](Base#client)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Base.ts:4](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Base.ts#L4)
 
 ___
 
@@ -71,8 +76,9 @@ ___
 
 • **id**: `string`
 
+#### Defined in
 
-
+[apps/vespera/src/structure/ClientUser.ts:7](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ClientUser.ts#L7)
 
 ## Methods
 
@@ -92,8 +98,9 @@ Edits the logged in client.
 
 [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
 
+#### Defined in
 
-
+[apps/vespera/src/structure/ClientUser.ts:33](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ClientUser.ts#L33)
 
 ___
 
@@ -122,8 +129,9 @@ client.user.setAvatar('./avatar.png')
   .catch(console.error);
 ```
 
+#### Defined in
 
-
+[apps/vespera/src/structure/ClientUser.ts:64](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ClientUser.ts#L64)
 
 ___
 
@@ -154,5 +162,6 @@ client.user.setUsername('discordjs')
   .catch(console.error);
 ```
 
+#### Defined in
 
-
+[apps/vespera/src/structure/ClientUser.ts:50](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ClientUser.ts#L50)

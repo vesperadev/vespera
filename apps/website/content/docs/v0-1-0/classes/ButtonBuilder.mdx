@@ -1,0 +1,197 @@
+---
+title: ButtonBuilder
+description: ButtonBuilder
+---
+[vespera](../README) / [Exports](../modules) / ButtonBuilder
+
+# Class: ButtonBuilder\<S\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+## Hierarchy
+
+- `ButtonBuilder`
+
+  ↳ **`ButtonBuilder`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](ButtonBuilder#constructor)
+
+### Properties
+
+- [components](ButtonBuilder#components)
+- [middlewares](ButtonBuilder#middlewares)
+- [run](ButtonBuilder#run)
+
+### Methods
+
+- [addComponent](ButtonBuilder#addcomponent)
+- [createMiddleware](ButtonBuilder#createmiddleware)
+- [execute](ButtonBuilder#execute)
+
+## Constructors
+
+### constructor
+
+• **new ButtonBuilder**\<`S`\>(`data?`): [`ButtonBuilder`](ButtonBuilder)\<`S`\>
+
+Creates a new button from API data.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data?` | [`Partial`]( https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype )\<`APIButtonComponent`\> | The API data to create this button with |
+
+#### Returns
+
+[`ButtonBuilder`](ButtonBuilder)\<`S`\>
+
+**`Example`**
+
+Creating a button from an API data object:
+```ts
+const button = new ButtonBuilder({
+	custom_id: 'a cool button',
+	style: ButtonStyle.Primary,
+	label: 'Click Me',
+	emoji: {
+		name: 'smile',
+		id: '123456789012345678',
+	},
+});
+```
+
+**`Example`**
+
+Creating a button using setters and API data:
+```ts
+const button = new ButtonBuilder({
+	style: ButtonStyle.Secondary,
+	label: 'Click Me',
+})
+	.setEmoji({ name: '🙂' })
+	.setCustomId('another cool button');
+```
+
+#### Inherited from
+
+DISCORDJSButtonBuilder.constructor
+
+#### Defined in
+
+
+## Properties
+
+### components
+
+• **components**: [`Record`]( https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type )\<[`Component`](../interfaces/Component), [`Record`]( https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type )\<`string`, [`Callback`](../modules#callback)\<[`unknown`]\>\>\>
+
+#### Defined in
+
+[apps/vespera/src/structure/ButtonBuilder.ts:24](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ButtonBuilder.ts#L24)
+
+___
+
+### middlewares
+
+• **middlewares**: [`Callback`](../modules#callback)\<[[`ButtonContext`](ButtonContext)\<`S`\>]\>[]
+
+#### Defined in
+
+[apps/vespera/src/structure/ButtonBuilder.ts:19](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ButtonBuilder.ts#L19)
+
+___
+
+### run
+
+• **run**: [`Callback`](../modules#callback)\<[[`ButtonContext`](ButtonContext)\<`S`\>]\>
+
+#### Defined in
+
+[apps/vespera/src/structure/ButtonBuilder.ts:14](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ButtonBuilder.ts#L14)
+
+## Methods
+
+### addComponent
+
+▸ **addComponent**(`callback`): [`ButtonBuilder`](ButtonBuilder)\<`S`\>
+
+Adds a component to the list of components.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callback` | [`Callback`](../modules#callback)\<[[`createComponentBuilder`](createComponentBuilder)\<`unknown`\>]\> |
+
+#### Returns
+
+[`ButtonBuilder`](ButtonBuilder)\<`S`\>
+
+the current instance of the class
+
+#### Defined in
+
+[apps/vespera/src/structure/ButtonBuilder.ts:54](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ButtonBuilder.ts#L54)
+
+___
+
+### createMiddleware
+
+▸ **createMiddleware**(`callback`): [`ButtonBuilder`](ButtonBuilder)\<`S`\>
+
+createMiddleware - adds a callback to the list of middlewares.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | [`Callback`](../modules#callback)\<[[`ButtonContext`](ButtonContext)\<`S`\>]\> | the callback to be added to the middlewares list |
+
+#### Returns
+
+[`ButtonBuilder`](ButtonBuilder)\<`S`\>
+
+the current instance of the class
+
+#### Defined in
+
+[apps/vespera/src/structure/ButtonBuilder.ts:43](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ButtonBuilder.ts#L43)
+
+___
+
+### execute
+
+▸ **execute**(`callback`): [`ButtonBuilder`](ButtonBuilder)\<`S`\>
+
+Execute the callback function and set it as the 'run' property, then return the current object.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | [`Callback`](../modules#callback)\<[[`ButtonContext`](ButtonContext)\<`S`\>]\> | The callback function to be executed and set as the 'run' property. |
+
+#### Returns
+
+[`ButtonBuilder`](ButtonBuilder)\<`S`\>
+
+The current object.
+
+#### Defined in
+
+[apps/vespera/src/structure/ButtonBuilder.ts:32](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ButtonBuilder.ts#L32)

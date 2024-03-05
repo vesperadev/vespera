@@ -1,5 +1,5 @@
 import { Avatar, Flex, Text } from '@radix-ui/themes';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 export const Logo: FC = () => {
   return (

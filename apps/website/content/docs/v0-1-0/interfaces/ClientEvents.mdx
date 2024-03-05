@@ -14,8 +14,6 @@ Interface representing the events that a Client can emit.
 
 - [button](ClientEvents#button)
 - [command](ClientEvents#command)
-- [commandRegistered](ClientEvents#commandregistered)
-- [commandUnregistered](ClientEvents#commandunregistered)
 - [error](ClientEvents#error)
 - [interaction](ClientEvents#interaction)
 - [request](ClientEvents#request)
@@ -24,75 +22,58 @@ Interface representing the events that a Client can emit.
 
 ### button
 
-• **button**: `Callback`\<[[`ButtonContext`](../classes/ButtonContext)\<`unknown`\>]\>
+• **button**: [`Callback`](../modules#callback)\<[[`ButtonContext`](../classes/ButtonContext)\<`unknown`\>]\>
 
 Emitted when a button interaction is received.
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:80](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L80)
 
 ___
 
 ### command
 
-• **command**: `Callback`\<[[`CommandContext`](../classes/CommandContext)\<`unknown`\>]\>
+• **command**: [`Callback`](../modules#callback)\<[[`CommandContext`](../classes/CommandContext)\<`unknown`\>]\>
 
 Emitted when a command interaction is received.
 
+#### Defined in
 
-
-
-___
-
-### commandRegistered
-
-• **commandRegistered**: `Callback`\<[`RESTPostAPIChatInputApplicationCommandsJSONBody`]\>
-
-Emitted after a command has been successfully registered.
-
-
-
-
-___
-
-### commandUnregistered
-
-• **commandUnregistered**: `Callback`\<[`string`]\>
-
-Emitted after a command has been successfully unregistered.
-
-
-
+[apps/vespera/src/structure/Client.ts:73](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L73)
 
 ___
 
 ### error
 
-• **error**: `Callback`\<[[`VesperaError`](../classes/VesperaError)]\>
+• **error**: [`Callback`](../modules#callback)\<[[`VesperaError`](../classes/VesperaError)]\>
 
 Emitted when an error occurs in the client.
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:59](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L59)
 
 ___
 
 ### interaction
 
-• **interaction**: `Callback`\<[[`BaseContext`](../classes/BaseContext)\<`APIBaseInteraction`\<`InteractionType`, `unknown`\>, `unknown`\>]\>
+• **interaction**: [`Callback`](../modules#callback)\<[[`BaseContext`](../classes/BaseContext)\<`APIBaseInteraction`\<`InteractionType`, `unknown`\>, `unknown`\>]\>
 
 Emitted when an interaction is received.
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:66](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L66)
 
 ___
 
 ### request
 
-• **request**: `Callback`\<[[`Request`]( https://developer.mozilla.org/docs/Web/API/Request )]\>
+• **request**: [`Callback`](../modules#callback)\<[[`Request`]( https://developer.mozilla.org/docs/Web/API/Request )]\>
 
 Emitted when the client makes a request.
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Client.ts:52](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Client.ts#L52)

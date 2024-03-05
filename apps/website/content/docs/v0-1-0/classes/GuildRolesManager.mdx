@@ -1,0 +1,142 @@
+---
+title: GuildRolesManager
+description: GuildRolesManager
+---
+[vespera](../README) / [Exports](../modules) / GuildRolesManager
+
+# Class: GuildRolesManager
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`GuildRolesManager`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](GuildRolesManager#constructor)
+
+### Properties
+
+- [client](GuildRolesManager#client)
+- [guild](GuildRolesManager#guild)
+
+### Methods
+
+- [delete](GuildRolesManager#delete)
+- [fetch](GuildRolesManager#fetch)
+- [setPositions](GuildRolesManager#setpositions)
+
+## Constructors
+
+### constructor
+
+• **new GuildRolesManager**(`client`, `guild`): [`GuildRolesManager`](GuildRolesManager)
+
+Constructor for creating a new instance of the class.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `client` | [`Client`](Client) | the client object |
+| `guild` | [`Guild`](Guild) | - |
+
+#### Returns
+
+[`GuildRolesManager`](GuildRolesManager)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+#### Defined in
+
+
+## Properties
+
+### client
+
+• **client**: [`Client`](Client)
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+#### Defined in
+
+[apps/vespera/src/structure/Base.ts:4](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Base.ts#L4)
+
+___
+
+### guild
+
+• **guild**: [`Guild`](Guild)
+
+#### Defined in
+
+
+## Methods
+
+### delete
+
+▸ **delete**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `reason?` | `string` |
+| › `role` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+#### Defined in
+
+
+___
+
+### fetch
+
+▸ **fetch**(`id`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<``null`` \| [`Role`](Role)\>
+
+Fetches data using the provided ID.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | The ID used to fetch data. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<``null`` \| [`Role`](Role)\>
+
+The data fetched using the ID.
+
+#### Defined in
+
+
+___
+
+### setPositions
+
+▸ **setPositions**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`RESTPatchAPIGuildRolePositionsResult`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `RESTPatchAPIGuildRolePositionsJSONBody` & \{ `reason?`: `string`  } |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`RESTPatchAPIGuildRolePositionsResult`\>
+
+#### Defined in
+

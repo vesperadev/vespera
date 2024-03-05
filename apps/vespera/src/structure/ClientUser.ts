@@ -2,9 +2,16 @@ import type { Client } from '..';
 import { Base } from '..';
 import type { RESTPatchAPICurrentUserJSONBody, Snowflake } from '../core';
 
+/* This class extends the Base class and represents a client user. */
 export class ClientUser extends Base {
   public id: Snowflake;
 
+  /**
+   * The constructor initializes the id property of the class instance with the application id from the
+   * client options.
+   * @param {Client} client - The `client` parameter in the constructor is an instance of the `Client`
+   * class. It is being passed to the constructor to initialize the object.
+   */
   constructor(client: Client) {
     super(client);
 

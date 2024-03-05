@@ -1,5 +1,4 @@
 import { ButtonBuilder } from '../structure/ButtonBuilder';
-import type { ButtonContext } from '../structure/Context/ButtonContext';
 import type { Callback } from '../utils';
 
 /**
@@ -7,17 +6,17 @@ import type { Callback } from '../utils';
  *
  * @typeParam S - The state type that extends `unknown` by default.
  * @callback Button
- * @param {ButtonBuilder<ButtonContext<S>>} builder - The builder for creating a button.
+ * @param {ButtonBuilder<S>} builder - The builder for creating a button.
  * @returns A button callback result.
  */
-export type Button<S extends unknown = unknown> = Callback<[ButtonBuilder<ButtonContext<S>>]>;
+export type Button<S extends unknown = unknown> = Callback<[ButtonBuilder<S>]>;
 
 /**
- * Creates a button with the given callback function.
- *
- * @param {Button<S>} command - The callback function for creating the button.
- * @return {ButtonBuilder<ButtonContext<S>>} The result of calling the callback function with a new ButtonBuilder.
+ * The function `createButton` creates a button using a button builder.
+ * @param button - The `button` parameter is a function that takes a `ButtonBuilder` instance as an
+ * argument and returns a `ButtonBuilder` instance with a specific state `S`.
+ * @returns The `createButton` function is returning a `ButtonBuilder<S>` instance.
  */
 export function createButton<S extends unknown = unknown>(button: Button<S>) {
-  return button(new ButtonBuilder()) as ButtonBuilder<ButtonContext<S>>;
+  return button(new ButtonBuilder()) as ButtonBuilder<S>;
 }

@@ -1,11 +1,13 @@
-import { create } from '@/components/ui/icon';
+import { Box, Card, Container, Flex, Grid, Heading, Section, Text } from '@radix-ui/themes';
 import { DocsLayout } from 'fumadocs-ui/layout';
 import { LayoutTemplate } from 'lucide-react';
-import { docs } from '../../lib/source';
-import { Box, Card, Container, Flex, Grid, Heading, Section, Text } from '@radix-ui/themes';
-import { Logo } from '@/components/logo';
 import Link from 'next/link';
+
+import { Logo } from '@/components/logo';
+import { create } from '@/components/ui/icon';
 import { useVersions } from '@/lib/hooks/versions';
+
+import { docs } from '../../lib/source';
 
 export default function DocsHome() {
   const versions = useVersions();

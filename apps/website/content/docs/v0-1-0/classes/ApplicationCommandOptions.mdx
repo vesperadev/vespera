@@ -6,6 +6,8 @@ description: ApplicationCommandOptions
 
 # Class: ApplicationCommandOptions
 
+Represents command options within the application.
+
 ## Hierarchy
 
 - [`Base`](Base)
@@ -26,15 +28,19 @@ description: ApplicationCommandOptions
 
 ### Methods
 
+- [getAttachmentOption](ApplicationCommandOptions#getattachmentoption)
 - [getBooleanOption](ApplicationCommandOptions#getbooleanoption)
 - [getChannelOption](ApplicationCommandOptions#getchanneloption)
+- [getIntegerOption](ApplicationCommandOptions#getintegeroption)
 - [getNumberOption](ApplicationCommandOptions#getnumberoption)
 - [getRoleOption](ApplicationCommandOptions#getroleoption)
 - [getStringOption](ApplicationCommandOptions#getstringoption)
+- [getUserOption](ApplicationCommandOptions#getuseroption)
 - [resolveAttachmentOption](ApplicationCommandOptions#resolveattachmentoption)
 - [resolveChannelOption](ApplicationCommandOptions#resolvechanneloption)
 - [resolveOption](ApplicationCommandOptions#resolveoption)
 - [resolveRoleOption](ApplicationCommandOptions#resolveroleoption)
+- [resolveUserOption](ApplicationCommandOptions#resolveuseroption)
 
 ## Constructors
 
@@ -42,13 +48,15 @@ description: ApplicationCommandOptions
 
 • **new ApplicationCommandOptions**(`client`, `data`, `resolved`): [`ApplicationCommandOptions`](ApplicationCommandOptions)
 
+Constructs a new instance of the ApplicationCommandOptions class.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `client` | [`Client`](Client) |
-| `data` | `APIApplicationCommandInteractionDataOption`[] |
-| `resolved` | `undefined` \| `APIInteractionDataResolved` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `client` | [`Client`](Client) | The client instance |
+| `data` | `APIApplicationCommandInteractionDataOption`[] | The raw data for the command options |
+| `resolved` | `undefined` \| `APIInteractionDataResolved` | The resolved data for the command options |
 
 #### Returns
 
@@ -58,8 +66,9 @@ description: ApplicationCommandOptions
 
 [Base](Base).[constructor](Base#constructor)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:40](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L40)
 
 ## Properties
 
@@ -71,17 +80,21 @@ description: ApplicationCommandOptions
 
 [Base](Base).[client](Base#client)
 
+#### Defined in
 
-
+[apps/vespera/src/structure/Base.ts:4](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/Base.ts#L4)
 
 ___
 
 ### data
 
-• **data**: (`undefined` \| `APIApplicationCommandInteractionDataChannelOption` \| `APIApplicationCommandInteractionDataRoleOption` \| `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `name`: `string` ; `type`: `Channel` ; `value`: [`Channel`](Channel)  } \| \{ `name`: `string` ; `type`: `Role` ; `value`: [`Role`](Role)  } \| \{ `name`: `string` ; `type`: `Attachment` ; `value`: `Attachment`  } \| \{ `name`: `string` ; `type`: `Boolean` ; `value`: `boolean`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `String` ; `value`: `string`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Integer` ; `value`: `number`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Number` ; `value`: `number`  })[]
+• **data**: (`undefined` \| `APIApplicationCommandInteractionDataUserOption` \| `APIApplicationCommandInteractionDataChannelOption` \| `APIApplicationCommandInteractionDataRoleOption` \| `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `value`: [`User`](User)  } \| \{ `value`: [`Channel`](Channel)  } \| \{ `value`: [`Role`](Role)  } \| \{ `value`: [`Attachment`](Attachment)  } \| \{ `value`: `boolean`  } \| \{ `value`: `string`  } \| \{ `value`: `number`  } \| \{ `value`: `number`  })[]
 
+The options (resolved)
 
+#### Defined in
 
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:25](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L25)
 
 ___
 
@@ -89,14 +102,19 @@ ___
 
 • **resolved**: `undefined` \| `APIInteractionDataResolved`
 
+The resolved data
 
+#### Defined in
 
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:31](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L31)
 
 ## Methods
 
-### getBooleanOption
+### getAttachmentOption
 
-▸ **getBooleanOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? `boolean` : `undefined` \| `boolean`
+▸ **getAttachmentOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? [`Attachment`](Attachment) : `undefined` \| [`Attachment`](Attachment)
+
+Returns the resolved option with the given name.
 
 #### Type parameters
 
@@ -106,17 +124,51 @@ ___
 
 #### Parameters
 
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the option to return. |
+| `required` | `R` | Whether the option is required. |
+
+#### Returns
+
+`R` extends ``true`` ? [`Attachment`](Attachment) : `undefined` \| [`Attachment`](Attachment)
+
+The resolved option with the given name.
+
+#### Defined in
+
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:250](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L250)
+
+___
+
+### getBooleanOption
+
+▸ **getBooleanOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? `boolean` : `undefined` \| `boolean`
+
+Returns the resolved option with the given name.
+
+#### Type parameters
+
 | Name | Type |
 | :------ | :------ |
-| `name` | `string` |
-| `required` | `R` |
+| `R` | extends `boolean` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the option to return. |
+| `required` | `R` | Whether the option is required. |
 
 #### Returns
 
 `R` extends ``true`` ? `boolean` : `undefined` \| `boolean`
 
+The resolved option with the given name.
 
+#### Defined in
 
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:223](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L223)
 
 ___
 
@@ -124,6 +176,8 @@ ___
 
 ▸ **getChannelOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? [`Channel`](Channel) : `undefined` \| [`Channel`](Channel)
 
+Returns the resolved option with the given name.
+
 #### Type parameters
 
 | Name | Type |
@@ -132,17 +186,51 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `required` | `R` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the option to return. |
+| `required` | `R` | Whether the option is required. |
 
 #### Returns
 
 `R` extends ``true`` ? [`Channel`](Channel) : `undefined` \| [`Channel`](Channel)
 
+The resolved option with the given name.
 
+#### Defined in
 
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:265](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L265)
+
+___
+
+### getIntegerOption
+
+▸ **getIntegerOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? `number` : `undefined` \| `number`
+
+Returns the resolved option with the given name.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `R` | extends `boolean` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the option to return. |
+| `required` | `R` | Whether the option is required. |
+
+#### Returns
+
+`R` extends ``true`` ? `number` : `undefined` \| `number`
+
+The resolved option with the given name.
+
+#### Defined in
+
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:211](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L211)
 
 ___
 
@@ -150,6 +238,8 @@ ___
 
 ▸ **getNumberOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? `number` : `undefined` \| `number`
 
+Returns the resolved option with the given name.
+
 #### Type parameters
 
 | Name | Type |
@@ -158,17 +248,20 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `required` | `R` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the option to return. |
+| `required` | `R` | Whether the option is required. |
 
 #### Returns
 
 `R` extends ``true`` ? `number` : `undefined` \| `number`
 
+The resolved option with the given name.
 
+#### Defined in
 
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:199](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L199)
 
 ___
 
@@ -176,6 +269,8 @@ ___
 
 ▸ **getRoleOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? [`Role`](Role) : `undefined` \| [`Role`](Role)
 
+Returns the resolved option with the given name.
+
 #### Type parameters
 
 | Name | Type |
@@ -184,17 +279,20 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `required` | `R` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the option to return. |
+| `required` | `R` | Whether the option is required. |
 
 #### Returns
 
 `R` extends ``true`` ? [`Role`](Role) : `undefined` \| [`Role`](Role)
 
+The resolved option with the given name.
 
+#### Defined in
 
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:280](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L280)
 
 ___
 
@@ -202,6 +300,8 @@ ___
 
 ▸ **getStringOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? `string` : `undefined` \| `string`
 
+Returns the resolved option with the given name.
+
 #### Type parameters
 
 | Name | Type |
@@ -210,90 +310,158 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `required` | `R` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the option to return. |
+| `required` | `R` | Whether the option is required. |
 
 #### Returns
 
 `R` extends ``true`` ? `string` : `undefined` \| `string`
 
+The resolved option with the given name.
 
+#### Defined in
 
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:187](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L187)
+
+___
+
+### getUserOption
+
+▸ **getUserOption**\<`R`\>(`name`, `required`): `R` extends ``true`` ? [`User`](User) : `undefined` \| [`User`](User)
+
+Returns the resolved option with the given name.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `R` | extends `boolean` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `name` | `string` | The name of the option to return. |
+| `required` | `R` | Whether the option is required. |
+
+#### Returns
+
+`R` extends ``true`` ? [`User`](User) : `undefined` \| [`User`](User)
+
+The resolved option with the given name.
+
+#### Defined in
+
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:238](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L238)
 
 ___
 
 ### resolveAttachmentOption
 
-▸ **resolveAttachmentOption**(`option`): `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `name`: `string` ; `type`: `Attachment` ; `value`: `Attachment`  }
+▸ **resolveAttachmentOption**(`option`): `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `value`: [`Attachment`](Attachment)  }
+
+Resolves the given attachment option based on its value and returns the updated option.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `option` | `APIApplicationCommandInteractionDataAttachmentOption` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `option` | `APIApplicationCommandInteractionDataAttachmentOption` | The option to be resolved. |
 
 #### Returns
 
-`APIApplicationCommandInteractionDataAttachmentOption` \| \{ `name`: `string` ; `type`: `Attachment` ; `value`: `Attachment`  }
+`APIApplicationCommandInteractionDataAttachmentOption` \| \{ `value`: [`Attachment`](Attachment)  }
 
+#### Defined in
 
-
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:110](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L110)
 
 ___
 
 ### resolveChannelOption
 
-▸ **resolveChannelOption**(`option`): `APIApplicationCommandInteractionDataChannelOption` \| \{ `name`: `string` ; `type`: `Channel` ; `value`: [`Channel`](Channel)  }
+▸ **resolveChannelOption**(`option`): `APIApplicationCommandInteractionDataChannelOption` \| \{ `value`: [`Channel`](Channel)  }
+
+Resolves the given channel option based on its value and returns the updated option.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `option` | `APIApplicationCommandInteractionDataChannelOption` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `option` | `APIApplicationCommandInteractionDataChannelOption` | The option to be resolved. |
 
 #### Returns
 
-`APIApplicationCommandInteractionDataChannelOption` \| \{ `name`: `string` ; `type`: `Channel` ; `value`: [`Channel`](Channel)  }
+`APIApplicationCommandInteractionDataChannelOption` \| \{ `value`: [`Channel`](Channel)  }
 
+#### Defined in
 
-
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:148](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L148)
 
 ___
 
 ### resolveOption
 
-▸ **resolveOption**(`option`): `undefined` \| `APIApplicationCommandInteractionDataChannelOption` \| `APIApplicationCommandInteractionDataRoleOption` \| `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `name`: `string` ; `type`: `Channel` ; `value`: [`Channel`](Channel)  } \| \{ `name`: `string` ; `type`: `Role` ; `value`: [`Role`](Role)  } \| \{ `name`: `string` ; `type`: `Attachment` ; `value`: `Attachment`  } \| \{ `name`: `string` ; `type`: `Boolean` ; `value`: `boolean`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `String` ; `value`: `string`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Integer` ; `value`: `number`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Number` ; `value`: `number`  }
+▸ **resolveOption**(`option`): `undefined` \| `APIApplicationCommandInteractionDataUserOption` \| `APIApplicationCommandInteractionDataChannelOption` \| `APIApplicationCommandInteractionDataRoleOption` \| `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `value`: [`User`](User)  } \| \{ `value`: [`Channel`](Channel)  } \| \{ `value`: [`Role`](Role)  } \| \{ `value`: [`Attachment`](Attachment)  } \| \{ `value`: `boolean`  } \| \{ `value`: `string`  } \| \{ `value`: `number`  } \| \{ `value`: `number`  }
+
+Resolves the given option based on its type and returns the updated option.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `option` | `APIApplicationCommandInteractionDataOption` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `option` | `APIApplicationCommandInteractionDataOption` | The option to be resolved. |
 
 #### Returns
 
-`undefined` \| `APIApplicationCommandInteractionDataChannelOption` \| `APIApplicationCommandInteractionDataRoleOption` \| `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `name`: `string` ; `type`: `Channel` ; `value`: [`Channel`](Channel)  } \| \{ `name`: `string` ; `type`: `Role` ; `value`: [`Role`](Role)  } \| \{ `name`: `string` ; `type`: `Attachment` ; `value`: `Attachment`  } \| \{ `name`: `string` ; `type`: `Boolean` ; `value`: `boolean`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `String` ; `value`: `string`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Integer` ; `value`: `number`  } \| \{ `focused?`: `boolean` ; `name`: `string` ; `type`: `Number` ; `value`: `number`  }
+`undefined` \| `APIApplicationCommandInteractionDataUserOption` \| `APIApplicationCommandInteractionDataChannelOption` \| `APIApplicationCommandInteractionDataRoleOption` \| `APIApplicationCommandInteractionDataAttachmentOption` \| \{ `value`: [`User`](User)  } \| \{ `value`: [`Channel`](Channel)  } \| \{ `value`: [`Role`](Role)  } \| \{ `value`: [`Attachment`](Attachment)  } \| \{ `value`: `boolean`  } \| \{ `value`: `string`  } \| \{ `value`: `number`  } \| \{ `value`: `number`  }
 
+#### Defined in
 
-
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:57](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L57)
 
 ___
 
 ### resolveRoleOption
 
-▸ **resolveRoleOption**(`option`): `APIApplicationCommandInteractionDataRoleOption` \| \{ `name`: `string` ; `type`: `Role` ; `value`: [`Role`](Role)  }
+▸ **resolveRoleOption**(`option`): `APIApplicationCommandInteractionDataRoleOption` \| \{ `value`: [`Role`](Role)  }
+
+Resolves the given role option based on its value and returns the updated option.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `option` | `APIApplicationCommandInteractionDataRoleOption` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `option` | `APIApplicationCommandInteractionDataRoleOption` | The option to be resolved. |
 
 #### Returns
 
-`APIApplicationCommandInteractionDataRoleOption` \| \{ `name`: `string` ; `type`: `Role` ; `value`: [`Role`](Role)  }
+`APIApplicationCommandInteractionDataRoleOption` \| \{ `value`: [`Role`](Role)  }
 
+#### Defined in
 
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:167](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L167)
 
+___
+
+### resolveUserOption
+
+▸ **resolveUserOption**(`option`): `APIApplicationCommandInteractionDataUserOption` \| \{ `value`: [`User`](User)  }
+
+Resolves the given user option based on its value and returns the updated option.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `option` | `APIApplicationCommandInteractionDataUserOption` | The option to be resolved. |
+
+#### Returns
+
+`APIApplicationCommandInteractionDataUserOption` \| \{ `value`: [`User`](User)  }
+
+#### Defined in
+
+[apps/vespera/src/structure/ApplicationCommandOptions.ts:129](https://github.com/vesperadev/Vespera/blob/1884615/apps/vespera/src/structure/ApplicationCommandOptions.ts#L129)
