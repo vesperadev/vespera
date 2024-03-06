@@ -1,0 +1,298 @@
+---
+title: Webhook
+description: Webhook
+---
+[vespera](../README) / [Exports](../modules) / Webhook
+
+# Class: Webhook
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`Webhook`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](Webhook#constructor)
+
+### Properties
+
+- [avatar](Webhook#avatar)
+- [client](Webhook#client)
+- [creator](Webhook#creator)
+- [id](Webhook#id)
+- [raw](Webhook#raw)
+- [token](Webhook#token)
+- [type](Webhook#type)
+
+### Methods
+
+- [avatarURL](Webhook#avatarurl)
+- [createClient](Webhook#createclient)
+- [createdAt](Webhook#createdat)
+- [createdTimestamp](Webhook#createdtimestamp)
+- [isApplicationCreated](Webhook#isapplicationcreated)
+- [isChannelFollower](Webhook#ischannelfollower)
+- [isIncoming](Webhook#isincoming)
+- [isUserCreated](Webhook#isusercreated)
+
+## Constructors
+
+### constructor
+
+• **new Webhook**(`client`, `data`): [`Webhook`](Webhook)
+
+Initializes a new instance of the class.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `client` | [`Client`](Client) | The client instance. |
+| `data` | `APIWebhook` | The webhook data. |
+
+#### Returns
+
+[`Webhook`](Webhook)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:28](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L28)
+
+## Properties
+
+### avatar
+
+• `Optional` **avatar**: `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:19](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L19)
+
+___
+
+### client
+
+• **client**: [`Client`](Client)
+
+This property allows instances of the `Base` class to have access to a `Client` object, which can be used to interact
+with or utilize the functionalities provided by the `Client` class.
+
+**`Name`**
+
+client
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Base
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+#### Defined in
+
+[apps/vespera/src/structure/Base.ts:16](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Base.ts#L16)
+
+___
+
+### creator
+
+• `Optional` **creator**: [`User`](User)
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:20](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L20)
+
+___
+
+### id
+
+• **id**: `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:16](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L16)
+
+___
+
+### raw
+
+• `Readonly` **raw**: `APIWebhook`
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:14](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L14)
+
+___
+
+### token
+
+• `Optional` **token**: `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:18](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L18)
+
+___
+
+### type
+
+• **type**: `WebhookType`
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:17](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L17)
+
+## Methods
+
+### avatarURL
+
+▸ **avatarURL**(`options?`): `undefined` \| `string`
+
+Returns the URL of the avatar image for this user.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `ImageURLOptions` | Optional parameters for the image URL. |
+
+#### Returns
+
+`undefined` \| `string`
+
+The URL of the avatar image, or undefined if there is no avatar.
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:78](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L78)
+
+___
+
+### createClient
+
+▸ **createClient**(): ``false`` \| [`WebhookClient`](WebhookClient)\<\{ `id`: `string` ; `token`: `string`  }\>
+
+Creates a client if the call is incoming and returns a new WebhookClient instance.
+
+#### Returns
+
+``false`` \| [`WebhookClient`](WebhookClient)\<\{ `id`: `string` ; `token`: `string`  }\>
+
+A new WebhookClient instance.
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:45](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L45)
+
+___
+
+### createdAt
+
+▸ **createdAt**(): [`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+Returns the creation date of the object.
+
+#### Returns
+
+[`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+The creation date of the object.
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:68](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L68)
+
+___
+
+### createdTimestamp
+
+▸ **createdTimestamp**(): `number`
+
+Returns the created timestamp as a Date object.
+
+#### Returns
+
+`number`
+
+The created timestamp.
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:54](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L54)
+
+___
+
+### isApplicationCreated
+
+▸ **isApplicationCreated**(): `boolean`
+
+Whether this webhook is created by an application.
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:94](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L94)
+
+___
+
+### isChannelFollower
+
+▸ **isChannelFollower**(): `boolean`
+
+Whether or not this webhook is a channel follower webhook.
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:102](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L102)
+
+___
+
+### isIncoming
+
+▸ **isIncoming**(): `boolean`
+
+Whether or not this webhook is an incoming webhook.
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:110](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L110)
+
+___
+
+### isUserCreated
+
+▸ **isUserCreated**(): `boolean`
+
+Whether this webhook is created by a user.
+
+#### Returns
+
+`boolean`
+
+#### Defined in
+
+[apps/vespera/src/structure/Webhook.ts:86](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Webhook.ts#L86)

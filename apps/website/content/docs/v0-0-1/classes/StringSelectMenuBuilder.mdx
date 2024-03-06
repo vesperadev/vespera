@@ -1,0 +1,200 @@
+---
+title: StringSelectMenuBuilder
+description: StringSelectMenuBuilder
+---
+[vespera](../README) / [Exports](../modules) / StringSelectMenuBuilder
+
+# Class: StringSelectMenuBuilder\<S\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+## Hierarchy
+
+- `StringSelectMenuBuilder`
+
+  ↳ **`StringSelectMenuBuilder`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](StringSelectMenuBuilder#constructor)
+
+### Properties
+
+- [components](StringSelectMenuBuilder#components)
+- [middlewares](StringSelectMenuBuilder#middlewares)
+- [run](StringSelectMenuBuilder#run)
+
+### Methods
+
+- [addComponent](StringSelectMenuBuilder#addcomponent)
+- [createMiddleware](StringSelectMenuBuilder#createmiddleware)
+- [execute](StringSelectMenuBuilder#execute)
+
+## Constructors
+
+### constructor
+
+• **new StringSelectMenuBuilder**\<`S`\>(`data?`): [`StringSelectMenuBuilder`](StringSelectMenuBuilder)\<`S`\>
+
+Creates a new select menu from API data.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data?` | [`Partial`]( https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype )\<`APIStringSelectComponent`\> | The API data to create this select menu with |
+
+#### Returns
+
+[`StringSelectMenuBuilder`](StringSelectMenuBuilder)\<`S`\>
+
+**`Example`**
+
+Creating a select menu from an API data object:
+```ts
+const selectMenu = new StringSelectMenuBuilder({
+	custom_id: 'a cool select menu',
+	placeholder: 'select an option',
+	max_values: 2,
+	options: [
+		{ label: 'option 1', value: '1' },
+		{ label: 'option 2', value: '2' },
+		{ label: 'option 3', value: '3' },
+	],
+});
+```
+
+**`Example`**
+
+Creating a select menu using setters and API data:
+```ts
+const selectMenu = new StringSelectMenuBuilder({
+	custom_id: 'a cool select menu',
+})
+	.setMinValues(1)
+	.addOptions({
+		label: 'Catchy',
+		value: 'catch',
+	});
+```
+
+#### Inherited from
+
+DISCORDJSStringSelectMenuBuilder.constructor
+
+#### Defined in
+
+
+## Properties
+
+### components
+
+• **components**: [`Record`]( https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type )\<[`Component`](../interfaces/Component), [`Record`]( https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type )\<`string`, [`Callback`](../modules#callback)\<[`unknown`]\>\>\>
+
+#### Defined in
+
+[apps/vespera/src/structure/StringSelectMenuBuilder.ts:24](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/StringSelectMenuBuilder.ts#L24)
+
+___
+
+### middlewares
+
+• **middlewares**: [`Callback`](../modules#callback)\<[[`SelectMenuContext`](SelectMenuContext)\<`S`\>]\>[]
+
+#### Defined in
+
+[apps/vespera/src/structure/StringSelectMenuBuilder.ts:19](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/StringSelectMenuBuilder.ts#L19)
+
+___
+
+### run
+
+• **run**: [`Callback`](../modules#callback)\<[[`SelectMenuContext`](SelectMenuContext)\<`S`\>]\>
+
+#### Defined in
+
+[apps/vespera/src/structure/StringSelectMenuBuilder.ts:14](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/StringSelectMenuBuilder.ts#L14)
+
+## Methods
+
+### addComponent
+
+▸ **addComponent**(`callback`): [`StringSelectMenuBuilder`](StringSelectMenuBuilder)\<`S`\>
+
+Adds a component to the list of components.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callback` | [`Callback`](../modules#callback)\<[[`createComponentBuilder`](createComponentBuilder)\<`unknown`\>]\> |
+
+#### Returns
+
+[`StringSelectMenuBuilder`](StringSelectMenuBuilder)\<`S`\>
+
+the current instance of the class
+
+#### Defined in
+
+[apps/vespera/src/structure/StringSelectMenuBuilder.ts:54](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/StringSelectMenuBuilder.ts#L54)
+
+___
+
+### createMiddleware
+
+▸ **createMiddleware**(`callback`): [`StringSelectMenuBuilder`](StringSelectMenuBuilder)\<`S`\>
+
+createMiddleware - adds a callback to the list of middlewares.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | [`Callback`](../modules#callback)\<[[`SelectMenuContext`](SelectMenuContext)\<`S`\>]\> | the callback to be added to the middlewares list |
+
+#### Returns
+
+[`StringSelectMenuBuilder`](StringSelectMenuBuilder)\<`S`\>
+
+the current instance of the class
+
+#### Defined in
+
+[apps/vespera/src/structure/StringSelectMenuBuilder.ts:43](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/StringSelectMenuBuilder.ts#L43)
+
+___
+
+### execute
+
+▸ **execute**(`callback`): [`StringSelectMenuBuilder`](StringSelectMenuBuilder)\<`S`\>
+
+Execute the callback function and set it as the 'run' property, then return the current object.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | [`Callback`](../modules#callback)\<[[`SelectMenuContext`](SelectMenuContext)\<`S`\>]\> | The callback function to be executed and set as the 'run' property. |
+
+#### Returns
+
+[`StringSelectMenuBuilder`](StringSelectMenuBuilder)\<`S`\>
+
+The current object.
+
+#### Defined in
+
+[apps/vespera/src/structure/StringSelectMenuBuilder.ts:32](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/StringSelectMenuBuilder.ts#L32)

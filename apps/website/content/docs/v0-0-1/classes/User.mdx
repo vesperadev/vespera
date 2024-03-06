@@ -1,0 +1,636 @@
+---
+title: User
+description: User
+---
+[vespera](../README) / [Exports](../modules) / User
+
+# Class: User
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`User`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](User#constructor)
+
+### Properties
+
+- [accentColor](User#accentcolor)
+- [avatar](User#avatar)
+- [avatarDecoration](User#avatardecoration)
+- [banner](User#banner)
+- [bot](User#bot)
+- [client](User#client)
+- [discriminator](User#discriminator)
+- [email](User#email)
+- [id](User#id)
+- [mfaEnabled](User#mfaenabled)
+- [raw](User#raw)
+- [system](User#system)
+- [username](User#username)
+- [verified](User#verified)
+
+### Accessors
+
+- [defaultAvatarURL](User#defaultavatarurl)
+
+### Methods
+
+- [avatarDecorationURL](User#avatardecorationurl)
+- [avatarURL](User#avatarurl)
+- [bannerURL](User#bannerurl)
+- [createDM](User#createdm)
+- [createdAt](User#createdat)
+- [createdTimestamp](User#createdtimestamp)
+- [displayAvatarURL](User#displayavatarurl)
+- [hexAccentColor](User#hexaccentcolor)
+- [toString](User#tostring)
+
+## Constructors
+
+### constructor
+
+• **new User**(`client`, `data`): [`User`](User)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `client` | [`Client`](Client) |
+| `data` | `APIUser` |
+
+#### Returns
+
+[`User`](User)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:182](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L182)
+
+## Properties
+
+### accentColor
+
+• **accentColor**: `undefined` \| `number`
+
+This property is used to store the accent color associated with
+the user, represented as a number. If the accent color is not set or available, the property will be `undefined`.
+
+**`Name`**
+
+accentColor
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:72](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L72)
+
+___
+
+### avatar
+
+• **avatar**: `undefined` \| `string`
+
+This property is used to store the URL of the user's avatar key provided by discord. If the
+user does not have an avatar set, the property will be `undefined`.
+
+**`Name`**
+
+avatar
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:85](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L85)
+
+___
+
+### avatarDecoration
+
+• **avatarDecoration**: `undefined` \| `string`
+
+This property can hold a value of type `string` (representing the URL of the user's avatar decoration)
+or `undefined` if the user does not have an avatar decoration set. It allows for storing and accessing the user's avatar
+decoration information within an instance of the `User` class.
+
+**`Name`**
+
+avatarDecoration
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:113](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L113)
+
+___
+
+### banner
+
+• **banner**: `undefined` \| `string`
+
+This property can hold a value of type `string` (representing the URL of the user's banner) or
+`undefined` if the user does not have a banner set. It allows for storing and accessing the user's banner information
+within an instance of the `User` class.
+
+**`Name`**
+
+banner
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:99](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L99)
+
+___
+
+### bot
+
+• **bot**: `undefined` \| `boolean`
+
+This property is used to indicate whether the user is a bot account. If the user is a
+bot, the `bot` property will hold a value of `true`, indicating that the user is a bot account. If the user is not a
+bot, the `bot` property will be `undefined`. This allows for distinguishing between regular user accounts and bot
+accounts within an instance of the `User` class.
+
+**`Name`**
+
+bot
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:128](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L128)
+
+___
+
+### client
+
+• **client**: [`Client`](Client)
+
+This property allows instances of the `Base` class to have access to a `Client` object, which can be used to interact
+with or utilize the functionalities provided by the `Client` class.
+
+**`Name`**
+
+client
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Base
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+#### Defined in
+
+[apps/vespera/src/structure/Base.ts:16](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Base.ts#L16)
+
+___
+
+### discriminator
+
+• **discriminator**: `string`
+
+This property is used to store the discriminator value associated with the user. The discriminator is
+a four-digit number that appears after the user's username and "#" symbol in their tag (e.g., Username#1234).
+
+**`Name`**
+
+discriminator
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:47](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L47)
+
+___
+
+### email
+
+• **email**: `undefined` \| `string`
+
+property that can either be a string value representing the user's email address, or it can be undefined if the user does not have an email
+associated with their account.
+
+**`Name`**
+
+email
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:180](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L180)
+
+___
+
+### id
+
+• **id**: `string`
+
+This property will hold the unique identifier (Snowflake) associated with the user
+
+**`Name`**
+
+id
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:34](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L34)
+
+___
+
+### mfaEnabled
+
+• **mfaEnabled**: `undefined` \| `boolean`
+
+This property is used to indicate whether multi-factor authentication (MFA)
+is enabled for the user.
+
+**`Name`**
+
+mfaEnabled
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:156](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L156)
+
+___
+
+### raw
+
+• **raw**: `APIUser`
+
+The raw object returned from the Discord API
+
+**`Name`**
+
+raw
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:22](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L22)
+
+___
+
+### system
+
+• **system**: `undefined` \| `boolean`
+
+This property is used to indicate whether the user is a system account. If the
+user is a system account, the `system` property will hold a value of `true`, indicating that the user is a system
+account. If the user is not a system account, the `system` property will be `undefined`. This allows for distinguishing
+between regular user accounts and system accounts within an instance of the `User` class.
+
+**`Name`**
+
+system
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:143](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L143)
+
+___
+
+### username
+
+• **username**: `string`
+
+This property is used to store the username associated with the user.
+
+**`Name`**
+
+username
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:59](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L59)
+
+___
+
+### verified
+
+• **verified**: `undefined` \| `boolean`
+
+**`Name`**
+
+verified
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+User
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:167](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L167)
+
+## Accessors
+
+### defaultAvatarURL
+
+• `get` **defaultAvatarURL**(): `string`
+
+A link to the user's default avatar
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:242](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L242)
+
+## Methods
+
+### avatarDecorationURL
+
+▸ **avatarDecorationURL**(`options?`): `undefined` \| `string`
+
+A link to the user's avatar decoration.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | Options for the image URL |
+| `options.extension` | `undefined` \| ``"webp"`` \| ``"png"`` \| ``"jpg"`` \| ``"jpeg"`` \| ``"gif"`` | - |
+| `options.forceStatic` | `undefined` \| `boolean` | - |
+| `options.size` | `undefined` \| ``16`` \| ``32`` \| ``64`` \| ``128`` \| ``256`` \| ``512`` \| ``1024`` \| ``2048`` \| ``4096`` | - |
+
+#### Returns
+
+`undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:233](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L233)
+
+___
+
+### avatarURL
+
+▸ **avatarURL**(`options?`): `undefined` \| `string`
+
+A link to the user's avatar.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | Options for the image URL |
+| `options.extension` | `undefined` \| ``"webp"`` \| ``"png"`` \| ``"jpg"`` \| ``"jpeg"`` \| ``"gif"`` | - |
+| `options.forceStatic` | `undefined` \| `boolean` | - |
+| `options.size` | `undefined` \| ``16`` \| ``32`` \| ``64`` \| ``128`` \| ``256`` \| ``512`` \| ``1024`` \| ``2048`` \| ``4096`` | - |
+
+#### Returns
+
+`undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:224](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L224)
+
+___
+
+### bannerURL
+
+▸ **bannerURL**(`options?`): `undefined` \| `string`
+
+A link to the user's banner. See [User#banner](User#banner) for more info
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | Options for the image URL |
+| `options.extension` | `undefined` \| ``"webp"`` \| ``"png"`` \| ``"jpg"`` \| ``"jpeg"`` \| ``"gif"`` | - |
+| `options.forceStatic` | `undefined` \| `boolean` | - |
+| `options.size` | `undefined` \| ``16`` \| ``32`` \| ``64`` \| ``128`` \| ``256`` \| ``512`` \| ``1024`` \| ``2048`` \| ``4096`` | - |
+
+#### Returns
+
+`undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:274](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L274)
+
+___
+
+### createDM
+
+▸ **createDM**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+Creates a DM channel between the client and the user.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`Channel`](Channel)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:282](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L282)
+
+___
+
+### createdAt
+
+▸ **createdAt**(): [`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+The time the user was created at
+
+#### Returns
+
+[`Date`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date )
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:215](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L215)
+
+___
+
+### createdTimestamp
+
+▸ **createdTimestamp**(): `number`
+
+The timestamp the user was created at
+
+#### Returns
+
+`number`
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:206](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L206)
+
+___
+
+### displayAvatarURL
+
+▸ **displayAvatarURL**(`options?`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`string`\>
+
+A link to the user's avatar if they have one.
+Otherwise a link to their default avatar will be returned.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options?` | `Object` | Options for the Image URL |
+| `options.extension` | `undefined` \| ``"webp"`` \| ``"png"`` \| ``"jpg"`` \| ``"jpeg"`` \| ``"gif"`` | - |
+| `options.forceStatic` | `undefined` \| `boolean` | - |
+| `options.size` | `undefined` \| ``16`` \| ``32`` \| ``64`` \| ``128`` \| ``256`` \| ``512`` \| ``1024`` \| ``2048`` \| ``4096`` | - |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`string`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:254](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L254)
+
+___
+
+### hexAccentColor
+
+▸ **hexAccentColor**(): `undefined` \| `string`
+
+The hexadecimal version of the user accent color, with a leading hash
+<info>The user must be force fetched for this property to be present</info>
+
+#### Returns
+
+`undefined` \| `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:264](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L264)
+
+___
+
+### toString
+
+▸ **toString**(): \`\<@$\{string}\>\`
+
+When concatenated with a string, this automatically returns the user's mention instead of the User object.
+
+#### Returns
+
+\`\<@$\{string}\>\`
+
+**`Example`**
+
+```ts
+// Logs: Hello from <@123456789012345678>!
+console.log(`Hello from ${user}!`);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/User.ts:294](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/User.ts#L294)

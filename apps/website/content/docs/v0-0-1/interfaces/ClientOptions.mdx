@@ -1,0 +1,70 @@
+---
+title: ClientOptions
+description: ClientOptions
+---
+[vespera](../README) / [Exports](../modules) / ClientOptions
+
+# Interface: ClientOptions
+
+## Table of contents
+
+### Properties
+
+- [application](ClientOptions#application)
+- [rest](ClientOptions#rest)
+- [state](ClientOptions#state)
+- [token](ClientOptions#token)
+
+## Properties
+
+### application
+
+• **application**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+| `publicKey` | `string` |
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:75](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L75)
+
+___
+
+### rest
+
+• `Optional` **rest**: `RESTOptions`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:79](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L79)
+
+___
+
+### state
+
+• `Optional` **state**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `get` | [`Callback`](../modules#callback)\<[`string`]\> |
+| `set` | [`Callback`](../modules#callback)\<[`string`, `string`, `number`]\> |
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:80](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L80)
+
+___
+
+### token
+
+• **token**: `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:74](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L74)

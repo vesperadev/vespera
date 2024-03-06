@@ -1,0 +1,241 @@
+---
+title: WebhookClient
+description: WebhookClient
+---
+[vespera](../README) / [Exports](../modules) / WebhookClient
+
+# Class: WebhookClient\<T\>
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` \| \{ `id`: `string` ; `token`: `string`  } |
+
+## Table of contents
+
+### Constructors
+
+- [constructor](WebhookClient#constructor)
+
+### Properties
+
+- [API](WebhookClient#api)
+- [id](WebhookClient#id)
+- [token](WebhookClient#token)
+
+### Methods
+
+- [delete](WebhookClient#delete)
+- [deleteMessage](WebhookClient#deletemessage)
+- [edit](WebhookClient#edit)
+- [editMessage](WebhookClient#editmessage)
+- [fetchMessage](WebhookClient#fetchmessage)
+- [send](WebhookClient#send)
+
+## Constructors
+
+### constructor
+
+• **new WebhookClient**\<`T`\>(`options`, `rest?`): [`WebhookClient`](WebhookClient)\<`T`\>
+
+Creates a new WebhookClient instance.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` \| \{ `id`: `string` ; `token`: `string`  } |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options` | `T` | The options for the WebhookClient. |
+| `rest?` | `REST` | The REST instance to use. |
+
+#### Returns
+
+[`WebhookClient`](WebhookClient)\<`T`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/WebhookClient.ts:29](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/WebhookClient.ts#L29)
+
+## Properties
+
+### API
+
+• `Private` **API**: `WebhooksAPI`
+
+#### Defined in
+
+[apps/vespera/src/structure/WebhookClient.ts:21](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/WebhookClient.ts#L21)
+
+___
+
+### id
+
+• `Readonly` **id**: `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/WebhookClient.ts:18](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/WebhookClient.ts#L18)
+
+___
+
+### token
+
+• `Readonly` **token**: `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/WebhookClient.ts:19](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/WebhookClient.ts#L19)
+
+## Methods
+
+### delete
+
+▸ **delete**(`reason`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Deletes the resource with the given reason.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `reason` | `string` | The reason for deleting the resource. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+A promise that resolves with the result of the deletion operation.
+
+#### Defined in
+
+[apps/vespera/src/structure/WebhookClient.ts:64](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/WebhookClient.ts#L64)
+
+___
+
+### deleteMessage
+
+▸ **deleteMessage**(`messageId`, `options?`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Deletes a webhook message.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `messageId` | `string` | The ID of the message to delete. |
+| `options?` | `Object` | The query parameters to send with the request. |
+| `options.thread_id` | `string` | - |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+A promise that resolves once the message is deleted.
+
+#### Defined in
+
+[apps/vespera/src/structure/WebhookClient.ts:108](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/WebhookClient.ts#L108)
+
+___
+
+### edit
+
+▸ **edit**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIWebhook`\>
+
+Edits the webhook with the provided data.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `RESTPatchAPIWebhookJSONBody` & \{ `reason`: `string`  } | The data to edit the webhook with, including the reason. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIWebhook`\>
+
+A promise that resolves to the edited webhook.
+
+#### Defined in
+
+[apps/vespera/src/structure/WebhookClient.ts:54](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/WebhookClient.ts#L54)
+
+___
+
+### editMessage
+
+▸ **editMessage**(`messageId`, `data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+Edits a previously sent webhook message.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `messageId` | `string` | The ID of the message to edit. |
+| `data` | `RESTPostAPIWebhookWithTokenJSONBody` & `RESTPostAPIWebhookWithTokenQuery` & \{ `files?`: `RawFile`[]  } | The new data for the message. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+A promise that resolves to the edited message.
+
+#### Defined in
+
+[apps/vespera/src/structure/WebhookClient.ts:91](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/WebhookClient.ts#L91)
+
+___
+
+### fetchMessage
+
+▸ **fetchMessage**(`messageId`, `query?`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+Fetches a message that was created by the webhook.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `messageId` | `string` | The ID of the message to fetch. |
+| `query?` | `RESTGetAPIWebhookWithTokenMessageQuery` | The query parameters to send with the request. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+A promise that resolves to the fetched message.
+
+#### Defined in
+
+[apps/vespera/src/structure/WebhookClient.ts:119](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/WebhookClient.ts#L119)
+
+___
+
+### send
+
+▸ **send**(`data`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+Sends the provided data using the API's `execute` method.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `RESTPostAPIWebhookWithTokenJSONBody` & `RESTPostAPIWebhookWithTokenQuery` & \{ `files?`: `RawFile`[] ; `wait`: ``true``  } | The data to be sent. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIMessage`\>
+
+A promise that resolves to the result of the `execute` method.
+
+#### Defined in
+
+[apps/vespera/src/structure/WebhookClient.ts:74](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/WebhookClient.ts#L74)

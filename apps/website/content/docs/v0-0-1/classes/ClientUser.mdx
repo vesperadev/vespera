@@ -1,0 +1,182 @@
+---
+title: ClientUser
+description: ClientUser
+---
+[vespera](../README) / [Exports](../modules) / ClientUser
+
+# Class: ClientUser
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`ClientUser`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](ClientUser#constructor)
+
+### Properties
+
+- [client](ClientUser#client)
+- [id](ClientUser#id)
+
+### Methods
+
+- [edit](ClientUser#edit)
+- [setAvatar](ClientUser#setavatar)
+- [setUsername](ClientUser#setusername)
+
+## Constructors
+
+### constructor
+
+• **new ClientUser**(`client`): [`ClientUser`](ClientUser)
+
+The constructor initializes the id property of the class instance with the application id from the
+client options.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `client` | [`Client`](Client) | The `client` parameter in the constructor is an instance of the `Client` class. It is being passed to the constructor to initialize the object. |
+
+#### Returns
+
+[`ClientUser`](ClientUser)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+#### Defined in
+
+[apps/vespera/src/structure/ClientUser.ts:15](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/ClientUser.ts#L15)
+
+## Properties
+
+### client
+
+• **client**: [`Client`](Client)
+
+This property allows instances of the `Base` class to have access to a `Client` object, which can be used to interact
+with or utilize the functionalities provided by the `Client` class.
+
+**`Name`**
+
+client
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Base
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+#### Defined in
+
+[apps/vespera/src/structure/Base.ts:16](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Base.ts#L16)
+
+___
+
+### id
+
+• **id**: `string`
+
+#### Defined in
+
+[apps/vespera/src/structure/ClientUser.ts:7](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/ClientUser.ts#L7)
+
+## Methods
+
+### edit
+
+▸ **edit**(`options`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+Edits the logged in client.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options` | `RESTPatchAPICurrentUserJSONBody` & \{ `avatar?`: `string`  } | The options to provide |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+#### Defined in
+
+[apps/vespera/src/structure/ClientUser.ts:33](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/ClientUser.ts#L33)
+
+___
+
+### setAvatar
+
+▸ **setAvatar**(`avatar`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+Sets the avatar of the logged in client.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `avatar` | `string` | The new avatar |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+**`Example`**
+
+```ts
+// Set avatar
+client.user.setAvatar('./avatar.png')
+  .then(user => console.log(`New avatar set!`))
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/ClientUser.ts:64](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/ClientUser.ts#L64)
+
+___
+
+### setUsername
+
+▸ **setUsername**(`username`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+Sets the username of the logged in client.
+Changing usernames in Discord is heavily rate limited, with only 2 requests
+every hour. Use this sparingly!
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `username` | `string` | The new username |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`ClientUser`](ClientUser)\>
+
+**`Example`**
+
+```ts
+// Set username
+client.user.setUsername('discordjs')
+  .then(user => console.log(`My new username is ${user.username}`))
+  .catch(console.error);
+```
+
+#### Defined in
+
+[apps/vespera/src/structure/ClientUser.ts:50](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/ClientUser.ts#L50)

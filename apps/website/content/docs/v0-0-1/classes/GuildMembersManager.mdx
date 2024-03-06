@@ -1,0 +1,358 @@
+---
+title: GuildMembersManager
+description: GuildMembersManager
+---
+[vespera](../README) / [Exports](../modules) / GuildMembersManager
+
+# Class: GuildMembersManager
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`GuildMembersManager`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](GuildMembersManager#constructor)
+
+### Properties
+
+- [client](GuildMembersManager#client)
+- [guild](GuildMembersManager#guild)
+
+### Methods
+
+- [addRole](GuildMembersManager#addrole)
+- [ban](GuildMembersManager#ban)
+- [edit](GuildMembersManager#edit)
+- [fetch](GuildMembersManager#fetch)
+- [fetchMe](GuildMembersManager#fetchme)
+- [kick](GuildMembersManager#kick)
+- [list](GuildMembersManager#list)
+- [prune](GuildMembersManager#prune)
+- [removeRole](GuildMembersManager#removerole)
+- [search](GuildMembersManager#search)
+- [unban](GuildMembersManager#unban)
+
+## Constructors
+
+### constructor
+
+• **new GuildMembersManager**(`client`, `guild`): [`GuildMembersManager`](GuildMembersManager)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `client` | [`Client`](Client) |
+| `guild` | [`Guild`](Guild) |
+
+#### Returns
+
+[`GuildMembersManager`](GuildMembersManager)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:20](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L20)
+
+## Properties
+
+### client
+
+• **client**: [`Client`](Client)
+
+This property allows instances of the `Base` class to have access to a `Client` object, which can be used to interact
+with or utilize the functionalities provided by the `Client` class.
+
+**`Name`**
+
+client
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Base
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+#### Defined in
+
+[apps/vespera/src/structure/Base.ts:16](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Base.ts#L16)
+
+___
+
+### guild
+
+• **guild**: [`Guild`](Guild)
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:18](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L18)
+
+## Methods
+
+### addRole
+
+▸ **addRole**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Adds a role to a member.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `reason?` | `string` |
+| › `role` | `string` |
+| › `user` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:130](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L130)
+
+___
+
+### ban
+
+▸ **ban**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Bans a member from the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | \{ `deleteMessageDays`: `undefined` \| `number` ; `deleteMessageSeconds`: `undefined` \| `number`  } & \{ `reason?`: `string` ; `user`: `string`  } |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:105](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L105)
+
+___
+
+### edit
+
+▸ **edit**(`user`, `options`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Edits a member of the guild.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `user` | `string` | The user to edit |
+| `options` | \{ `channelId`: `undefined` \| ``null`` \| `string` ; `communicationDisabledUntil`: `undefined` \| ``null`` \| `string` ; `deaf`: `undefined` \| ``null`` \| `boolean` ; `mute`: `undefined` \| ``null`` \| `boolean` ; `nick`: `undefined` \| ``null`` \| `string` ; `roles`: `undefined` \| ``null`` \| `string`[]  } & \{ `reason?`: `string`  } | Options for editing the member |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:67](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L67)
+
+___
+
+### fetch
+
+▸ **fetch**(`id`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuildMember`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuildMember`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:26](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L26)
+
+___
+
+### fetchMe
+
+▸ **fetchMe**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuildMember`\>
+
+Fetches the client user as a GuildMember of the guild.
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`APIGuildMember`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:36](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L36)
+
+___
+
+### kick
+
+▸ **kick**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`unknown`\>
+
+Kicks a member from the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `reason?` | `string` |
+| › `user` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`unknown`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:95](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L95)
+
+___
+
+### list
+
+▸ **list**(`query`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`Collection`\<`unknown`, `unknown`\>\>
+
+Lists up to 1000 members of the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `query` | `Object` |
+| `query.after` | `undefined` \| `string` |
+| `query.limit` | `undefined` \| `number` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`Collection`\<`unknown`, `unknown`\>\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:55](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L55)
+
+___
+
+### prune
+
+▸ **prune**\<`D`\>(`dry`, `options`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`RESTPostAPIGuildPruneResult`\>
+
+Prunes members from the guild.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `D` | extends `boolean` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `dry` | `D` | Whether or not to do a dry run |
+| `options` | `CamelCasedPropertiesDeep`\<`D` extends ``true`` ? `RESTGetAPIGuildPruneCountQuery` : `RESTPostAPIGuildPruneJSONBody`, {}\> | Options for pruning members |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`RESTPostAPIGuildPruneResult`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:80](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L80)
+
+___
+
+### removeRole
+
+▸ **removeRole**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Removes a role from a member.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `reason?` | `string` |
+| › `role` | `string` |
+| › `user` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:141](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L141)
+
+___
+
+### search
+
+▸ **search**(`query`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`Collection`\<`unknown`, `unknown`\>\>
+
+Searches for members in the guild based on a query.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `query` | `Object` |
+| `query.limit` | `undefined` \| `number` |
+| `query.query` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`Collection`\<`unknown`, `unknown`\>\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:45](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L45)
+
+___
+
+### unban
+
+▸ **unban**(`«destructured»`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+Unbans a member from the guild.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `Object` |
+| › `reason?` | `string` |
+| › `user` | `string` |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`void`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Manager/GuildMember.ts:119](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Manager/GuildMember.ts#L119)

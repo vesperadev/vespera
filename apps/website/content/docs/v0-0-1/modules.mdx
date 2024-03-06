@@ -1,0 +1,427 @@
+---
+title: modules
+description: modules
+---
+[vespera](README) / Exports
+
+# vespera
+
+## Table of contents
+
+### Classes
+
+- [ApplicationCommandOptions](classes/ApplicationCommandOptions)
+- [Attachment](classes/Attachment)
+- [Base](classes/Base)
+- [BaseContext](classes/BaseContext)
+- [ButtonBuilder](classes/ButtonBuilder)
+- [ButtonContext](classes/ButtonContext)
+- [Channel](classes/Channel)
+- [ChannelManager](classes/ChannelManager)
+- [Client](classes/Client)
+- [ClientHandler](classes/ClientHandler)
+- [ClientUser](classes/ClientUser)
+- [CommandContext](classes/CommandContext)
+- [ComponentContext](classes/ComponentContext)
+- [Emoji](classes/Emoji)
+- [EntitlementManager](classes/EntitlementManager)
+- [Guild](classes/Guild)
+- [GuildAuditLogs](classes/GuildAuditLogs)
+- [GuildAuditLogsEntry](classes/GuildAuditLogsEntry)
+- [GuildIntegration](classes/GuildIntegration)
+- [GuildManager](classes/GuildManager)
+- [GuildMembersManager](classes/GuildMembersManager)
+- [GuildOnboarding](classes/GuildOnboarding)
+- [GuildPreview](classes/GuildPreview)
+- [GuildRolesManager](classes/GuildRolesManager)
+- [GuildTemplate](classes/GuildTemplate)
+- [GuildWelcomeScreen](classes/GuildWelcomeScreen)
+- [Message](classes/Message)
+- [MessageManager](classes/MessageManager)
+- [Role](classes/Role)
+- [SelectMenuContext](classes/SelectMenuContext)
+- [SlashCommandBuilder](classes/SlashCommandBuilder)
+- [SlashCommandSubcommandBuilder](classes/SlashCommandSubcommandBuilder)
+- [SlashCommandSubcommandGroupBuilder](classes/SlashCommandSubcommandGroupBuilder)
+- [StringSelectMenuBuilder](classes/StringSelectMenuBuilder)
+- [User](classes/User)
+- [UserManager](classes/UserManager)
+- [VesperaError](classes/VesperaError)
+- [Webhook](classes/Webhook)
+- [WebhookClient](classes/WebhookClient)
+- [createComponentBuilder](classes/createComponentBuilder)
+
+### Interfaces
+
+- [ClientEvents](interfaces/ClientEvents)
+- [ClientOptions](interfaces/ClientOptions)
+- [Component](interfaces/Component)
+- [Environment](interfaces/Environment)
+
+### Type Aliases
+
+- [Button](modules#button)
+- [Callback](modules#callback)
+- [Command](modules#command)
+- [StringSelectMenu](modules#stringselectmenu)
+- [SubCommand](modules#subcommand)
+- [SubCommandGroup](modules#subcommandgroup)
+- [TextChannel](modules#textchannel)
+- [WebhookClientOptions](modules#webhookclientoptions)
+
+### Variables
+
+- [TextChannelTypes](modules#textchanneltypes)
+
+### Functions
+
+- [createButton](modules#createbutton)
+- [createCommand](modules#createcommand)
+- [createStringSelectMenu](modules#createstringselectmenu)
+- [createSubCommand](modules#createsubcommand)
+- [createSubCommandGroup](modules#createsubcommandgroup)
+
+## Type Aliases
+
+### Button
+
+Ƭ **Button**\<`S`\>: [`Callback`](modules#callback)\<[[`ButtonBuilder`](classes/ButtonBuilder)\<`S`\>]\>
+
+Type alias for a Button callback.
+
+**`Param`**
+
+The builder for creating a button.
+
+#### Type parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `S` | extends `unknown` = `unknown` | The state type that extends `unknown` by default. |
+
+#### Defined in
+
+[apps/vespera/src/lib/button.ts:12](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/lib/button.ts#L12)
+
+___
+
+### Callback
+
+Ƭ **Callback**\<`T`\>: (...`callback`: `T`) => [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`T` \| `unknown`\> \| `T` \| `unknown`
+
+Type definition for a generic callback function.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `unknown`[] |
+
+#### Type declaration
+
+▸ (`...callback`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`T` \| `unknown`\> \| `T` \| `unknown`
+
+##### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `...callback` | `T` | The input parameter of type T. |
+
+##### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`T` \| `unknown`\> \| `T` \| `unknown`
+
+#### Defined in
+
+[apps/vespera/src/utils/index.ts:13](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/utils/index.ts#L13)
+
+___
+
+### Command
+
+Ƭ **Command**\<`S`\>: [`Callback`](modules#callback)\<[[`SlashCommandBuilder`](classes/SlashCommandBuilder)\<`S`\>]\>
+
+Type alias for a Command callback.
+
+**`Param`**
+
+The builder for creating a slash command.
+
+#### Type parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `S` | extends `unknown` = `unknown` | The state type that extends `unknown` by default. |
+
+#### Defined in
+
+[apps/vespera/src/lib/command.ts:16](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/lib/command.ts#L16)
+
+___
+
+### StringSelectMenu
+
+Ƭ **StringSelectMenu**\<`S`\>: [`Callback`](modules#callback)\<[[`StringSelectMenuBuilder`](classes/StringSelectMenuBuilder)\<`S`\>]\>
+
+The code `export type StringSelectMenu<S extends unknown = unknown> = Callback<[StringSelectMenuBuilder<S>]>;` is
+defining a type alias named `StringSelectMenu`. This type alias takes a generic type `S` as a parameter, which extends
+`unknown` by default. The type `StringSelectMenu` is then defined as a callback function that takes an array containing
+a `StringSelectMenuBuilder<S>` as its argument.
+
+**`Name`**
+
+StringSelectMenu
+
+**`Kind`**
+
+variable
+
+**`Exports`**
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` = `unknown` |
+
+#### Defined in
+
+[apps/vespera/src/lib/selectMenu.ts:16](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/lib/selectMenu.ts#L16)
+
+___
+
+### SubCommand
+
+Ƭ **SubCommand**\<`S`\>: [`Callback`](modules#callback)\<[[`SlashCommandSubcommandBuilder`](classes/SlashCommandSubcommandBuilder)\<`S`\>]\>
+
+Type alias for a SubCommand callback.
+
+**`Param`**
+
+The builder for creating a subcommand.
+
+#### Type parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `S` | extends `unknown` = `unknown` | The state type that extends `unknown` by default. |
+
+#### Defined in
+
+[apps/vespera/src/lib/command.ts:36](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/lib/command.ts#L36)
+
+___
+
+### SubCommandGroup
+
+Ƭ **SubCommandGroup**\<`S`\>: [`Callback`](modules#callback)\<[[`SlashCommandSubcommandGroupBuilder`](classes/SlashCommandSubcommandGroupBuilder)\<`S`\>]\>
+
+Type alias for a SubCommandGroup callback.
+
+**`Param`**
+
+The builder for creating a subcommand group.
+
+#### Type parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `S` | extends `unknown` = `unknown` | The state type that extends `unknown` by default. |
+
+#### Defined in
+
+[apps/vespera/src/lib/command.ts:26](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/lib/command.ts#L26)
+
+___
+
+### TextChannel
+
+Ƭ **TextChannel**: typeof [`TextChannelTypes`](modules#textchanneltypes)[`number`]
+
+#### Defined in
+
+[apps/vespera/src/structure/Channel.ts:34](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Channel.ts#L34)
+
+___
+
+### WebhookClientOptions
+
+Ƭ **WebhookClientOptions**\<`T`\>: `T`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` \| \{ `id`: `string` ; `token`: `string`  } |
+
+#### Defined in
+
+[apps/vespera/src/structure/WebhookClient.ts:15](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/WebhookClient.ts#L15)
+
+## Variables
+
+### TextChannelTypes
+
+• `Const` **TextChannelTypes**: readonly [`AnnouncementThread`, `GuildText`, `DM`, `GroupDM`, `GuildForum`, `GuildAnnouncement`, `PrivateThread`, `PublicThread`]
+
+#### Defined in
+
+[apps/vespera/src/structure/Channel.ts:24](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Channel.ts#L24)
+
+## Functions
+
+### createButton
+
+▸ **createButton**\<`S`\>(`button`): [`ButtonBuilder`](classes/ButtonBuilder)\<`S`\>
+
+The function `createButton` creates a button using a button builder.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` = `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `button` | [`Button`](modules#button)\<`S`\> | The `button` parameter is a function that takes a `ButtonBuilder` instance as an argument and returns a `ButtonBuilder` instance with a specific state `S`. |
+
+#### Returns
+
+[`ButtonBuilder`](classes/ButtonBuilder)\<`S`\>
+
+The `createButton` function is returning a `ButtonBuilder<S>` instance.
+
+#### Defined in
+
+[apps/vespera/src/lib/button.ts:20](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/lib/button.ts#L20)
+
+___
+
+### createCommand
+
+▸ **createCommand**\<`S`\>(`command`): [`SlashCommandBuilder`](classes/SlashCommandBuilder)\<`S`\>
+
+The function createCommand takes a command and returns a SlashCommandBuilder.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` = `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `command` | [`Command`](modules#command)\<`S`\> | The `createCommand` function takes a `command` parameter, which is a function that accepts a `SlashCommandBuilder` as an argument and returns a `SlashCommandBuilder`. The `command` function is a generic function that can accept any type `S` as its argument. |
+
+#### Returns
+
+[`SlashCommandBuilder`](classes/SlashCommandBuilder)\<`S`\>
+
+The `createCommand` function is returning the result of calling the `command` function with
+a new `SlashCommandBuilder()` instance, and then casting the result as `SlashCommandBuilder<S>`.
+
+#### Defined in
+
+[apps/vespera/src/lib/command.ts:46](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/lib/command.ts#L46)
+
+___
+
+### createStringSelectMenu
+
+▸ **createStringSelectMenu**\<`S`\>(`callback`): [`StringSelectMenuBuilder`](classes/StringSelectMenuBuilder)\<`S`\>
+
+The function `createStringSelectMenu` creates a string select menu using a callback function.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` = `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `callback` | [`StringSelectMenu`](modules#stringselectmenu)\<`S`\> | The `callback` parameter in the `createStringSelectMenu` function is a function that takes a `StringSelectMenuBuilder` as an argument and returns a `StringSelectMenuBuilder`. |
+
+#### Returns
+
+[`StringSelectMenuBuilder`](classes/StringSelectMenuBuilder)\<`S`\>
+
+The `createStringSelectMenu` function is returning the result of calling the `callback`
+function with a new instance of `StringSelectMenuBuilder<S>` as an argument. The return value is
+then cast as `StringSelectMenuBuilder<S>` before being returned from the `createStringSelectMenu`
+function.
+
+#### Defined in
+
+[apps/vespera/src/lib/selectMenu.ts:27](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/lib/selectMenu.ts#L27)
+
+___
+
+### createSubCommand
+
+▸ **createSubCommand**\<`S`\>(`subCommand`): [`SlashCommandSubcommandBuilder`](classes/SlashCommandSubcommandBuilder)\<`S`\>
+
+The function `createSubCommand` creates a subcommand for a slash command.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` = `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `subCommand` | [`SubCommand`](modules#subcommand)\<`S`\> | The `subCommand` parameter is a function that takes a `SlashCommandSubcommandBuilder` as an argument and returns a `SlashCommandSubcommandBuilder` with a generic type `S`. |
+
+#### Returns
+
+[`SlashCommandSubcommandBuilder`](classes/SlashCommandSubcommandBuilder)\<`S`\>
+
+The `createSubCommand` function is returning the result of calling the `subCommand`
+function with a `SlashCommandSubcommandBuilder` instance as an argument, and then casting the result
+as a `SlashCommandSubcommandBuilder<S>`.
+
+#### Defined in
+
+[apps/vespera/src/lib/command.ts:72](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/lib/command.ts#L72)
+
+___
+
+### createSubCommandGroup
+
+▸ **createSubCommandGroup**\<`S`\>(`subCommandGroup`): [`SlashCommandSubcommandGroupBuilder`](classes/SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+The function `createSubCommandGroup` creates a subcommand group for a slash command.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` = `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `subCommandGroup` | [`SubCommandGroup`](modules#subcommandgroup)\<`S`\> | The `subCommandGroup` parameter is a function that takes a `SlashCommandSubcommandGroupBuilder` as an argument and returns a `SlashCommandSubcommandGroupBuilder` with a generic type `S`. |
+
+#### Returns
+
+[`SlashCommandSubcommandGroupBuilder`](classes/SlashCommandSubcommandGroupBuilder)\<`S`\>
+
+The `createSubCommandGroup` function is returning the result of calling the
+`subCommandGroup` function with a `SlashCommandSubcommandGroupBuilder` instance as an argument, and
+then casting the result as a `SlashCommandSubcommandGroupBuilder<S>`.
+
+#### Defined in
+
+[apps/vespera/src/lib/command.ts:59](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/lib/command.ts#L59)

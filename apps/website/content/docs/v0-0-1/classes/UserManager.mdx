@@ -1,0 +1,104 @@
+---
+title: UserManager
+description: UserManager
+---
+[vespera](../README) / [Exports](../modules) / UserManager
+
+# Class: UserManager
+
+## Hierarchy
+
+- [`Base`](Base)
+
+  ↳ **`UserManager`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](UserManager#constructor)
+
+### Properties
+
+- [client](UserManager#client)
+
+### Methods
+
+- [fetch](UserManager#fetch)
+
+## Constructors
+
+### constructor
+
+• **new UserManager**(`client`): [`UserManager`](UserManager)
+
+Constructor for creating a new instance of the class.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `client` | [`Client`](Client) | the client object |
+
+#### Returns
+
+[`UserManager`](UserManager)
+
+#### Overrides
+
+[Base](Base).[constructor](Base#constructor)
+
+#### Defined in
+
+
+## Properties
+
+### client
+
+• **client**: [`Client`](Client)
+
+This property allows instances of the `Base` class to have access to a `Client` object, which can be used to interact
+with or utilize the functionalities provided by the `Client` class.
+
+**`Name`**
+
+client
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Base
+
+#### Inherited from
+
+[Base](Base).[client](Base#client)
+
+#### Defined in
+
+[apps/vespera/src/structure/Base.ts:16](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Base.ts#L16)
+
+## Methods
+
+### fetch
+
+▸ **fetch**(`id`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`User`](User)\>
+
+Fetches data using the provided ID.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | The ID used to fetch data. |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<[`User`](User)\>
+
+The data fetched using the ID.
+
+#### Defined in
+

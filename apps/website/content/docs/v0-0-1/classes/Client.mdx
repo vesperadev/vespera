@@ -1,0 +1,640 @@
+---
+title: Client
+description: Client
+---
+[vespera](../README) / [Exports](../modules) / Client
+
+# Class: Client
+
+## Hierarchy
+
+- `TypedEventEmitter`\<[`ClientEvents`](../interfaces/ClientEvents), `this`\>
+
+  ↳ **`Client`**
+
+## Table of contents
+
+### Constructors
+
+- [constructor](Client#constructor)
+
+### Properties
+
+- [api](Client#api)
+- [channels](Client#channels)
+- [commands](Client#commands)
+- [components](Client#components)
+- [entitlements](Client#entitlements)
+- [guilds](Client#guilds)
+- [handler](Client#handler)
+- [options](Client#options)
+- [rest](Client#rest)
+- [user](Client#user)
+- [users](Client#users)
+
+### Methods
+
+- [deployCommands](Client#deploycommands)
+- [handleRequest](Client#handlerequest)
+- [registerCommand](Client#registercommand)
+- [registerCommands](Client#registercommands)
+- [registerComponent](Client#registercomponent)
+- [registerComponents](Client#registercomponents)
+- [sweepCommands](Client#sweepcommands)
+- [sweepComponents](Client#sweepcomponents)
+- [unRegisterCommand](Client#unregistercommand)
+- [unRegisterCommands](Client#unregistercommands)
+- [unregisterComponent](Client#unregistercomponent)
+- [unregisterComponents](Client#unregistercomponents)
+
+## Constructors
+
+### constructor
+
+• **new Client**(`options`): [`Client`](Client)
+
+Constructor for initializing the client with the given options.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `options` | [`ClientOptions`](../interfaces/ClientOptions) | The options for configuring the client. |
+
+#### Returns
+
+[`Client`](Client)
+
+**`Example`**
+
+```ts title="example.ts"
+const client = new Client({
+  token: 'token',
+  application: {
+    id: 'id',
+    publicKey: 'key',
+  },
+  rest: {
+    version: '10',
+  },
+  state: {
+    set: (key, value, ttl) => {},
+    get: (key) => {},
+  },
+})
+```
+
+#### Overrides
+
+(EventEmitter as new () &#x3D;\&gt; TypedEmitter\&lt;ClientEvents\&gt;).constructor
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:250](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L250)
+
+## Properties
+
+### api
+
+• **api**: `API`
+
+This property is used to store an instance of the `API` class within the `Client` class. By declaring it as a public
+property, it can be accessed and used from outside the `Client` class as needed. This allows other parts of the codebase
+to interact with the `API` functionality through the `api` property of an instance of the `Client` class.
+
+**`Name`**
+
+api
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Client
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:126](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L126)
+
+___
+
+### channels
+
+• **channels**: [`ChannelManager`](ChannelManager)
+
+This property stored the ChannelManager class, providing methods to fetch and use channels
+
+**`Name`**
+
+channels
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Client
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:190](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L190)
+
+___
+
+### commands
+
+• **commands**: `Collection`\<`string`, [`SlashCommandBuilder`](SlashCommandBuilder)\<`unknown`\>\>
+
+This property is used to store commands within the `Client` class.
+
+**`Name`**
+
+commands
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Client
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:138](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L138)
+
+___
+
+### components
+
+• **components**: `Collection`\<`string`, [`ButtonBuilder`](ButtonBuilder)\<`unknown`\>\>
+
+This property is used to store components within the `Client` class.
+
+**`Name`**
+
+components
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Client
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:150](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L150)
+
+___
+
+### entitlements
+
+• **entitlements**: [`EntitlementManager`](EntitlementManager)
+
+This property stored the EntitlementManager class, providing methods to fetch and use entitlements
+
+**`Name`**
+
+webhooks
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Client
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:226](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L226)
+
+___
+
+### guilds
+
+• **guilds**: [`GuildManager`](GuildManager)
+
+This property stored the GuildManager class, providing methods to fetch and use guilds
+
+**`Name`**
+
+guilds
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Client
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:202](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L202)
+
+___
+
+### handler
+
+• `Private` **handler**: [`ClientHandler`](ClientHandler)
+
+This property is used to store an instance of the `ClientHandler` class within the `Client` class. By declaring it as a public
+property, it can be accessed and used from outside the `Client` class as needed. This allows other parts of the codebase
+to interact with the `ClientHandler` functionality through the `handler` property of an instance of the `Client` class.
+
+**`Name`**
+
+handler
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Client
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:178](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L178)
+
+___
+
+### options
+
+• `Readonly` **options**: [`ClientOptions`](../interfaces/ClientOptions)
+
+The client options through which the client was initialized.
+
+**`Name`**
+
+options
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Client
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:99](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L99)
+
+___
+
+### rest
+
+• **rest**: `REST`
+
+This property is used to store an instance of the `REST` class, which is responsible for handling REST API requests and
+responses within the Discord client implementation. By declaring it as a public property, it can be accessed from outside the class as needed.
+
+**`Name`**
+
+rest
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Client
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:112](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L112)
+
+___
+
+### user
+
+• **user**: [`ClientUser`](ClientUser)
+
+This property is used to store an instance of the `ClientUser` class within the `Client` class. By declaring it as a public
+property, it can be accessed and used from outside the `Client` class as needed. This allows other parts of the codebase
+to interact with the `ClientUser` functionality through the `user` property of an instance of the `Client` class.
+
+**`Name`**
+
+user
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Client
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:164](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L164)
+
+___
+
+### users
+
+• **users**: [`UserManager`](UserManager)
+
+This property stored the UserManager class, providing methods to fetch and use users
+
+**`Name`**
+
+users
+
+**`Kind`**
+
+property
+
+**`Memberof`**
+
+Client
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:214](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L214)
+
+## Methods
+
+### deployCommands
+
+▸ **deployCommands**(): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`RESTPutAPIApplicationCommandsResult`\>
+
+deployCommands - deploy the registered commands to the Discord API
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`RESTPutAPIApplicationCommandsResult`\>
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:395](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L395)
+
+___
+
+### handleRequest
+
+▸ **handleRequest**(`request`): [`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`undefined` \| \{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
+
+Handle the incoming request and validate the signature.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `request` | [`Request`]( https://developer.mozilla.org/docs/Web/API/Request ) | the request object |
+
+#### Returns
+
+[`Promise`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise )\<`undefined` \| \{ `type`: `InteractionResponseType` = InteractionResponseType.DeferredChannelMessageWithSource }\>
+
+a promise that resolves when the request is handled
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:406](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L406)
+
+___
+
+### registerCommand
+
+▸ **registerCommand**\<`S`\>(`command`): `void`
+
+Register a command.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `command` | [`SlashCommandBuilder`](SlashCommandBuilder)\<`S`\> | the command to register |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:290](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L290)
+
+___
+
+### registerCommands
+
+▸ **registerCommands**\<`S`\>(`commands`): `void`
+
+Register commands.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `commands` | [`SlashCommandBuilder`](SlashCommandBuilder)\<`S`\>[] | array of commands |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:277](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L277)
+
+___
+
+### registerComponent
+
+▸ **registerComponent**(`component`): `void`
+
+The function `registerComponent` registers a ButtonBuilder component with a custom_id property in
+a TypeScript class.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `component` | [`ButtonBuilder`](ButtonBuilder)\<`unknown`\> | The `component` parameter in the `registerComponent` function is of type `ReturnType<typeof createButton<unknown>>`. This means it is a builder object for creating a button component with some unknown data type. |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:348](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L348)
+
+___
+
+### registerComponents
+
+▸ **registerComponents**(`components`): `void`
+
+The function `registerComponents` iterates through an array of ButtonBuilder objects and adds them
+to a map if they have a custom_id property of type string.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `components` | [`ButtonBuilder`](ButtonBuilder)\<`unknown`\>[] | The `components` parameter is an array of `ButtonBuilder` objects with an unknown type. Each `ButtonBuilder` object may have a `data` property that contains information about the button, and the `custom_id` property within the `data` object is checked to ensure it is a string |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:333](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L333)
+
+___
+
+### sweepCommands
+
+▸ **sweepCommands**(): `void`
+
+sweepCommands - A description of the entire function.
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:321](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L321)
+
+___
+
+### sweepComponents
+
+▸ **sweepComponents**(): `void`
+
+The function `sweepComponents` iterates over components and removes all of them.
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:386](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L386)
+
+___
+
+### unRegisterCommand
+
+▸ **unRegisterCommand**\<`S`\>(`command`): `void`
+
+unregisters a command.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `command` | [`SlashCommandBuilder`](SlashCommandBuilder)\<`S`\> | the command to unregister |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:312](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L312)
+
+___
+
+### unRegisterCommands
+
+▸ **unRegisterCommands**\<`S`\>(`commands`): `void`
+
+Unregisters the given commands from the list of registered commands.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | extends `unknown` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `commands` | [`SlashCommandBuilder`](SlashCommandBuilder)\<`S`\>[] | The array of commands to unregister. |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:300](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L300)
+
+___
+
+### unregisterComponent
+
+▸ **unregisterComponent**(`component`): `void`
+
+The function `unregisterComponent` removes a ButtonBuilder component from a collection based on
+its custom_id property.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `component` | [`ButtonBuilder`](ButtonBuilder)\<`unknown`\> | The `component` parameter in the `unregisterComponent` function is of type `ReturnType<typeof createButton<unknown>>`. This means it is a builder object for creating a button component, but the specific type of data it holds is unknown. |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:377](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L377)
+
+___
+
+### unregisterComponents
+
+▸ **unregisterComponents**(`components`): `void`
+
+The function `unregisterComponents` removes components with a `custom_id` property from a
+collection.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `components` | [`ButtonBuilder`](ButtonBuilder)\<`unknown`\>[] | The `unregisterComponents` function takes an array of `ButtonBuilder` objects as its parameter. Each `ButtonBuilder` object represents a button component with some data, including a `custom_id` property. The function iterates over the array of components and removes the components from a collection (`this |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[apps/vespera/src/structure/Client.ts:362](https://github.com/vesperadev/Vespera/blob/4ab3699/apps/vespera/src/structure/Client.ts#L362)
