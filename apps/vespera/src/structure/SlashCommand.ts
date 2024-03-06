@@ -46,6 +46,10 @@ export class SlashCommandBuilder<S extends unknown> extends DISCORDJSSlashComman
    * @return {this} the current instance of the class
    */
   public createMiddleware(callback: Callback<[CommandContext<S>]>) {
+    if (!Reflect.has(this, 'middlewares')) {
+      Reflect.set(this, 'middlewares', []);
+    }
+
     this.middlewares.push(callback);
     return this;
   }

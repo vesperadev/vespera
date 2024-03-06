@@ -37,6 +37,8 @@ export * from './structure/Manager/Message';
 export * from './structure/Manager/Guild';
 export * from './structure/Manager/GuildMember';
 export * from './structure/Manager/Role';
+export * from './structure/Manager/User';
+export * from './structure/Manager/Entitlement';
 
 /**
  * Vespera Client's Environment Interface

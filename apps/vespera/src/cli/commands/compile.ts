@@ -1,19 +1,19 @@
 // @ts-expect-error - ignore import
 import * as p from '@clack/prompts';
+import { watchConfig } from 'c12';
 import { Command } from 'commander';
 import { build } from 'esbuild';
 import color from 'picocolors';
 
-import { getConfig } from '../utils/config';
 import { defaultConfig } from '..';
-import { watchConfig } from 'c12';
+import { getConfig } from '../utils/config';
 
 export const compile = new Command()
   .name('compile')
   .description('Compile the project')
   .option('-w, --watch', 'watch for changes')
   .action(async () => {
-    const commandOptions = compile.opts() as { watch?: boolean };
+    const commandOptions = compile.opts();
 
     console.clear();
     const time = new Date();
@@ -46,7 +46,7 @@ export const compile = new Command()
       const perf = new Date().getTime() - time.getTime();
 
       const messages = [
-        `Compiled in: ${color.red(perf + 'ms')}`,
+        `Compiled in: ${color.red(`${perf  }ms`)}`,
         `Output: ${color.red(`${options.outdir}/` ?? options.outfile)}`,
         `Output Size: ${color.bgRed(
           color.black(
@@ -97,7 +97,7 @@ export const compile = new Command()
             const perf = new Date().getTime() - now.getTime();
 
             const messages = [
-              `Compiled in: ${color.red(perf + 'ms')}`,
+              `Compiled in: ${color.red(`${perf  }ms`)}`,
               `Output: ${color.red(`${options.outdir}/` ?? options.outfile)}`,
               `Output Size: ${color.bgRed(
                 color.black(

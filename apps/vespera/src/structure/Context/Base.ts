@@ -187,8 +187,11 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
   public decorate(key: string, data: unknown) {
     Object.defineProperty(this.state, key, {
       value: data,
-      writable: false,
+      writable: true,
+      configurable: true,
+      enumerable: true,
     });
+
     return this;
   }
 
@@ -219,7 +222,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is received from a guild.
    * @returns {boolean}
    */
-  inGuild() {
+  public inGuild() {
     return Boolean(this.guildId);
   }
 
@@ -227,7 +230,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is received from a DM.
    * @returns {boolean}
    */
-  inDM() {
+  public inDM() {
     return !this.inGuild();
   }
 
@@ -235,7 +238,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is an {@link AutocompleteInteraction}
    * @returns {boolean}
    */
-  isAutocomplete() {
+  public isAutocomplete() {
     return this.type === InteractionType.ApplicationCommandAutocomplete;
   }
 
@@ -245,7 +248,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * @returns The `isCommand()` function is returning a boolean value based on whether the `type`
    * property of the object is equal to `InteractionType.ApplicationCommand`.
    */
-  isCommand() {
+  public isCommand() {
     return this.type === InteractionType.ApplicationCommand;
   }
 
@@ -253,7 +256,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link ChatInputCommandInteraction}.
    * @returns {boolean}
    */
-  isChatInputCommand() {
+  public isChatInputCommand() {
     return (
       this.type === InteractionType.ApplicationCommand &&
       (this.raw.data as APIApplicationCommandInteractionData).type === ApplicationCommandType.ChatInput
@@ -264,7 +267,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link ContextMenuCommandInteraction}
    * @returns {boolean}
    */
-  isContextMenuCommand() {
+  public isContextMenuCommand() {
     return (
       this.type === InteractionType.ApplicationCommand &&
       [ApplicationCommandType.User, ApplicationCommandType.Message].includes(
@@ -277,7 +280,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link MessageComponentInteraction}
    * @returns {boolean}
    */
-  isMessageComponent() {
+  public isMessageComponent() {
     return this.type === InteractionType.MessageComponent;
   }
 
@@ -285,7 +288,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link ModalSubmitInteraction}
    * @returns {boolean}
    */
-  isModalSubmit() {
+  public isModalSubmit() {
     return this.type === InteractionType.ModalSubmit;
   }
 
@@ -293,7 +296,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link UserContextMenuCommandInteraction}
    * @returns {boolean}
    */
-  isUserContextMenuCommand() {
+  public isUserContextMenuCommand() {
     return (
       this.isContextMenuCommand() &&
       (this.raw.data as APIApplicationCommandInteractionData).type === ApplicationCommandType.User
@@ -304,7 +307,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link MessageContextMenuCommandInteraction}
    * @returns {boolean}
    */
-  isMessageContextMenuCommand() {
+  public isMessageContextMenuCommand() {
     return (
       this.isContextMenuCommand() &&
       (this.raw.data as APIApplicationCommandInteractionData).type === ApplicationCommandType.Message
@@ -315,7 +318,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link ButtonInteraction}.
    * @returns {boolean}
    */
-  isButton() {
+  public isButton() {
     return (
       this.type === InteractionType.MessageComponent &&
       (this.raw.data as APIMessageComponentInteractionData).component_type === ComponentType.Button
@@ -327,7 +330,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * @returns {boolean}
    * @deprecated Use {@link BaseInteraction#isStringSelectMenu} instead.
    */
-  isSelectMenu() {
+  public isSelectMenu() {
     return this.isStringSelectMenu();
   }
 
@@ -335,7 +338,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a select menu of any known type.
    * @returns {boolean}
    */
-  isAnySelectMenu() {
+  public isAnySelectMenu() {
     return (
       this.type === InteractionType.MessageComponent &&
       [
@@ -352,7 +355,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link StringSelectMenuInteraction}.
    * @returns {boolean}
    */
-  isStringSelectMenu() {
+  public isStringSelectMenu() {
     return (
       this.type === InteractionType.MessageComponent &&
       (this.raw.data as APIMessageComponentInteractionData).component_type === ComponentType.StringSelect
@@ -363,7 +366,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link UserSelectMenuInteraction}
    * @returns {boolean}
    */
-  isUserSelectMenu() {
+  public isUserSelectMenu() {
     return (
       this.type === InteractionType.MessageComponent &&
       (this.raw.data as APIMessageComponentInteractionData).component_type === ComponentType.UserSelect
@@ -374,7 +377,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link RoleSelectMenuInteraction}
    * @returns {boolean}
    */
-  isRoleSelectMenu() {
+  public isRoleSelectMenu() {
     return (
       this.type === InteractionType.MessageComponent &&
       (this.raw.data as APIMessageComponentInteractionData).component_type === ComponentType.RoleSelect
@@ -385,7 +388,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link ChannelSelectMenuInteraction}
    * @returns {boolean}
    */
-  isChannelSelectMenu() {
+  public isChannelSelectMenu() {
     return (
       this.type === InteractionType.MessageComponent &&
       (this.raw.data as APIMessageComponentInteractionData).component_type === ComponentType.ChannelSelect
@@ -396,7 +399,7 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction is a {@link MentionableSelectMenuInteraction}
    * @returns {boolean}
    */
-  isMentionableSelectMenu() {
+  public isMentionableSelectMenu() {
     return (
       this.type === InteractionType.MessageComponent &&
       (this.raw.data as APIMessageComponentInteractionData).component_type === ComponentType.MentionableSelect
@@ -407,7 +410,34 @@ export class BaseContext<T extends APIBaseInteraction<InteractionType, unknown>,
    * Indicates whether this interaction can be replied to.
    * @returns {boolean}
    */
-  isRepliable() {
+  public isRepliable() {
     return ![InteractionType.Ping, InteractionType.ApplicationCommandAutocomplete].includes(this.type);
+  }
+
+  /**
+   * The function `loadDecorations` loads decorations from a given context's state into the current
+   * object's state.
+   * @param {TBase} context - The `context` parameter in the `loadDecorations` method is of type
+   * `TBase`, which extends `BaseContext<APIBaseInteraction<InteractionType, unknown>, unknown>`. This
+   * means that `context` should be an object that conforms to the structure defined by `BaseContext`
+   * with specific generic
+   */
+  public loadDecorations<TBase extends BaseContext<APIBaseInteraction<InteractionType, unknown>, unknown>>(
+    context: TBase,
+  ) {
+    if (context.state) {
+      const variables = Object.entries(context.state);
+
+      if (variables.length) {
+        for (const [key, value] of variables) {
+          Object.defineProperty(this.state, key, {
+            value,
+            writable: true,
+            configurable: true,
+            enumerable: true,
+          });
+        }
+      }
+    }
   }
 }

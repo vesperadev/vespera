@@ -60,6 +60,7 @@
     "vespera": "./bin/index.mjs"
   },
   "files": [
+    "bin",
     "dist",
     "package.json"
   ],
@@ -87,7 +88,7 @@
     "nypm": "^0.3.8",
     "picocolors": "^1.0.0",
     "tsup": "^8.0.2",
-    "type-fest": "^4.11.0",
+    "type-fest": "^4.11.1",
     "typed-emitter": "^2.1.0",
     "typescript": "^5.3.3"
   }

@@ -4,14 +4,16 @@ import { Collection } from '@discordjs/collection';
 import { verifyKey } from 'discord-interactions';
 import type TypedEmitter from 'typed-emitter';
 
-import type { BaseContext, ButtonContext } from '..';
+import { EntitlementManager, type BaseContext, type ButtonContext } from '..';
 import type { APIBaseInteraction, InteractionType } from '../core';
 import { API } from '../core';
 import type { createCommand } from '../lib/command';
+import type { createButton } from '../lib/button';
 import type { RESTOptions } from '../rest';
 import { REST } from '../rest';
 import { type Callback } from '../utils';
 
+import type { ButtonBuilder } from './ButtonBuilder';
 import { ClientHandler } from './ClientHandler';
 import { ClientUser } from './ClientUser';
 import type { CommandContext } from './Context/CommandContext';
@@ -19,7 +21,7 @@ import { VesperaError } from './Error';
 import { ChannelManager } from './Manager/Channel';
 import { GuildManager } from './Manager/Guild';
 import { type SlashCommandBuilder } from './SlashCommand';
-import { ButtonBuilder } from './ButtonBuilder';
+import { UserManager } from './Manager/User';
 
 /**
  * Interface representing the events that a Client can emit.
@@ -83,18 +85,145 @@ export interface ClientOptions {
 
 // @ts-expect-error - ignore for now
 export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents>) {
+  /**
+   * The client options through which the client was initialized.
+   *
+   * @property
+   * @name options
+   * @kind property
+   * @memberof Client
+   * @public
+   * @readonly
+   * @type {ClientOptions}
+   */
   public readonly options: ClientOptions;
 
+  /**
+   * This property is used to store an instance of the `REST` class, which is responsible for handling REST API requests and
+   * responses within the Discord client implementation. By declaring it as a public property, it can be accessed from outside the class as needed.
+   *
+   * @property
+   * @name rest
+   * @kind property
+   * @memberof Client
+   * @public
+   * @type {REST}
+   */
   public rest: REST;
+
+  /**
+   * This property is used to store an instance of the `API` class within the `Client` class. By declaring it as a public
+   * property, it can be accessed and used from outside the `Client` class as needed. This allows other parts of the codebase
+   * to interact with the `API` functionality through the `api` property of an instance of the `Client` class.
+   *
+   * @property
+   * @name api
+   * @kind property
+   * @memberof Client
+   * @public
+   * @type {API}
+   */
   public api: API;
+
+  /**
+   * This property is used to store commands within the `Client` class.
+   *
+   * @property
+   * @name commands
+   * @kind property
+   * @memberof Client
+   * @public
+   * @type {Collection<string, SlashCommandBuilder<unknown>>}
+   */
   public commands: Collection<string, SlashCommandBuilder<unknown>>;
+
+  /**
+   * This property is used to store components within the `Client` class.
+   *
+   * @property
+   * @name components
+   * @kind property
+   * @memberof Client
+   * @public
+   * @type {Collection<string, ButtonBuilder<unknown>>}
+   */
   public components: Collection<string, ButtonBuilder<unknown>>;
 
+  /**
+   * This property is used to store an instance of the `ClientUser` class within the `Client` class. By declaring it as a public
+   * property, it can be accessed and used from outside the `Client` class as needed. This allows other parts of the codebase
+   * to interact with the `ClientUser` functionality through the `user` property of an instance of the `Client` class.
+   *
+   * @property
+   * @name user
+   * @kind property
+   * @memberof Client
+   * @public
+   * @type {ClientUser}
+   */
   public user: ClientUser;
+
+  /**
+   * This property is used to store an instance of the `ClientHandler` class within the `Client` class. By declaring it as a public
+   * property, it can be accessed and used from outside the `Client` class as needed. This allows other parts of the codebase
+   * to interact with the `ClientHandler` functionality through the `handler` property of an instance of the `Client` class.
+   *
+   * @property
+   * @name handler
+   * @kind property
+   * @memberof Client
+   * @private
+   * @type {ClientHandler}
+   */
   private handler: ClientHandler;
 
+  /**
+   * This property stored the ChannelManager class, providing methods to fetch and use channels
+   *
+   * @property
+   * @name channels
+   * @kind property
+   * @memberof Client
+   * @public
+   * @type {ChannelManager}
+   */
   public channels: ChannelManager;
+
+  /**
+   * This property stored the GuildManager class, providing methods to fetch and use guilds
+   *
+   * @property
+   * @name guilds
+   * @kind property
+   * @memberof Client
+   * @public
+   * @type {GuildManager}
+   */
   public guilds: GuildManager;
+
+  /**
+   * This property stored the UserManager class, providing methods to fetch and use users
+   *
+   * @property
+   * @name users
+   * @kind property
+   * @memberof Client
+   * @public
+   * @type {UserManager}
+   */
+  public users: UserManager;
+
+  /**
+   * This property stored the EntitlementManager class, providing methods to fetch and use entitlements
+   *
+   * @property
+   * @name webhooks
+   * @kind property
+   * @memberof Client
+   * @public
+   * @type {EntitlementManager}
+   */
+  public entitlements: EntitlementManager;
 
   /**
    * Constructor for initializing the client with the given options.
@@ -133,6 +262,8 @@ export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents
 
     this.channels = new ChannelManager(this);
     this.guilds = new GuildManager(this);
+    this.users = new UserManager(this);
+    this.entitlements = new EntitlementManager(this);
 
     this.rest.setToken(options.token);
   }
@@ -140,11 +271,12 @@ export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents
   /**
    * Register commands.
    *
-   * @param {ReturnType<typeof createCommand>[]} commands - array of commands
+   * @param {ReturnType<typeof createCommand<S>>[]} commands - array of commands
    * @return {void}
    */
-  public registerCommands(commands: ReturnType<typeof createCommand>[]) {
+  public registerCommands<S extends unknown>(commands: ReturnType<typeof createCommand<S>>[]) {
     for (const command of commands) {
+      // @ts-expect-error
       this.commands.set(command.name, command);
     }
   }
@@ -152,19 +284,20 @@ export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents
   /**
    * Register a command.
    *
-   * @param {ReturnType<typeof createCommand>} command - the command to register
+   * @param {ReturnType<typeof createCommand<S>>} command - the command to register
    * @return {void}
    */
-  public registerCommand(command: ReturnType<typeof createCommand>) {
+  public registerCommand<S extends unknown>(command: ReturnType<typeof createCommand<S>>) {
+    // @ts-expect-error
     this.commands.set(command.name, command);
   }
 
   /**
    * Unregisters the given commands from the list of registered commands.
    *
-   * @param {ReturnType<typeof createCommand>[]} commands - The array of commands to unregister.
+   * @param {ReturnType<typeof createCommand<S>>[]} commands - The array of commands to unregister.
    */
-  public unRegisterCommands(commands: ReturnType<typeof createCommand>[]) {
+  public unRegisterCommands<S extends unknown>(commands: ReturnType<typeof createCommand<S>>[]) {
     for (const command of commands) {
       this.commands.has(command.name) ? this.commands.delete(command.name) : null;
     }
@@ -173,10 +306,10 @@ export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents
   /**
    * unregisters a command.
    *
-   * @param {ReturnType<typeof createCommand>} command - the command to unregister
+   * @param {ReturnType<typeof createCommand<S>>} command - the command to unregister
    * @return {void}
    */
-  public unRegisterCommand(command: ReturnType<typeof createCommand>) {
+  public unRegisterCommand<S extends unknown>(command: ReturnType<typeof createCommand<S>>) {
     this.commands.has(command.name) ? this.commands.delete(command.name) : null;
   }
 
@@ -192,12 +325,12 @@ export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents
   /**
    * The function `registerComponents` iterates through an array of ButtonBuilder objects and adds them
    * to a map if they have a custom_id property of type string.
-   * @param {ButtonBuilder<unknown>[]} components - The `components` parameter is an array of
+   * @param {ReturnType<typeof createButton<unknown>>[]} components - The `components` parameter is an array of
    * `ButtonBuilder` objects with an unknown type. Each `ButtonBuilder` object may have a `data`
    * property that contains information about the button, and the `custom_id` property within the
    * `data` object is checked to ensure it is a string
    */
-  public registerComponents(components: ButtonBuilder<unknown>[]) {
+  public registerComponents(components: ReturnType<typeof createButton<unknown>>[]) {
     for (const component of components) {
       if ('custom_id' in component.data && typeof component.data.custom_id === 'string') {
         this.components.set(component.data.custom_id, component);
@@ -208,11 +341,11 @@ export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents
   /**
    * The function `registerComponent` registers a ButtonBuilder component with a custom_id property in
    * a TypeScript class.
-   * @param {ButtonBuilder<unknown>} component - The `component` parameter in the `registerComponent` function is of type
-   * `ButtonBuilder<unknown>`. This means it is a builder object for creating a button component with
+   * @param {ReturnType<typeof createButton<unknown>>} component - The `component` parameter in the `registerComponent` function is of type
+   * `ReturnType<typeof createButton<unknown>>`. This means it is a builder object for creating a button component with
    * some unknown data type.
    */
-  public registerComponent(component: ButtonBuilder<unknown>) {
+  public registerComponent(component: ReturnType<typeof createButton<unknown>>) {
     if ('custom_id' in component.data && typeof component.data.custom_id === 'string') {
       this.components.set(component.data.custom_id, component);
     }
@@ -221,12 +354,12 @@ export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents
   /**
    * The function `unregisterComponents` removes components with a `custom_id` property from a
    * collection.
-   * @param {ButtonBuilder<unknown>[]} components - The `unregisterComponents` function takes an array
+   * @param {ReturnType<typeof createButton<unknown>>[]} components - The `unregisterComponents` function takes an array
    * of `ButtonBuilder` objects as its parameter. Each `ButtonBuilder` object represents a button
    * component with some data, including a `custom_id` property. The function iterates over the array
    * of components and removes the components from a collection (`this
    */
-  public unregisterComponents(components: ButtonBuilder<unknown>[]) {
+  public unregisterComponents(components: ReturnType<typeof createButton<unknown>>[]) {
     for (const component of components) {
       if ('custom_id' in component.data && typeof component.data.custom_id === 'string') {
         this.components.delete(component.data.custom_id);
@@ -237,11 +370,11 @@ export class Client extends (EventEmitter as new () => TypedEmitter<ClientEvents
   /**
    * The function `unregisterComponent` removes a ButtonBuilder component from a collection based on
    * its custom_id property.
-   * @param {ButtonBuilder<unknown>} component - The `component` parameter in the `unregisterComponent` function is of type
-   * `ButtonBuilder<unknown>`. This means it is a builder object for creating a button component, but
+   * @param {ReturnType<typeof createButton<unknown>>} component - The `component` parameter in the `unregisterComponent` function is of type
+   * `ReturnType<typeof createButton<unknown>>`. This means it is a builder object for creating a button component, but
    * the specific type of data it holds is unknown.
    */
-  public unregisterComponent(component: ButtonBuilder<unknown>) {
+  public unregisterComponent(component: ReturnType<typeof createButton<unknown>>) {
     if ('custom_id' in component.data && typeof component.data.custom_id === 'string') {
       this.components.delete(component.data.custom_id);
     }

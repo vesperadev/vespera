@@ -1,6 +1,6 @@
 import { loadConfig } from 'c12';
 
-import { defaultConfig, type VesperaConfig } from '..';
+import { type VesperaConfig, defaultConfig } from '..';
 
 export async function getConfig() {
   const config = await loadConfig<VesperaConfig>({
@@ -16,7 +16,7 @@ export async function getConfig() {
     },
 
     // @ts-expect-error - ignore for now
-    defaultConfig: defaultConfig,
+    defaultConfig,
   });
 
   return config.config;

@@ -76,7 +76,7 @@ export class ClientHandler {
           const command = this.client.commands.get(context.raw.data.name);
 
           if (command) {
-            if (command.middlewares.length) {
+            if (command.middlewares && Array.isArray(command.middlewares) && command.middlewares.length) {
               for await (const middleware of command.middlewares) {
                 await middleware(context);
               }
@@ -89,7 +89,11 @@ export class ClientHandler {
               ) as SlashCommandSubcommandGroupBuilder<unknown> | undefined;
 
               if (subcommandGroup) {
-                if (subcommandGroup.middlewares.length) {
+                if (
+                  subcommandGroup.middlewares &&
+                  Array.isArray(subcommandGroup.middlewares) &&
+                  subcommandGroup.middlewares.length
+                ) {
                   for await (const middleware of subcommandGroup.middlewares) {
                     await middleware(context);
                   }
@@ -101,7 +105,11 @@ export class ClientHandler {
                   ) as SlashCommandSubcommandBuilder<unknown> | undefined;
 
                   if (subcommand) {
-                    if (subcommand.middlewares.length) {
+                    if (
+                      subcommand.middlewares &&
+                      Array.isArray(subcommand.middlewares) &&
+                      subcommand.middlewares.length
+                    ) {
                       for await (const middleware of subcommand.middlewares) {
                         await middleware(context);
                       }
@@ -127,7 +135,7 @@ export class ClientHandler {
               ) as SlashCommandSubcommandBuilder<unknown> | undefined;
 
               if (subcommand) {
-                if (subcommand.middlewares.length) {
+                if (subcommand.middlewares && Array.isArray(subcommand.middlewares) && subcommand.middlewares.length) {
                   for await (const middleware of subcommand.middlewares) {
                     await middleware(context);
                   }

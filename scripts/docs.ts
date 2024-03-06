@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
-import packageJson from '../package.json';
+import packageJson from '../apps/vespera/package.json';
 
 const workspace = `${process.cwd()}/apps/vespera`;
 
